@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: e8c3e201a9cbb5b42bcf37fc7400eeda
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4933108527588935790
+    second: MEOWTAR_THE_BLUE_Healing_0
+  - first:
+      213: 2295407005586329719
+    second: MEOWTAR_THE_BLUE_Healing_1
+  - first:
+      213: 7576757569484858899
+    second: MEOWTAR_THE_BLUE_Healing_2
+  - first:
+      213: -2683923463494636942
+    second: MEOWTAR_THE_BLUE_Healing_3
+  - first:
+      213: 5190768319986025464
+    second: MEOWTAR_THE_BLUE_Healing_4
+  - first:
+      213: -9116608463536501980
+    second: MEOWTAR_THE_BLUE_Healing_5
+  - first:
+      213: 8849564183259251278
+    second: MEOWTAR_THE_BLUE_Healing_6
+  - first:
+      213: -6652091211570490196
+    second: MEOWTAR_THE_BLUE_Healing_7
+  - first:
+      213: -1201507371779431125
+    second: MEOWTAR_THE_BLUE_Healing_8
+  - first:
+      213: 7265275639219225835
+    second: MEOWTAR_THE_BLUE_Healing_9
+  - first:
+      213: 4902311780855696892
+    second: MEOWTAR_THE_BLUE_Healing_10
+  - first:
+      213: 7425320352148902388
+    second: MEOWTAR_THE_BLUE_Healing_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Healing_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 429
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e688361b11ce57440800000000000000
+      internalID: 4933108527588935790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Healing_1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 387
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7709aee828ceadf10800000000000000
+      internalID: 2295407005586329719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Healing_2
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 345
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 316a566bddc062960800000000000000
+      internalID: 7576757569484858899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Healing_3
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 303
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27ae01a74d9c0cad0800000000000000
+      internalID: -2683923463494636942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Healing_4
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 262
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f34e100940590840800000000000000
+      internalID: 5190768319986025464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Healing_5
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 221
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42b469e77ec4b7180800000000000000
+      internalID: -9116608463536501980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Healing_6
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 179
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e420038dcb7ffca70800000000000000
+      internalID: 8849564183259251278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Healing_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 137
+        width: 15
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca4d7d099460fa3a0800000000000000
+      internalID: -6652091211570490196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Healing_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 95
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b25e2164963635fe0800000000000000
+      internalID: -1201507371779431125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Healing_9
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 53
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be406f663b173d460800000000000000
+      internalID: 7265275639219225835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Healing_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 25
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfdcd145792880440800000000000000
+      internalID: 4902311780855696892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Healing_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f1505de4890c0760800000000000000
+      internalID: 7425320352148902388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      MEOWTAR_THE_BLUE_Healing_0: 4933108527588935790
+      MEOWTAR_THE_BLUE_Healing_1: 2295407005586329719
+      MEOWTAR_THE_BLUE_Healing_10: 4902311780855696892
+      MEOWTAR_THE_BLUE_Healing_11: 7425320352148902388
+      MEOWTAR_THE_BLUE_Healing_2: 7576757569484858899
+      MEOWTAR_THE_BLUE_Healing_3: -2683923463494636942
+      MEOWTAR_THE_BLUE_Healing_4: 5190768319986025464
+      MEOWTAR_THE_BLUE_Healing_5: -9116608463536501980
+      MEOWTAR_THE_BLUE_Healing_6: 8849564183259251278
+      MEOWTAR_THE_BLUE_Healing_7: -6652091211570490196
+      MEOWTAR_THE_BLUE_Healing_8: -1201507371779431125
+      MEOWTAR_THE_BLUE_Healing_9: 7265275639219225835
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
