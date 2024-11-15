@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Meow_Knight_Dodge_0: -8388463257184847319
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
