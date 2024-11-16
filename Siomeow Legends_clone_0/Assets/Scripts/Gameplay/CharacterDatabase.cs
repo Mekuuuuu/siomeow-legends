@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Character Database", menuName = "Characters/Database")]
@@ -19,5 +20,11 @@ public class CharacterDatabase : ScriptableObject
         }
 
         return null;
+    }
+
+    // Check if input id matches with any of character id
+    public bool IsValidCharacterId(int id)
+    {
+        return characters.Any(x => x.Id == id);
     }
 }
