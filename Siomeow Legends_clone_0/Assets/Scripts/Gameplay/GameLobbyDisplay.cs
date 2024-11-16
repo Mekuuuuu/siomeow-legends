@@ -92,9 +92,14 @@ public class GameLobbyDisplay : NetworkBehaviour
         for(int i = 0; i < players.Count; i++)
         {
             if (players[i].ClientId != NetworkManager.Singleton.LocalClientId) { continue; } // looking for user clientId
+
             if (players[i].IsLockedIn) { return;}                                      // cant change character is already locked in
+
             if (players[i].CharacterId == character.Id) { return; }                     // current character selected already selected
+
+            if (IsCharacterTaken(character.Id, false)) { return; }                      // false => client only, true => server-wide
         }
+
         characterNameText.text = character.DisplayName;
         characterInfoPanel.SetActive(true);
         SelectServerRpc(character.Id);
@@ -106,13 +111,47 @@ public class GameLobbyDisplay : NetworkBehaviour
     {   
         for(int i = 0; i < players.Count; i++)
         {
-            if (players[i].ClientId == serverRpcParams.Receive.SenderClientId)
-            {
-                players[i] = new GameLobbyState(
-                    players[i].ClientId,
-                    characterId
-                );
-            }
+            // ignore all clients that is not ourselves / user
+            if (players[i].ClientId != serverRpcParams.Receive.SenderClientId) { continue; }
+
+            // cancel if character is not valid
+            if (!characterDatabase.IsValidCharacterId(characterId)) { return; }
+
+            // make sure this character is not locked in (true => regardless of who the user is; host or client)
+            if (IsCharacterTaken(characterId, true)) { return; }
+
+            players[i] = new GameLobbyState(
+                players[i].ClientId,
+                characterId,
+                players[i].IsLockedIn
+            );
+        }
+    }
+
+    public void LockIn()
+    {
+        LockInServerRpc();
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void LockInServerRpc(ServerRpcParams serverRpcParams = default)
+    {   
+        for(int i = 0; i < players.Count; i++)
+        {
+            // ignore all clients that is not ourselves / user
+            if (players[i].ClientId != serverRpcParams.Receive.SenderClientId) { continue; }
+
+            // cancel if character is not valid
+            if (!characterDatabase.IsValidCharacterId(players[i].CharacterId)) { return; }
+
+            // make sure this character is not locked in (true => regardless of who the user is; host or client)
+            if (IsCharacterTaken(players[i].CharacterId, true)) { return; }
+
+            players[i] = new GameLobbyState(
+                players[i].ClientId,
+                players[i].CharacterId,
+                true
+            );
         }
     }
 
@@ -128,6 +167,37 @@ public class GameLobbyDisplay : NetworkBehaviour
             {
                 playerCards[i].DisableDisplay();
             }
+        }
+
+        foreach(var button in characterButtons)
+        {
+            if (button.IsDisabled) { continue; }
+
+            if (IsCharacterTaken(button.Character.Id, false)) 
+            { 
+                button.SetDisabled();
+            }
+
+        }
+
+        foreach(var player in players)
+        {
+            if (player.ClientId != NetworkManager.Singleton.LocalClientId) { continue; }
+
+            if (player.IsLockedIn)
+            {
+                lockInButton.interactable = false;
+                break;
+            }
+
+            if (IsCharacterTaken(player.CharacterId, false))
+            {
+                lockInButton.interactable = false;
+                break;
+            }
+
+            lockInButton.interactable = true;
+            break;
         }
     }
 
