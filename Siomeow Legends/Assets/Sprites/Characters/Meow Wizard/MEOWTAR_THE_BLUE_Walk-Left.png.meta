@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 708e9673cb183c54d8324c803d2c017f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2154016545613123201
+    second: MEOWTAR_THE_BLUE_Walk-Left_0
+  - first:
+      213: 2378560896375231657
+    second: MEOWTAR_THE_BLUE_Walk-Left_1
+  - first:
+      213: -3727154151062094329
+    second: MEOWTAR_THE_BLUE_Walk-Left_2
+  - first:
+      213: -546096628815961224
+    second: MEOWTAR_THE_BLUE_Walk-Left_3
+  - first:
+      213: -6752825414172719990
+    second: MEOWTAR_THE_BLUE_Walk-Left_4
+  - first:
+      213: 925285007635136125
+    second: MEOWTAR_THE_BLUE_Walk-Left_5
+  - first:
+      213: -2883610540468180346
+    second: MEOWTAR_THE_BLUE_Walk-Left_6
+  - first:
+      213: 387673131874012266
+    second: MEOWTAR_THE_BLUE_Walk-Left_7
+  - first:
+      213: 4391672296530085488
+    second: MEOWTAR_THE_BLUE_Walk-Left_8
+  - first:
+      213: -5994535198259661309
+    second: MEOWTAR_THE_BLUE_Walk-Left_9
+  - first:
+      213: -8219355311793119914
+    second: MEOWTAR_THE_BLUE_Walk-Left_10
+  - first:
+      213: -4296602646094325244
+    second: MEOWTAR_THE_BLUE_Walk-Left_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Walk-Left_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 339
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f717a6e3d556b12e0800000000000000
+      internalID: -2154016545613123201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Walk-Left_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 298
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a494197888520120800000000000000
+      internalID: 2378560896375231657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Walk-Left_2
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 255
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70e32d20c0d764cc0800000000000000
+      internalID: -3727154151062094329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Walk-Left_3
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 230
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 873e26a6200eb68f0800000000000000
+      internalID: -546096628815961224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Walk-Left_4
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 187
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a84410650152942a0800000000000000
+      internalID: -6752825414172719990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Walk-Left_5
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 147
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7e3614efc547dc00800000000000000
+      internalID: 925285007635136125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Walk-Left_6
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 104
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68a62d0dd7b5bf7d0800000000000000
+      internalID: -2883610540468180346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Walk-Left_7
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 77
+        width: 27
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6c4052d8aa416500800000000000000
+      internalID: 387673131874012266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Walk-Left_8
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 56
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07689948faa52fc30800000000000000
+      internalID: 4391672296530085488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Walk-Left_9
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 51
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30638226ff12fcca0800000000000000
+      internalID: -5994535198259661309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Walk-Left_10
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 25
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65dd9d554ebfeed80800000000000000
+      internalID: -8219355311793119914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Walk-Left_11
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 0
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40a5b8268a66f54c0800000000000000
+      internalID: -4296602646094325244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      MEOWTAR_THE_BLUE_Walk-Left_0: -2154016545613123201
+      MEOWTAR_THE_BLUE_Walk-Left_1: 2378560896375231657
+      MEOWTAR_THE_BLUE_Walk-Left_10: -8219355311793119914
+      MEOWTAR_THE_BLUE_Walk-Left_11: -4296602646094325244
+      MEOWTAR_THE_BLUE_Walk-Left_2: -3727154151062094329
+      MEOWTAR_THE_BLUE_Walk-Left_3: -546096628815961224
+      MEOWTAR_THE_BLUE_Walk-Left_4: -6752825414172719990
+      MEOWTAR_THE_BLUE_Walk-Left_5: 925285007635136125
+      MEOWTAR_THE_BLUE_Walk-Left_6: -2883610540468180346
+      MEOWTAR_THE_BLUE_Walk-Left_7: 387673131874012266
+      MEOWTAR_THE_BLUE_Walk-Left_8: 4391672296530085488
+      MEOWTAR_THE_BLUE_Walk-Left_9: -5994535198259661309
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
