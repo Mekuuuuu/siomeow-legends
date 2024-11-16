@@ -25,7 +25,8 @@ public class PlayerCard : MonoBehaviour
             characterIconImage.enabled = false;
         }
 
-        playerNameText.text = $"Player {state.ClientId}";
+        // Make separate text for picking in card when player is not locked in / disappear when locked in
+        playerNameText.text = state.IsLockedIn ? $"Player {state.ClientId}" : $"Player {state.ClientId} (Picking...)";
 
         visuals.SetActive(true);
     }

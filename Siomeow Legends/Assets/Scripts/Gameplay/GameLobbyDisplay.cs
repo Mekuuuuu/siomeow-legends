@@ -1,7 +1,10 @@
+using System.Collections.Generic;
 using TMPro;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.UI;
 
 public class GameLobbyDisplay : NetworkBehaviour
 {
@@ -11,6 +14,9 @@ public class GameLobbyDisplay : NetworkBehaviour
     [SerializeField] private PlayerCard[] playerCards;
     [SerializeField] private GameObject characterInfoPanel; // REMOVE THIS SINCE WE WILL NOT USE IT. ctrl+f for instances of this.
     [SerializeField] private TMP_Text characterNameText; // REMOVE THIS SINCE WE WILL NOT USE IT. ctrl+f for instances of this.
+    [SerializeField] private Button lockInButton;
+
+    private List<CharacterSelectButton> characterButtons = new List<CharacterSelectButton>();
     private NetworkList<GameLobbyState> players;
 
     private void Awake()
@@ -28,6 +34,7 @@ public class GameLobbyDisplay : NetworkBehaviour
             {
                 var selectbuttonInstance = Instantiate(selectButtonPrefab, charactersHolder);
                 selectbuttonInstance.SetCharacter(this, character);
+                characterButtons.Add(selectbuttonInstance);
             }
 
             players.OnListChanged += HandlePlayersStateChanged;
@@ -82,6 +89,12 @@ public class GameLobbyDisplay : NetworkBehaviour
 
     public void Select(Character character)
     {
+        for(int i = 0; i < players.Count; i++)
+        {
+            if (players[i].ClientId != NetworkManager.Singleton.LocalClientId) { continue; } // looking for user clientId
+            if (players[i].IsLockedIn) { return;}                                      // cant change character is already locked in
+            if (players[i].CharacterId == character.Id) { return; }                     // current character selected already selected
+        }
         characterNameText.text = character.DisplayName;
         characterInfoPanel.SetActive(true);
         SelectServerRpc(character.Id);
@@ -116,5 +129,24 @@ public class GameLobbyDisplay : NetworkBehaviour
                 playerCards[i].DisableDisplay();
             }
         }
+    }
+
+    private bool IsCharacterTaken(int characterId, bool checkAll)
+    {
+        for (int i = 0; i < players.Count; i++)
+        {
+            // for the disabledOverlay. we dont want to cross out the character we locked in in our screen, only other players
+            if (!checkAll)
+            {
+                if (players[i].ClientId == NetworkManager.Singleton.LocalClientId) { continue; }
+            }
+            // other player has locked in the selected character
+            if (players[i].IsLockedIn && players[i].CharacterId == characterId)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
