@@ -417,6 +417,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+  targetImage: {fileID: 0}
+  alternateSprite: {fileID: 0}
 --- !u!114 &1121803659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,6 +614,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+  targetImage: {fileID: 0}
+  alternateSprite: {fileID: 0}
 --- !u!114 &1559654146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,6 +736,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+  targetImage: {fileID: 0}
+  alternateSprite: {fileID: 0}
 --- !u!114 &1729570357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -858,7 +864,7 @@ GameObject:
   - component: {fileID: 1936853696}
   - component: {fileID: 1936853695}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Main Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
