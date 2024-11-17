@@ -15,3 +15,5 @@ MonoBehaviour:
   id: 2
   displayName: Sample2
   icon: {fileID: 368543389579951487, guid: 3397d89bf94334849a02f46a83f9ee44, type: 3}
+  cardIcon: {fileID: 368543389579951487, guid: 3397d89bf94334849a02f46a83f9ee44, type: 3}
+  gameplayPrefab: {fileID: 7792370698815513177, guid: 1445287563497044894249390d036e03, type: 3}

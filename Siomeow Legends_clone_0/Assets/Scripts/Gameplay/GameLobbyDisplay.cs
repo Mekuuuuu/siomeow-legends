@@ -153,6 +153,19 @@ public class GameLobbyDisplay : NetworkBehaviour
                 true
             );
         }
+
+        foreach (var player in players)
+        {
+            if (!player.IsLockedIn) { return; }
+
+        }
+        foreach(var player in players)
+        {
+            ServerManager.Instance.SetCharacter(player.ClientId, player.CharacterId);        
+        }
+
+        // MIKO REMINDER. ATTACH THIS TO A BUTTON THAT ONLY THE HOST CAN SEE
+        ServerManager.Instance.StartGame();
     }
 
     private void HandlePlayersStateChanged(NetworkListEvent<GameLobbyState> changeEvent)

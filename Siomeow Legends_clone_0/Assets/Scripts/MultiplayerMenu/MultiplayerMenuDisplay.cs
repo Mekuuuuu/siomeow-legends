@@ -1,22 +1,18 @@
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MultiplayerMenuDisplay : MonoBehaviour
 {
 
-    [SerializeField] private string gameplaySceneName = "Sandbox";
-
     public void StartHost()
     {
-        NetworkManager.Singleton.StartHost();
-        NetworkManager.Singleton.SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
+        // Debug.Log(ServerManager.Instance == null ? "ServerManager is null" : "ServerManager is not null");
+        ServerManager.Instance.StartHost();
     }
 
     public void StartServer()
     {
-        NetworkManager.Singleton.StartServer();
-        NetworkManager.Singleton.SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
+        ServerManager.Instance.StartServer();
     }
 
     public void StartClient()
