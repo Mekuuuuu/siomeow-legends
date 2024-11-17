@@ -1,18 +1,25 @@
+using System;
 using System.Collections.Generic;
 using Unity.Netcode;
+using Unity.Netcode.Transports.UTP;
+using Unity.Networking.Transport.Relay;
+using Unity.Services.Relay;
+using Unity.Services.Relay.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ServerManager : MonoBehaviour
+public class HostManager : MonoBehaviour
 {
     [Header("Settings")]
+    [SerializeField] private int maxConnections = 4;
     [SerializeField] private string characterSelectScene = "GameLobby";
     [SerializeField] private string gameplaySceneName = "Gameplay";
 
-    public static ServerManager Instance { get; private set; }
+    public static HostManager Instance { get; private set; }
 
     private bool gameHasStarted;
     public Dictionary<ulong, ClientData> ClientData { get; private set; }
+    public String JoinCode { get; private set; }
 
     private void Awake()
     {
@@ -27,8 +34,39 @@ public class ServerManager : MonoBehaviour
         }
     }
 
-    public void StartHost()
+    public async void StartHost()
     {
+        Allocation allocation;
+        // Use Relay, not our own router
+        try
+        {
+            allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Relay create allocation request failed {e.Message}");
+            throw;
+        }
+        
+        Debug.Log($"server: {allocation.ConnectionData[0]} {allocation.ConnectionData[1]}");
+        Debug.Log($"server: {allocation.AllocationId}");
+
+        // Get Join Code from Relay allocation
+        try
+        {
+            JoinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
+        }
+        catch
+        {
+            Debug.LogError("Relay get join code request failed");
+            throw;
+        }
+
+        var relayServerData = new RelayServerData(allocation, "dtls"); // dtls is 'security protocol'(?)
+        
+        // Set everything up for us to connect to the Relay server
+        NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
+
         NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
         NetworkManager.Singleton.OnServerStarted += OnNetworkReady;
 
@@ -37,15 +75,15 @@ public class ServerManager : MonoBehaviour
         NetworkManager.Singleton.StartHost();
     }
 
-    public void StartServer()
-    {
-        NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
-        NetworkManager.Singleton.OnServerStarted += OnNetworkReady;
+    // public void StartServer()
+    // {
+    //     NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
+    //     NetworkManager.Singleton.OnServerStarted += OnNetworkReady;
 
-        ClientData = new Dictionary<ulong, ClientData>(); // Avoid lingering data from previous instance
+    //     ClientData = new Dictionary<ulong, ClientData>(); // Avoid lingering data from previous instance
 
-        NetworkManager.Singleton.StartServer();
-    }
+    //     NetworkManager.Singleton.StartServer();
+    // }
 
     // Manage if player can join the room / server
     private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)

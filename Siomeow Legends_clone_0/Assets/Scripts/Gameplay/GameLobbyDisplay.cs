@@ -14,6 +14,7 @@ public class GameLobbyDisplay : NetworkBehaviour
     [SerializeField] private PlayerCard[] playerCards;
     [SerializeField] private GameObject characterInfoPanel; // REMOVE THIS SINCE WE WILL NOT USE IT. ctrl+f for instances of this.
     [SerializeField] private TMP_Text characterNameText; // REMOVE THIS SINCE WE WILL NOT USE IT. ctrl+f for instances of this.
+    [SerializeField] private TMP_Text joinCodeText;
     [SerializeField] private Button lockInButton;
 
     private List<CharacterSelectButton> characterButtons = new List<CharacterSelectButton>();
@@ -40,6 +41,7 @@ public class GameLobbyDisplay : NetworkBehaviour
             players.OnListChanged += HandlePlayersStateChanged;
         }
 
+        // Could change this to IsHost but using this if we decide to use dedicated servers in the future
         if(IsServer)
         {
             NetworkManager.Singleton.OnClientConnectedCallback += HandleClientConnected;
@@ -51,6 +53,11 @@ public class GameLobbyDisplay : NetworkBehaviour
             {
                 HandleClientConnected(client.ClientId);
             }
+        }
+
+        if(IsHost)
+        {
+            joinCodeText.text = HostManager.Instance.JoinCode;
         }
     }
 
@@ -161,11 +168,11 @@ public class GameLobbyDisplay : NetworkBehaviour
         }
         foreach(var player in players)
         {
-            ServerManager.Instance.SetCharacter(player.ClientId, player.CharacterId);        
+            HostManager.Instance.SetCharacter(player.ClientId, player.CharacterId);        
         }
 
         // MIKO REMINDER. ATTACH THIS TO A BUTTON THAT ONLY THE HOST CAN SEE
-        ServerManager.Instance.StartGame();
+        HostManager.Instance.StartGame();
     }
 
     private void HandlePlayersStateChanged(NetworkListEvent<GameLobbyState> changeEvent)
