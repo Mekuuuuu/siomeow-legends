@@ -6,20 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/Scenes/Sandbox.unity
-    guid: f7bad5431990c6f47bda7242f6961932
-  - enabled: 1
-    path: Assets/Scenes/Homescreen/MainMenu.unity
-    guid: ddaa65849a6947f4091d941573ebfbc3
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2fa99e384a3ff3c4c981ee990bac181f
   - enabled: 1
     path: Assets/Scenes/GameLobby.unity
     guid: e999c83d09182c142bce16a52f4e70d8
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 2fa99e384a3ff3c4c981ee990bac181f
+    path: Assets/Scenes/Gameplay.unity
+    guid: 77264536ec0091d48bf644f6a3dac2ec
+  - enabled: 1
+    path: Assets/Scenes/Sandbox.unity
+    guid: f7bad5431990c6f47bda7242f6961932
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

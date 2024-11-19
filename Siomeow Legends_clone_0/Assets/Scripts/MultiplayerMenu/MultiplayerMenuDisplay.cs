@@ -1,26 +1,46 @@
+using System;
+using TMPro;
 using Unity.Netcode;
+using Unity.Services.Authentication;
+using Unity.Services.Core;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MultiplayerMenuDisplay : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private GameObject connectingPanel;
+    [SerializeField] private GameObject menuPanel;
+    [SerializeField] private GameObject lobbiesList;
+    [SerializeField] private TMP_InputField joinCodeInputField;
 
-    [SerializeField] private string gameplaySceneName = "Sandbox";
+    private async void Awake()
+    {
+        try
+        {
+            await UnityServices.InitializeAsync();
+            await AuthenticationService.Instance.SignInAnonymouslyAsync();
+            Debug.Log($"Player Id: {AuthenticationService.Instance.PlayerId}");
+        }
+        catch (Exception e)
+        {
+            Debug.Log("UnityServices Initialize or AuthenticationService Error " + e);
+            Debug.LogError(e);
+            return;
+        }
+
+        connectingPanel.SetActive(false);
+        menuPanel.SetActive(true);
+        lobbiesList.SetActive(true);
+
+    }
 
     public void StartHost()
     {
-        NetworkManager.Singleton.StartHost();
-        NetworkManager.Singleton.SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
+        HostManager.Instance.StartHost();
     }
 
-    public void StartServer()
+    public async void StartClient()
     {
-        NetworkManager.Singleton.StartServer();
-        NetworkManager.Singleton.SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
-    }
-
-    public void StartClient()
-    {
-        NetworkManager.Singleton.StartClient();
+        await ClientManager.Instance.StartClient(joinCodeInputField.text);
     }
 }
