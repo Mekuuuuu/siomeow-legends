@@ -1,25 +1,32 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
-// THIS SCRIPT IS USED FOR CHARACTER SELECTION
-// since we want it to be random, so this should be disregarded
 public class CharacterSelectButton : MonoBehaviour
 {
     [SerializeField] private Image iconImage;
+    [SerializeField] private GameObject disabledOverlay;
+    [SerializeField] private Button button;
 
     private GameLobbyDisplay characterSelect;
-    private Character character;
+    public Character Character {get; private set;} 
+    public bool IsDisabled {get; private set;}
 
     public void SetCharacter(GameLobbyDisplay characterSelect, Character character)
     {
         iconImage.sprite = character.Icon;
         this.characterSelect = characterSelect;
-        this.character = character;
+        this.Character = character;
     }
 
     public void SelectCharacter()
     {
-        characterSelect.Select(character);
+        characterSelect.Select(Character);
+    }
+
+    public void SetDisabled()
+    {
+        IsDisabled = true;
+        disabledOverlay.SetActive(true);
+        button.interactable = false;
     }
 }
