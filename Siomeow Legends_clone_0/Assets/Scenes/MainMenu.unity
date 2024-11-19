@@ -572,14 +572,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MultiplayerMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 2407332910815798931, guid: 181bcad7a1fa46e4fb5d7ae913f36a6c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2955239839966091971, guid: 181bcad7a1fa46e4fb5d7ae913f36a6c, type: 3}
-      propertyPath: m_Name
-      value: JoinCodeInputField
-      objectReference: {fileID: 0}
     - target: {fileID: 4203353084411618945, guid: 181bcad7a1fa46e4fb5d7ae913f36a6c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -659,10 +651,6 @@ PrefabInstance:
     - target: {fileID: 4203353084411618945, guid: 181bcad7a1fa46e4fb5d7ae913f36a6c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4928218147633484639, guid: 181bcad7a1fa46e4fb5d7ae913f36a6c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

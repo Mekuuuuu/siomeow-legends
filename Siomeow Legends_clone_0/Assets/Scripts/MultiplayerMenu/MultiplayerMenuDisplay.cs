@@ -10,9 +10,10 @@ public class MultiplayerMenuDisplay : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject connectingPanel;
     [SerializeField] private GameObject menuPanel;
+    [SerializeField] private GameObject lobbiesList;
     [SerializeField] private TMP_InputField joinCodeInputField;
 
-    private async void Start()
+    private async void Awake()
     {
         try
         {
@@ -22,12 +23,14 @@ public class MultiplayerMenuDisplay : MonoBehaviour
         }
         catch (Exception e)
         {
+            Debug.Log("UnityServices Initialize or AuthenticationService Error " + e);
             Debug.LogError(e);
             return;
         }
 
         connectingPanel.SetActive(false);
         menuPanel.SetActive(true);
+        lobbiesList.SetActive(true);
 
     }
 
@@ -36,8 +39,8 @@ public class MultiplayerMenuDisplay : MonoBehaviour
         HostManager.Instance.StartHost();
     }
 
-    public void StartClient()
+    public async void StartClient()
     {
-        ClientManager.Instance.StartClient(joinCodeInputField.text);
+        await ClientManager.Instance.StartClient(joinCodeInputField.text);
     }
 }

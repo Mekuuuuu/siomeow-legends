@@ -1,8 +1,11 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using Unity.Networking.Transport.Relay;
+using Unity.Services.Lobbies;
+using Unity.Services.Lobbies.Models;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using UnityEngine;
@@ -18,6 +21,7 @@ public class HostManager : MonoBehaviour
     public static HostManager Instance { get; private set; }
 
     private bool gameHasStarted;
+    private String lobbyId;
     public Dictionary<ulong, ClientData> ClientData { get; private set; }
     public String JoinCode { get; private set; }
 
@@ -67,6 +71,31 @@ public class HostManager : MonoBehaviour
         // Set everything up for us to connect to the Relay server
         NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
 
+        try
+        {
+            var createLobbyOptions = new CreateLobbyOptions();
+            createLobbyOptions.IsPrivate = false; // MIKO CHECK
+            createLobbyOptions.Data = new Dictionary<string, DataObject>()
+            {
+                {
+                    "JoinCode", new DataObject(
+                        visibility: DataObject.VisibilityOptions.Member, // sets that player has to be in lobby to see the join code
+                        value: JoinCode
+                    )
+                }
+            };
+
+            // ping API to create a lobby
+            Lobby lobby = await Lobbies.Instance.CreateLobbyAsync("My Lobby", maxConnections, createLobbyOptions);
+            lobbyId = lobby.Id;
+            StartCoroutine(HeartbeatLobbyCoroutine(15));
+        }
+        catch (LobbyServiceException e)
+        {
+            Debug.Log("Start Host Error: " + e);
+            throw;
+        }
+
         NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
         NetworkManager.Singleton.OnServerStarted += OnNetworkReady;
 
@@ -75,17 +104,16 @@ public class HostManager : MonoBehaviour
         NetworkManager.Singleton.StartHost();
     }
 
-    // public void StartServer()
-    // {
-    //     NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
-    //     NetworkManager.Singleton.OnServerStarted += OnNetworkReady;
-
-    //     ClientData = new Dictionary<ulong, ClientData>(); // Avoid lingering data from previous instance
-
-    //     NetworkManager.Singleton.StartServer();
-    // }
-
-    // Manage if player can join the room / server
+    // need to ping the service regularly so that it wont be erased by Lobby service
+    private IEnumerator HeartbeatLobbyCoroutine(float waitTimeSeconds)
+    {
+        var delay = new WaitForSeconds(waitTimeSeconds);
+        while(true)
+        {
+            Lobbies.Instance.SendHeartbeatPingAsync(lobbyId);
+            yield return delay;
+        }
+    }
     private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
     {
         // reject if room is full or game has started 

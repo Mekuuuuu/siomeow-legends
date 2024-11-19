@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using Unity.Networking.Transport.Relay;
@@ -23,7 +24,7 @@ public class ClientManager : MonoBehaviour
         }
     }
 
-    public async void StartClient(string joinCode)
+    public async Task StartClient(string joinCode)
     {
         JoinAllocation allocation;
         // Use Relay, not our own router
@@ -43,8 +44,7 @@ public class ClientManager : MonoBehaviour
 
         var relayServerData = new RelayServerData(allocation, "dtls");
 
-        NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
-        
+        NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);    
 
         NetworkManager.Singleton.StartClient();
     }
