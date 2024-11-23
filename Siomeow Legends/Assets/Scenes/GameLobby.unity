@@ -467,6 +467,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1824297381}
     m_Modifications:
+    - target: {fileID: 405930333828447838, guid: 37bc9c3781bc4b046b3e3971bd9905ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 916611186689092377, guid: 37bc9c3781bc4b046b3e3971bd9905ae, type: 3}
       propertyPath: m_Name
       value: PlayerCard (3)
@@ -814,9 +818,9 @@ RectTransform:
   - {fileID: 1014769608}
   - {fileID: 775341579}
   - {fileID: 1517024551}
+  - {fileID: 1824297381}
   - {fileID: 846489755}
   - {fileID: 391151477}
-  - {fileID: 1824297381}
   m_Father: {fileID: 101368656}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1230,6 +1234,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1824297381}
     m_Modifications:
+    - target: {fileID: 405930333828447838, guid: 37bc9c3781bc4b046b3e3971bd9905ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 916611186689092377, guid: 37bc9c3781bc4b046b3e3971bd9905ae, type: 3}
       propertyPath: m_Name
       value: PlayerCard (2)
@@ -1358,7 +1366,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824297380}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1369,9 +1377,9 @@ RectTransform:
   - {fileID: 806053928}
   m_Father: {fileID: 1116386808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 960, y: -540}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2026554544
@@ -1518,6 +1526,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1824297381}
     m_Modifications:
+    - target: {fileID: 405930333828447838, guid: 37bc9c3781bc4b046b3e3971bd9905ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 916611186689092377, guid: 37bc9c3781bc4b046b3e3971bd9905ae, type: 3}
       propertyPath: m_Name
       value: PlayerCard (1)
