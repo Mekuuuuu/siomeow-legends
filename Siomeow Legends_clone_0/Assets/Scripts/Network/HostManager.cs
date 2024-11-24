@@ -40,60 +40,63 @@ public class HostManager : MonoBehaviour
 
     public async void StartHost()
     {
-        Allocation allocation;
-        // Use Relay, not our own router
-        try
+        if (!NetworkSelector.Instance.isLAN)
         {
-            allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections);
-        }
-        catch (Exception e)
-        {
-            Debug.LogError($"Relay create allocation request failed {e.Message}");
-            throw;
-        }
-        
-        Debug.Log($"server: {allocation.ConnectionData[0]} {allocation.ConnectionData[1]}");
-        Debug.Log($"server: {allocation.AllocationId}");
-
-        // Get Join Code from Relay allocation
-        try
-        {
-            JoinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
-        }
-        catch
-        {
-            Debug.LogError("Relay get join code request failed");
-            throw;
-        }
-
-        var relayServerData = new RelayServerData(allocation, "dtls"); // dtls is 'security protocol'(?)
-        
-        // Set everything up for us to connect to the Relay server
-        NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
-
-        try
-        {
-            var createLobbyOptions = new CreateLobbyOptions();
-            createLobbyOptions.IsPrivate = false; // MIKO CHECK
-            createLobbyOptions.Data = new Dictionary<string, DataObject>()
+            Allocation allocation;
+            // Use Relay, not our own router
+            try
             {
-                {
-                    "JoinCode", new DataObject(
-                        visibility: DataObject.VisibilityOptions.Member, // sets that player has to be in lobby to see the join code
-                        value: JoinCode
-                    )
-                }
-            };
+                allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Relay create allocation request failed {e.Message}");
+                throw;
+            }
+            
+            Debug.Log($"server: {allocation.ConnectionData[0]} {allocation.ConnectionData[1]}");
+            Debug.Log($"server: {allocation.AllocationId}");
 
-            // ping API to create a lobby
-            Lobby lobby = await Lobbies.Instance.CreateLobbyAsync("My Lobby", maxConnections, createLobbyOptions);
-            lobbyId = lobby.Id;
-            StartCoroutine(HeartbeatLobbyCoroutine(15));
-        }
-        catch (LobbyServiceException e)
-        {
-            Debug.Log("Start Host Error: " + e);
-            throw;
+            // Get Join Code from Relay allocation
+            try
+            {
+                JoinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
+            }
+            catch
+            {
+                Debug.LogError("Relay get join code request failed");
+                throw;
+            }
+
+            var relayServerData = new RelayServerData(allocation, "dtls"); // dtls is 'security protocol'(?)
+            
+            // Set everything up for us to connect to the Relay server
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
+
+            try
+            {
+                var createLobbyOptions = new CreateLobbyOptions();
+                createLobbyOptions.IsPrivate = false; // MIKO CHECK
+                createLobbyOptions.Data = new Dictionary<string, DataObject>()
+                {
+                    {
+                        "JoinCode", new DataObject(
+                            visibility: DataObject.VisibilityOptions.Member, // sets that player has to be in lobby to see the join code
+                            value: JoinCode
+                        )
+                    }
+                };
+
+                // ping API to create a lobby
+                Lobby lobby = await Lobbies.Instance.CreateLobbyAsync("My Lobby", maxConnections, createLobbyOptions);
+                lobbyId = lobby.Id;
+                StartCoroutine(HeartbeatLobbyCoroutine(15));
+            }
+            catch (LobbyServiceException e)
+            {
+                Debug.Log("Start Host Error: " + e);
+                throw;
+            }
         }
 
         NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
@@ -117,7 +120,7 @@ public class HostManager : MonoBehaviour
     private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
     {
         // reject if room is full or game has started 
-        if (ClientData.Count >= 3 || gameHasStarted)
+        if (ClientData.Count >= 4 || gameHasStarted)
         {
             response.Approved = false;
             return;
@@ -161,6 +164,12 @@ public class HostManager : MonoBehaviour
 
         NetworkManager.Singleton.SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
     }
+
+    /**********************************************************************
+
+    NOT COMPLETE. NEED TO HANDLE CONNECTION AND DISCONNECTION
+
+    ***********************************************************************/
 
 
 }

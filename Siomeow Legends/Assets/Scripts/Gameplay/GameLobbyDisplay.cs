@@ -161,6 +161,7 @@ public class GameLobbyDisplay : NetworkBehaviour
             );
         }
 
+        // Will not start until every player is locked in
         foreach (var player in players)
         {
             if (!player.IsLockedIn) { return; }
@@ -171,12 +172,21 @@ public class GameLobbyDisplay : NetworkBehaviour
             HostManager.Instance.SetCharacter(player.ClientId, player.CharacterId);        
         }
 
-        // MIKO REMINDER. ATTACH THIS TO A BUTTON THAT ONLY THE HOST CAN SEE
-        HostManager.Instance.StartGame();
+        // if (NetworkSelector.Instance.isLAN)
+        // {
+
+        // }
+        // else
+        // {
+            // MIKO REMINDER. ATTACH THIS TO A BUTTON THAT ONLY THE HOST CAN SEE
+            HostManager.Instance.StartGame();
+        // }
     }
 
     private void HandlePlayersStateChanged(NetworkListEvent<GameLobbyState> changeEvent)
     {
+
+        // Handles connected players in lobby. Shows connected player's info. Hides player card if no connected player
         for (int i = 0; i < playerCards.Length; i++)
         {
             if (players.Count > i)
