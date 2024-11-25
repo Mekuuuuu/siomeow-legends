@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MEOWOLAS_Electro_Arrow_0: -6383311347428626884
+      MEOWOLAS_Electro_Arrow_1: 4512151467061294181
+      MEOWOLAS_Electro_Arrow_2: -2096632402651738891
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      King_Mewrthur_Attack_3_0: -6060086297461847468
+      King_Mewrthur_Attack_3_1: -5318002108004344831
+      King_Mewrthur_Attack_3_2: -7090771929921391667
+      King_Mewrthur_Attack_3_3: 8427635396308756232
+      King_Mewrthur_Attack_3_4: -8764037241437425058
+      King_Mewrthur_Attack_3_5: 468915895838115197
+      King_Mewrthur_Attack_3_6: 1758903307813912918
+      King_Mewrthur_Attack_3_7: 1830754921598440683
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

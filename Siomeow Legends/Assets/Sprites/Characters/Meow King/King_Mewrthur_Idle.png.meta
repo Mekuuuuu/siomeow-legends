@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      King_Mewrthur_Idle_0: -6405229381304896869
+      King_Mewrthur_Idle_1: -1990435409830418644
+      King_Mewrthur_Idle_2: 5439255042477350755
+      King_Mewrthur_Idle_3: -5330414984022430882
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      King_Mewrthur_Death_0: -8329715299296872173
+      King_Mewrthur_Death_1: -2446612991554813771
+      King_Mewrthur_Death_2: -1580984459108872799
+      King_Mewrthur_Death_3: 1223889934100731715
+      King_Mewrthur_Death_4: -3130765791047345475
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

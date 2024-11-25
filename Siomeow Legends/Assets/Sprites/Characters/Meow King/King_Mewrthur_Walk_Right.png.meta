@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      King_Mewrthur_Walk_Right_0: 2785049506169827531
+      King_Mewrthur_Walk_Right_1: 9046770127882098486
+      King_Mewrthur_Walk_Right_2: 821330527335400451
+      King_Mewrthur_Walk_Right_3: 5375735641955097560
+      King_Mewrthur_Walk_Right_4: 5074553092581590669
+      King_Mewrthur_Walk_Right_5: 2912684049187944002
+      King_Mewrthur_Walk_Right_6: 8503872282588127380
+      King_Mewrthur_Walk_Right_7: -8728531452612054140
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
