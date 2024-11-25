@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sandbox.unity
     guid: f7bad5431990c6f47bda7242f6961932
+  - enabled: 1
+    path: Assets/Scenes/LANGameplay.unity
+    guid: bca42e35d03b4da4b9a067263b93f423
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
