@@ -560,6 +560,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &844496697 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4591241422722067663, guid: acd22bfd4a4f48e4baee2b2c245fe49e, type: 3}
+  m_PrefabInstance: {fileID: 5338616675780393678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ca504ad8d323040a20a4aef196e724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1176367108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -849,6 +860,14 @@ PrefabInstance:
       propertyPath: NetworkConfig.PlayerPrefab
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8836187537902836921, guid: 527f3026dff92f540aa5878b384df4b6, type: 3}
+      propertyPath: ConnectionData.Address
+      value: 0.0.0.0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8836187537902836921, guid: 527f3026dff92f540aa5878b384df4b6, type: 3}
+      propertyPath: ConnectionData.ServerListenAddress
+      value: 0.0.0.0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -872,6 +891,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b7bbc8452290aa4288932454ecc2701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1484362083 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8836187537902836921, guid: 527f3026dff92f540aa5878b384df4b6, type: 3}
+  m_PrefabInstance: {fileID: 1484362080}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484362081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6960e84d07fb87f47956e7a81d71c4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1540862053 stripped
@@ -1214,6 +1244,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 42358260332928367, guid: a447771873e4adb4a9f1d60b5ff2eba0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 42358260332928367, guid: a447771873e4adb4a9f1d60b5ff2eba0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 42358260332928367, guid: a447771873e4adb4a9f1d60b5ff2eba0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 42358260332928367, guid: a447771873e4adb4a9f1d60b5ff2eba0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 844496697}
+    - target: {fileID: 42358260332928367, guid: a447771873e4adb4a9f1d60b5ff2eba0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 844496697}
+    - target: {fileID: 42358260332928367, guid: a447771873e4adb4a9f1d60b5ff2eba0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 42358260332928367, guid: a447771873e4adb4a9f1d60b5ff2eba0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseApplication
+      objectReference: {fileID: 0}
+    - target: {fileID: 42358260332928367, guid: a447771873e4adb4a9f1d60b5ff2eba0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CloseApplication
+      objectReference: {fileID: 0}
+    - target: {fileID: 42358260332928367, guid: a447771873e4adb4a9f1d60b5ff2eba0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 42358260332928367, guid: a447771873e4adb4a9f1d60b5ff2eba0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MainMenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 42358260332928367, guid: a447771873e4adb4a9f1d60b5ff2eba0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 523261954861191791, guid: a447771873e4adb4a9f1d60b5ff2eba0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1400,6 +1474,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 909129319256508527, guid: 5230caad5e433684586fa95611098c2b, type: 3}
+      propertyPath: transport
+      value: 
+      objectReference: {fileID: 1484362083}
     - target: {fileID: 3575498213186614436, guid: 5230caad5e433684586fa95611098c2b, type: 3}
       propertyPath: m_Name
       value: ClientManager

@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Sockets;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using Unity.Networking.Transport.Relay;
@@ -42,6 +44,8 @@ public class HostManager : MonoBehaviour
     {
         if (!NetworkSelector.Instance.isLAN)
         {
+            Debug.Log("Multiplayer Process");
+
             Allocation allocation;
             // Use Relay, not our own router
             try
@@ -98,6 +102,27 @@ public class HostManager : MonoBehaviour
                 throw;
             }
         }
+        else
+        {
+            Debug.Log("LAN Process");
+
+            NetworkManager.Singleton.GetComponent<UnityTransport>().ConnectionData.Port = 7777; // Ensure port is same
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    JoinCode = ip.ToString();
+                }
+            }
+            if (JoinCode == null)
+            {
+                throw new Exception("No network adapters with an IPv4 address in the system.");
+            }
+
+        }
+
+        Debug.Log("General Network Process (Host)");
 
         NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
         NetworkManager.Singleton.OnServerStarted += OnNetworkReady;
