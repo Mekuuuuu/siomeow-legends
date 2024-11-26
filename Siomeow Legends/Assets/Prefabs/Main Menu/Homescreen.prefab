@@ -132,8 +132,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  targetImage: {fileID: 0}
-  alternateSprite: {fileID: 0}
 --- !u!1 &2586914330734257231
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,8 +297,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: LEGENDS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f0d1ad884ef4a264ca79119514792f73, type: 2}
-  m_sharedMaterial: {fileID: 1716005487644289215, guid: f0d1ad884ef4a264ca79119514792f73, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7fe85df0461611447b5eb7a3ce4c963f, type: 2}
+  m_sharedMaterial: {fileID: -6255300160676138538, guid: 7fe85df0461611447b5eb7a3ce4c963f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -607,8 +605,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  targetImage: {fileID: 0}
-  alternateSprite: {fileID: 0}
 --- !u!1 &5100341858565679669
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,8 +672,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SiOmEoW
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f0d1ad884ef4a264ca79119514792f73, type: 2}
-  m_sharedMaterial: {fileID: 1716005487644289215, guid: f0d1ad884ef4a264ca79119514792f73, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7fe85df0461611447b5eb7a3ce4c963f, type: 2}
+  m_sharedMaterial: {fileID: -6255300160676138538, guid: 7fe85df0461611447b5eb7a3ce4c963f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -909,5 +905,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  targetImage: {fileID: 0}
-  alternateSprite: {fileID: 0}
