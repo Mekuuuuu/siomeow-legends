@@ -132,7 +132,7 @@ TextureImporter:
         width: 17
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -151,10 +151,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1
         y: 77
-        width: 17
+        width: 25
         height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -168,37 +168,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MEOWTAR_THE_BLUE_Attack_1_2
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 78
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 34356c65f72e8fb50800000000000000
-      internalID: 6627295888220246851
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: MEOWTAR_THE_BLUE_Attack_1_3
       rect:
         serializedVersion: 2
         x: 0
         y: 51
-        width: 19
+        width: 47
         height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.15, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -212,37 +190,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MEOWTAR_THE_BLUE_Attack_1_4
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 52
-        width: 11
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 912f8f9a849327ce0800000000000000
-      internalID: -1409000749161450983
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: MEOWTAR_THE_BLUE_Attack_1_5
       rect:
         serializedVersion: 2
         x: 14
         y: 25
-        width: 21
+        width: 32
         height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -256,37 +212,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MEOWTAR_THE_BLUE_Attack_1_6
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 27
-        width: 9
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 22a6d97707f0a0d50800000000000000
-      internalID: 6704187971011963426
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: MEOWTAR_THE_BLUE_Attack_1_7
       rect:
         serializedVersion: 2
         x: 14
         y: 0
-        width: 18
+        width: 50
         height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.2, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -299,33 +233,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: MEOWTAR_THE_BLUE_Attack_1_8
-      rect:
-        serializedVersion: 2
-        x: 57
-        y: 1
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aae347340efa8a440800000000000000
-      internalID: 4947397568405716650
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 530eac9888b307b44b9b9a7fe088f16a
     internalID: 0
     vertices: []
     indices: 
