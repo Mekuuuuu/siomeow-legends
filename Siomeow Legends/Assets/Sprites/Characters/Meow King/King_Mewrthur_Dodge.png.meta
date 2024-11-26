@@ -359,7 +359,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      King_Mewrthur_Dodge_0: -4305539226103463309
+      King_Mewrthur_Dodge_1: 8795965208584630519
+      King_Mewrthur_Dodge_2: 7101455772205529081
+      King_Mewrthur_Dodge_3: -8949810232505869993
+      King_Mewrthur_Dodge_4: 3276440405437644222
+      King_Mewrthur_Dodge_5: 7462139256556927165
+      King_Mewrthur_Dodge_6: 4772585079864869339
+      King_Mewrthur_Dodge_7: 8510956705710565410
+      King_Mewrthur_Dodge_8: -219236364757644745
+      King_Mewrthur_Dodge_9: -7387251171316474754
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

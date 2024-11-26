@@ -409,7 +409,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      King_Mewrthur_Jump_0: 3088417580183433898
+      King_Mewrthur_Jump_1: -5348777368054512970
+      King_Mewrthur_Jump_10: 8051866901370441522
+      King_Mewrthur_Jump_11: 3002571570409163270
+      King_Mewrthur_Jump_2: 8402867629636927635
+      King_Mewrthur_Jump_3: 4740634484717265454
+      King_Mewrthur_Jump_4: -2713643864293593834
+      King_Mewrthur_Jump_5: -6951099978434945836
+      King_Mewrthur_Jump_6: 5946804575240112486
+      King_Mewrthur_Jump_7: 4922743678433779206
+      King_Mewrthur_Jump_8: -3006287922542129443
+      King_Mewrthur_Jump_9: -2412823958383659856
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

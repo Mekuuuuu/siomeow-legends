@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      King_Mewrthur_Take_Damage_0: -7334663395494015769
+      King_Mewrthur_Take_Damage_1: -4282716477431082142
+      King_Mewrthur_Take_Damage_2: -6961509484442231082
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
