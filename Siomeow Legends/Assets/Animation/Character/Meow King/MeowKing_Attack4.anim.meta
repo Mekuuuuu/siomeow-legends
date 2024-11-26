@@ -1,15 +1,8 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 16d365e16ed4c3c4c948b57b336d34c9
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-=======
 guid: 3b3abfcfbcf4ba046a61e0adc713b9e0
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000
->>>>>>> 13b67b3 (Add meowking prefab)
   userData: 
   assetBundleName: 
   assetBundleVariant: 

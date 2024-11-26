@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 8574a8e3065d97c49828ed21a761f5f5
-=======
 guid: 1b389903269042043a5846691497535b
->>>>>>> 13b67b3 (Add meowking prefab)
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -74,11 +70,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
-    filterMode: 1
-=======
     filterMode: 0
->>>>>>> 13b67b3 (Add meowking prefab)
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -92,11 +84,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-  spritePixelsToUnits: 100
-=======
   spritePixelsToUnits: 16
->>>>>>> 13b67b3 (Add meowking prefab)
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -120,11 +108,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
-    textureCompression: 1
-=======
     textureCompression: 0
->>>>>>> 13b67b3 (Add meowking prefab)
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0

@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: c17d6f285002f414b843763e3be64235
-=======
 guid: 29193e7209651f843968d6131b74ea9c
->>>>>>> 13b67b3 (Add meowking prefab)
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -101,11 +97,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
-    filterMode: 1
-=======
     filterMode: 0
->>>>>>> 13b67b3 (Add meowking prefab)
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -119,11 +111,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-  spritePixelsToUnits: 100
-=======
   spritePixelsToUnits: 16
->>>>>>> 13b67b3 (Add meowking prefab)
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -147,11 +135,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
-    textureCompression: 1
-=======
     textureCompression: 0
->>>>>>> 13b67b3 (Add meowking prefab)
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -184,11 +168,7 @@ TextureImporter:
         width: 28
         height: 31
       alignment: 0
-<<<<<<< HEAD
-      pivot: {x: 0, y: 0}
-=======
       pivot: {x: 0.5, y: 0.5}
->>>>>>> 13b67b3 (Add meowking prefab)
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -210,11 +190,7 @@ TextureImporter:
         width: 30
         height: 33
       alignment: 0
-<<<<<<< HEAD
-      pivot: {x: 0, y: 0}
-=======
       pivot: {x: 0.5, y: 0.5}
->>>>>>> 13b67b3 (Add meowking prefab)
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -236,11 +212,7 @@ TextureImporter:
         width: 24
         height: 31
       alignment: 0
-<<<<<<< HEAD
-      pivot: {x: 0, y: 0}
-=======
       pivot: {x: 0.5, y: 0.5}
->>>>>>> 13b67b3 (Add meowking prefab)
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -254,53 +226,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: King_Mewrthur_Attack_4_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 437
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c31b5a1bcf687c360800000000000000
-      internalID: 7189863749990592828
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: King_Mewrthur_Attack_4_4
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 381
-        width: 7
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e99d4f4a31db99dd0800000000000000
-      internalID: -2478742227821209186
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-=======
->>>>>>> 13b67b3 (Add meowking prefab)
       name: King_Mewrthur_Attack_4_5
       rect:
         serializedVersion: 2
@@ -309,11 +234,7 @@ TextureImporter:
         width: 27
         height: 37
       alignment: 0
-<<<<<<< HEAD
-      pivot: {x: 0, y: 0}
-=======
       pivot: {x: 0.5, y: 0.5}
->>>>>>> 13b67b3 (Add meowking prefab)
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -335,11 +256,7 @@ TextureImporter:
         width: 29
         height: 23
       alignment: 0
-<<<<<<< HEAD
-      pivot: {x: 0, y: 0}
-=======
       pivot: {x: 0.5, y: 0.5}
->>>>>>> 13b67b3 (Add meowking prefab)
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -361,11 +278,7 @@ TextureImporter:
         width: 42
         height: 16
       alignment: 0
-<<<<<<< HEAD
-      pivot: {x: 0, y: 0}
-=======
       pivot: {x: 0.5, y: 0.5}
->>>>>>> 13b67b3 (Add meowking prefab)
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -379,39 +292,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: King_Mewrthur_Attack_4_8
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 241
-        width: 20
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f9d27e2417c488ad0800000000000000
-      internalID: -2699823927271150177
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: King_Mewrthur_Attack_4_9
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 241
-        width: 27
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-=======
       name: King_Mewrthur_Attack_4_9
       rect:
         serializedVersion: 2
@@ -421,7 +301,6 @@ TextureImporter:
         height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
->>>>>>> 13b67b3 (Add meowking prefab)
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -438,21 +317,12 @@ TextureImporter:
       name: King_Mewrthur_Attack_4_10
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 29
-        y: 267
-        width: 25
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-=======
         x: 10
         y: 267
         width: 63
         height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
->>>>>>> 13b67b3 (Add meowking prefab)
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -466,47 +336,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: King_Mewrthur_Attack_4_11
-      rect:
-        serializedVersion: 2
-        x: 59
-        y: 242
-        width: 19
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 919188ef8d9058ea0800000000000000
-      internalID: -5871275711619655399
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-=======
->>>>>>> 13b67b3 (Add meowking prefab)
       name: King_Mewrthur_Attack_4_12
       rect:
         serializedVersion: 2
         x: 0
         y: 199
-<<<<<<< HEAD
-        width: 49
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-=======
         width: 80
         height: 33
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
->>>>>>> 13b67b3 (Add meowking prefab)
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -520,83 +358,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: King_Mewrthur_Attack_4_13
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 199
-        width: 41
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 02fd133200075f1c0800000000000000
-      internalID: -4470543909202567392
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: King_Mewrthur_Attack_4_14
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 163
-        width: 19
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bbdb260b278d25d60800000000000000
-      internalID: 7877596685321551291
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: King_Mewrthur_Attack_4_15
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 156
-        width: 9
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b81cb409c61d76400800000000000000
-      internalID: 317452562960466315
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: King_Mewrthur_Attack_4_16
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 141
-        width: 15
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-=======
       name: King_Mewrthur_Attack_4_16
       rect:
         serializedVersion: 2
@@ -606,7 +367,6 @@ TextureImporter:
         height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
->>>>>>> 13b67b3 (Add meowking prefab)
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -620,46 +380,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: King_Mewrthur_Attack_4_17
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 102
-        width: 7
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 72e6703bbdeba8300800000000000000
-      internalID: 255226179710578215
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-=======
->>>>>>> 13b67b3 (Add meowking prefab)
       name: King_Mewrthur_Attack_4_18
       rect:
         serializedVersion: 2
         x: 0
         y: 83
         width: 15
-<<<<<<< HEAD
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-=======
         height: 43
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
->>>>>>> 13b67b3 (Add meowking prefab)
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -681,11 +410,7 @@ TextureImporter:
         width: 15
         height: 39
       alignment: 0
-<<<<<<< HEAD
-      pivot: {x: 0, y: 0}
-=======
       pivot: {x: 0.5, y: 0.5}
->>>>>>> 13b67b3 (Add meowking prefab)
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -707,11 +432,7 @@ TextureImporter:
         width: 15
         height: 16
       alignment: 0
-<<<<<<< HEAD
-      pivot: {x: 0, y: 0}
-=======
       pivot: {x: 0.5, y: 0.5}
->>>>>>> 13b67b3 (Add meowking prefab)
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -728,11 +449,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-<<<<<<< HEAD
-    spriteID: 
-=======
     spriteID: f99c5ec99c897f84ab6fc61fc804740f
->>>>>>> 13b67b3 (Add meowking prefab)
     internalID: 0
     vertices: []
     indices: 

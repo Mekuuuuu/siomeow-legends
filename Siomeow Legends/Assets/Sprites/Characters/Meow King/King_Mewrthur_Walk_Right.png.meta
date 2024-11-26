@@ -1,33 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: bfdccd793333eb44fa5ab659c55ebb43
-TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 2785049506169827531
-    second: King_Mewrthur_Walk_Right_0
-  - first:
-      213: 9046770127882098486
-    second: King_Mewrthur_Walk_Right_1
-  - first:
-      213: 821330527335400451
-    second: King_Mewrthur_Walk_Right_2
-  - first:
-      213: 5375735641955097560
-    second: King_Mewrthur_Walk_Right_3
-  - first:
-      213: 5074553092581590669
-    second: King_Mewrthur_Walk_Right_4
-  - first:
-      213: 2912684049187944002
-    second: King_Mewrthur_Walk_Right_5
-  - first:
-      213: 8503872282588127380
-    second: King_Mewrthur_Walk_Right_6
-  - first:
-      213: -8728531452612054140
-    second: King_Mewrthur_Walk_Right_7
-=======
 guid: 9712223982e393042b924474528aa199
 TextureImporter:
   internalIDToNameTable:
@@ -55,7 +26,6 @@ TextureImporter:
   - first:
       213: 8775804030919914670
     second: King_Mewrthur_Run_7
->>>>>>> 13b67b3 (Add meowking prefab)
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -88,11 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
-    filterMode: 1
-=======
     filterMode: 0
->>>>>>> 13b67b3 (Add meowking prefab)
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -106,11 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-  spritePixelsToUnits: 100
-=======
   spritePixelsToUnits: 16
->>>>>>> 13b67b3 (Add meowking prefab)
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -134,11 +96,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
-    textureCompression: 1
-=======
     textureCompression: 0
->>>>>>> 13b67b3 (Add meowking prefab)
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -163,11 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: King_Mewrthur_Walk_Right_0
-=======
       name: King_Mewrthur_Run_0
->>>>>>> 13b67b3 (Add meowking prefab)
       rect:
         serializedVersion: 2
         x: 13
@@ -182,23 +136,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<< HEAD
-      spriteID: bc0312125cb76a620800000000000000
-      internalID: 2785049506169827531
-=======
       spriteID: b0d5ab04739fb4fd0800000000000000
       internalID: -2356515964293849845
->>>>>>> 13b67b3 (Add meowking prefab)
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: King_Mewrthur_Walk_Right_1
-=======
       name: King_Mewrthur_Run_1
->>>>>>> 13b67b3 (Add meowking prefab)
       rect:
         serializedVersion: 2
         x: 13
@@ -213,23 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<< HEAD
-      spriteID: 637170ddf759c8d70800000000000000
-      internalID: 9046770127882098486
-=======
       spriteID: 3eac44337608b76e0800000000000000
       internalID: -1838734842120582429
->>>>>>> 13b67b3 (Add meowking prefab)
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: King_Mewrthur_Walk_Right_2
-=======
       name: King_Mewrthur_Run_2
->>>>>>> 13b67b3 (Add meowking prefab)
       rect:
         serializedVersion: 2
         x: 13
@@ -244,23 +180,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<< HEAD
-      spriteID: 304c20553c3f56b00800000000000000
-      internalID: 821330527335400451
-=======
       spriteID: 07f5d387c857dff80800000000000000
       internalID: -8071165711004901520
->>>>>>> 13b67b3 (Add meowking prefab)
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: King_Mewrthur_Walk_Right_3
-=======
       name: King_Mewrthur_Run_3
->>>>>>> 13b67b3 (Add meowking prefab)
       rect:
         serializedVersion: 2
         x: 13
@@ -275,23 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<< HEAD
-      spriteID: 8dbd321a5137a9a40800000000000000
-      internalID: 5375735641955097560
-=======
       spriteID: 97a1a654a809bcd40800000000000000
       internalID: 5605733084737182329
->>>>>>> 13b67b3 (Add meowking prefab)
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: King_Mewrthur_Walk_Right_4
-=======
       name: King_Mewrthur_Run_4
->>>>>>> 13b67b3 (Add meowking prefab)
       rect:
         serializedVersion: 2
         x: 13
@@ -306,23 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<< HEAD
-      spriteID: d868f2dc62f6c6640800000000000000
-      internalID: 5074553092581590669
-=======
       spriteID: 03c85126eccc06650800000000000000
       internalID: 6224199871806934064
->>>>>>> 13b67b3 (Add meowking prefab)
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: King_Mewrthur_Walk_Right_5
-=======
       name: King_Mewrthur_Run_5
->>>>>>> 13b67b3 (Add meowking prefab)
       rect:
         serializedVersion: 2
         x: 13
@@ -337,23 +246,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<< HEAD
-      spriteID: 2463bcee5beeb6820800000000000000
-      internalID: 2912684049187944002
-=======
       spriteID: c108e051397cb09e0800000000000000
       internalID: -1654009003601133540
->>>>>>> 13b67b3 (Add meowking prefab)
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: King_Mewrthur_Walk_Right_6
-=======
       name: King_Mewrthur_Run_6
->>>>>>> 13b67b3 (Add meowking prefab)
       rect:
         serializedVersion: 2
         x: 13
@@ -368,23 +268,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<< HEAD
-      spriteID: 490a4fa19c2d30670800000000000000
-      internalID: 8503872282588127380
-=======
       spriteID: 936423fff13f6be80800000000000000
       internalID: -8163069955811424711
->>>>>>> 13b67b3 (Add meowking prefab)
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-<<<<<<< HEAD
-      name: King_Mewrthur_Walk_Right_7
-=======
       name: King_Mewrthur_Run_7
->>>>>>> 13b67b3 (Add meowking prefab)
       rect:
         serializedVersion: 2
         x: 14
@@ -399,13 +290,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<< HEAD
-      spriteID: 483fb3cb3e60ed680800000000000000
-      internalID: -8728531452612054140
-=======
       spriteID: ea43c69154be9c970800000000000000
       internalID: 8775804030919914670
->>>>>>> 13b67b3 (Add meowking prefab)
       vertices: []
       indices: 
       edges: []
@@ -424,16 +310,6 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-<<<<<<< HEAD
-      King_Mewrthur_Walk_Right_0: 2785049506169827531
-      King_Mewrthur_Walk_Right_1: 9046770127882098486
-      King_Mewrthur_Walk_Right_2: 821330527335400451
-      King_Mewrthur_Walk_Right_3: 5375735641955097560
-      King_Mewrthur_Walk_Right_4: 5074553092581590669
-      King_Mewrthur_Walk_Right_5: 2912684049187944002
-      King_Mewrthur_Walk_Right_6: 8503872282588127380
-      King_Mewrthur_Walk_Right_7: -8728531452612054140
-=======
       King_Mewrthur_Run_0: -2356515964293849845
       King_Mewrthur_Run_1: -1838734842120582429
       King_Mewrthur_Run_2: -8071165711004901520
@@ -442,7 +318,6 @@ TextureImporter:
       King_Mewrthur_Run_5: -1654009003601133540
       King_Mewrthur_Run_6: -8163069955811424711
       King_Mewrthur_Run_7: 8775804030919914670
->>>>>>> 13b67b3 (Add meowking prefab)
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

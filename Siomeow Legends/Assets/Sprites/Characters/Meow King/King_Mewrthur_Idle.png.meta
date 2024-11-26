@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: b882259bd57ddf74da51af7fe799f53f
-=======
 guid: 0bd5641c71c17bc4bb4fdcf34fb4634d
->>>>>>> 13b67b3 (Add meowking prefab)
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -50,11 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
-    filterMode: 1
-=======
     filterMode: 0
->>>>>>> 13b67b3 (Add meowking prefab)
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -68,11 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
-  spritePixelsToUnits: 100
-=======
   spritePixelsToUnits: 16
->>>>>>> 13b67b3 (Add meowking prefab)
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,11 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
-    textureCompression: 1
-=======
     textureCompression: 0
->>>>>>> 13b67b3 (Add meowking prefab)
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,15 +113,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 11
-<<<<<<< HEAD
-        y: 31
-        width: 16
-        height: 49
-=======
         y: 80
         width: 16
         height: 16
->>>>>>> 13b67b3 (Add meowking prefab)
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,17 +134,10 @@ TextureImporter:
       name: King_Mewrthur_Idle_1
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 13
-        y: 79
-        width: 14
-        height: 17
-=======
         x: 11
         y: 64
         width: 16
         height: 16
->>>>>>> 13b67b3 (Add meowking prefab)
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,17 +156,10 @@ TextureImporter:
       name: King_Mewrthur_Idle_2
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 12
-        y: 15
-        width: 15
-        height: 17
-=======
         x: 11
         y: 48
         width: 16
         height: 16
->>>>>>> 13b67b3 (Add meowking prefab)
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,17 +178,10 @@ TextureImporter:
       name: King_Mewrthur_Idle_3
       rect:
         serializedVersion: 2
-<<<<<<< HEAD
-        x: 13
-        y: 0
-        width: 14
-        height: 15
-=======
         x: 11
         y: 32
         width: 16
         height: 16
->>>>>>> 13b67b3 (Add meowking prefab)
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,8 +196,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-<<<<<<< HEAD
-=======
     - serializedVersion: 2
       name: King_Mewrthur_Idle_4
       rect:
@@ -285,16 +240,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
->>>>>>> 13b67b3 (Add meowking prefab)
     outline: []
     customData: 
     physicsShape: []
     bones: []
-<<<<<<< HEAD
-    spriteID: 
-=======
     spriteID: 4c5c3326b63a02546884bd7316057c46
->>>>>>> 13b67b3 (Add meowking prefab)
     internalID: 0
     vertices: []
     indices: 
@@ -308,11 +258,8 @@ TextureImporter:
       King_Mewrthur_Idle_1: -1990435409830418644
       King_Mewrthur_Idle_2: 5439255042477350755
       King_Mewrthur_Idle_3: -5330414984022430882
-<<<<<<< HEAD
-=======
       King_Mewrthur_Idle_4: -16699313
       King_Mewrthur_Idle_5: -1678540030
->>>>>>> 13b67b3 (Add meowking prefab)
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
