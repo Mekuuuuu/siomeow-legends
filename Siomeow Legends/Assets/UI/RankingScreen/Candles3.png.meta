@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 528f827ed974f014a84dec147572e08a
+guid: 49f6baeefac5ce245a057e9f00580d02
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2475929708402795311
-    second: MEOWOLAS_Idle_0
+      213: 8388061226385915301
+    second: Candles3_0
   - first:
-      213: -5110390076891821044
-    second: MEOWOLAS_Idle_1
+      213: -7302110075581418642
+    second: Candles3_1
   - first:
-      213: -5535329488603652652
-    second: MEOWOLAS_Idle_2
+      213: -7926837840652019787
+    second: Candles3_2
   - first:
-      213: 1993666004717209446
-    second: MEOWOLAS_Idle_3
-  - first:
-      213: -6561146592178979354
-    second: MEOWOLAS_Idle_4
-  - first:
-      213: -8757598788239139821
-    second: MEOWOLAS_Idle_5
+      213: -1441801223518002695
+    second: Candles3_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -61,12 +55,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,133 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MEOWOLAS_Idle_0
+      name: Candles3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 18
+        x: 13
+        y: 58
+        width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f236f26a3f44c5220800000000000000
-      internalID: 2475929708402795311
+      spriteID: 5adb5f85e31686470800000000000000
+      internalID: 8388061226385915301
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MEOWOLAS_Idle_1
+      name: Candles3_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
-        width: 18
-        height: 16
+        x: 217
+        y: 51
+        width: 15
+        height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0c8e231d4f3419b0800000000000000
-      internalID: -5110390076891821044
+      spriteID: e633b221391b9aa90800000000000000
+      internalID: -7302110075581418642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MEOWOLAS_Idle_2
+      name: Candles3_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 18
-        height: 16
+        x: 39
+        y: 1
+        width: 15
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4ddd805582f8e23b0800000000000000
-      internalID: -5535329488603652652
+      spriteID: 5b7dfcb6bf63ef190800000000000000
+      internalID: -7926837840652019787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MEOWOLAS_Idle_3
+      name: Candles3_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 18
+        x: 185
+        y: 6
+        width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66701fb1baceaab10800000000000000
-      internalID: 1993666004717209446
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MEOWOLAS_Idle_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 18
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6ed38e5dfef12f4a0800000000000000
-      internalID: -6561146592178979354
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MEOWOLAS_Idle_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 18
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 31c5d954d42c67680800000000000000
-      internalID: -8757598788239139821
+      spriteID: 9f16c7b1d61bdfbe0800000000000000
+      internalID: -1441801223518002695
       vertices: []
       indices: 
       edges: []
@@ -250,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bc19b0a650efe4d46ba0acdb198dd62a
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -260,13 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MEOWOLAS_Idle_0: 2475929708402795311
-      MEOWOLAS_Idle_1: -5110390076891821044
-      MEOWOLAS_Idle_2: -5535329488603652652
-      MEOWOLAS_Idle_3: 1993666004717209446
-      MEOWOLAS_Idle_4: -6561146592178979354
-      MEOWOLAS_Idle_5: -8757598788239139821
-      MEOWOLAS_Idle_6: 762009626
+      Candles3_0: 8388061226385915301
+      Candles3_1: -7302110075581418642
+      Candles3_2: -7926837840652019787
+      Candles3_3: -1441801223518002695
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
