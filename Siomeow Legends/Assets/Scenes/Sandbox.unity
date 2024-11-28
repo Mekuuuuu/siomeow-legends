@@ -291,7 +291,7 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!1001 &364204815
+--- !u!1001 &212848743
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -301,23 +301,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1881418066040155737, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 1603951667
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020296957852016617, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
-      propertyPath: m_Size.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020296957852016617, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020296957852016617, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 6952844108847272362, guid: 5ec6e9f286a8f0f4db7f4876c3e6574e, type: 3}
-    - target: {fileID: 3020296957852016617, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 3117711321
       objectReference: {fileID: 0}
     - target: {fileID: 3368756762496411348, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -358,14 +342,6 @@ PrefabInstance:
     - target: {fileID: 3368756762496411348, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4321462393816752307, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 1641380170
-      objectReference: {fileID: 0}
-    - target: {fileID: 4321462393816752307, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
-      propertyPath: InScenePlacedSourceGlobalObjectIdHash
-      value: 401113238
       objectReference: {fileID: 0}
     - target: {fileID: 6981502042216279895, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
       propertyPath: m_Name
@@ -6030,7 +6006,7 @@ SceneRoots:
   - {fileID: 1247737400457691935}
   - {fileID: 594563903}
   - {fileID: 986746584}
-  - {fileID: 364204815}
+  - {fileID: 212848743}
   - {fileID: 1895902472}
   - {fileID: 1932330691}
   - {fileID: 1281860079}
