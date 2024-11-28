@@ -303,9 +303,21 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 1603951667
       objectReference: {fileID: 0}
-    - target: {fileID: 1881418066040155737, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
-      propertyPath: InScenePlacedSourceGlobalObjectIdHash
-      value: 2483412193
+    - target: {fileID: 3020296957852016617, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
+      propertyPath: m_Size.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3020296957852016617, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3020296957852016617, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6952844108847272362, guid: 5ec6e9f286a8f0f4db7f4876c3e6574e, type: 3}
+    - target: {fileID: 3020296957852016617, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3368756762496411348, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
       propertyPath: m_LocalPosition.x
