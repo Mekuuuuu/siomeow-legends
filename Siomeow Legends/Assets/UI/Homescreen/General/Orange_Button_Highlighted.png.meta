@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Orange_Button_Highlighted_0: 6701891211768669298
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

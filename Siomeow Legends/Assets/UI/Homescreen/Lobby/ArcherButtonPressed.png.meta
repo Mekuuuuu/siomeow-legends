@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e4725e07902c7634988c994a3391692c
+guid: f385bcf10e09d0e4e8a23d7d2176da4d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8260663846481145046
-    second: Back_Button_Highlighted_0
+      213: -5087874017358296362
+    second: ArcherButtonPressed_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Back_Button_Highlighted_0
+      name: ArcherButtonPressed_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 17
-        height: 31
+        width: 132
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a23549d9ff93c5d80800000000000000
-      internalID: -8260663846481145046
+      spriteID: 6da4b65b98d3469b0800000000000000
+      internalID: -5087874017358296362
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Back_Button_Highlighted_0: -8260663846481145046
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

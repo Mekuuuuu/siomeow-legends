@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: e4725e07902c7634988c994a3391692c
+guid: 95d51283414b0a246ac7c518d046cf49
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8260663846481145046
-    second: Back_Button_Highlighted_0
+      213: -1335188855448512003
+    second: WizardIcon_0
+  - first:
+      213: 7732125630550673780
+    second: WizardIcon_1
+  - first:
+      213: 5171060029357280194
+    second: WizardIcon_2
+  - first:
+      213: -7775071112975172727
+    second: WizardIcon_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +109,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Back_Button_Highlighted_0
+      name: WizardIcon_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 17
-        height: 31
+        width: 321
+        height: 207
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a23549d9ff93c5d80800000000000000
-      internalID: -8260663846481145046
+      spriteID: 2cbcf0203bb43c740800000000000000
+      internalID: 5171060029357280194
       vertices: []
       indices: 
       edges: []
@@ -125,7 +134,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5400e282222d0c941aa5c8b580e71c4a
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +144,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Back_Button_Highlighted_0: -8260663846481145046
+      WizardIcon_2: 5171060029357280194
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
