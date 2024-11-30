@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7398562205520620299}
   - component: {fileID: 1210375886708781713}
   - component: {fileID: -35897718155505845}
+  - component: {fileID: 711391164439807502}
   m_Layer: 0
   m_Name: Meow-Knight
   m_TagString: Untagged
@@ -159,7 +160,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.8125, y: 0.9375}
     newSize: {x: 1, y: 1.0625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -201,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3117711321
+  GlobalObjectIdHash: 2483412193
   InScenePlacedSourceGlobalObjectIdHash: 2483412193
   DeferredDespawnTick: 0
   Ownership: 1
@@ -281,3 +282,16 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   TransitionStateInfoList: []
   m_Animator: {fileID: 3165092791418124409}
+--- !u!114 &711391164439807502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6981502042216279895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa138de5cb1c8f4e9ba38f830ccfcac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickup: 0
