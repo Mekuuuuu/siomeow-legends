@@ -142,6 +142,7 @@ TextureImporter:
         height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -312,9 +313,9 @@ TextureImporter:
       name: MEOWTAR_THE_BLUE_Walk-Left_9
       rect:
         serializedVersion: 2
-        x: 23
+        x: 22
         y: 51
-        width: 25
+        width: 26
         height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -378,7 +379,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a7d2cd626c19a804f8e7c9542b71dbe3
+    spriteID: 3597989e86b63d9428b45d8823e363bd
     internalID: 0
     vertices: []
     indices: 
