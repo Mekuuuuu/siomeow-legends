@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: becd6dbc0fa9960408de2dc69dc3d912
+guid: 4d87bb046bcf8b74491b05eec257a25d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1547804281730946603
-    second: Line_0
+      213: 3278021448701030435
+    second: GreenBox_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Line_0
+      name: GreenBox_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1160
-        height: 4
+        x: 3
+        y: 2
+        width: 175
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b26d66a2bc7ea7510800000000000000
-      internalID: 1547804281730946603
+      spriteID: 320bfefc32fdd7d20800000000000000
+      internalID: 3278021448701030435
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Line_0: 1547804281730946603
+      GreenBox_0: 3278021448701030435
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
