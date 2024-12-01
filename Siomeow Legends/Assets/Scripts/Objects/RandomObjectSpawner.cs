@@ -63,12 +63,6 @@ public class RandomSpawner : MonoBehaviour
         }
     }
 
-    public void NotifyPickup(GameObject pickedObject)
-    {
-        // Remove the object from the list
-        spawnedObjects.Remove(pickedObject);
-    }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
