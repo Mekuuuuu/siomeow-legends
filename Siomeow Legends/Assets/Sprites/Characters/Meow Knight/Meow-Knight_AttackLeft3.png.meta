@@ -112,10 +112,10 @@ TextureImporter:
       name: Meow-Knight_AttackLeft3_0
       rect:
         serializedVersion: 2
-        x: 33
+        x: 0
         y: 294
-        width: 20
-        height: 15
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: Meow-Knight_AttackLeft3_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 0
         y: 262
-        width: 24
-        height: 18
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,10 +156,10 @@ TextureImporter:
       name: Meow-Knight_AttackLeft3_2
       rect:
         serializedVersion: 2
-        x: 28
-        y: 229
-        width: 29
-        height: 26
+        x: 0
+        y: 230
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,10 +178,10 @@ TextureImporter:
       name: Meow-Knight_AttackLeft3_3
       rect:
         serializedVersion: 2
-        x: 28
+        x: 0
         y: 198
-        width: 28
-        height: 29
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
