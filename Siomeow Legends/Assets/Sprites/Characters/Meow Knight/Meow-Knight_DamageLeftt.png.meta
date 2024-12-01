@@ -109,10 +109,10 @@ TextureImporter:
       name: Meow-Knight_DamageLeftt_0
       rect:
         serializedVersion: 2
-        x: 42
+        x: 0
         y: 64
-        width: 12
-        height: 15
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,10 +131,10 @@ TextureImporter:
       name: Meow-Knight_DamageLeftt_1
       rect:
         serializedVersion: 2
-        x: 40
+        x: 0
         y: 32
-        width: 14
-        height: 14
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: Meow-Knight_DamageLeftt_2
       rect:
         serializedVersion: 2
-        x: 42
+        x: 0
         y: 0
-        width: 12
-        height: 16
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

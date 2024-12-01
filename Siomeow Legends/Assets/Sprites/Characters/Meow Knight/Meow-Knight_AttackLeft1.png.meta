@@ -148,10 +148,10 @@ TextureImporter:
       name: Meow-Knight_AttackLeft1_0
       rect:
         serializedVersion: 2
-        x: 43
+        x: 0
         y: 294
-        width: 21
-        height: 20
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,13 +167,57 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: Meow-Knight_AttackLeft1_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 262
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03df66287ceed9e30800000000000000
+      internalID: 4512024942348795184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meow-Knight_AttackLeft1_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 230
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 016bbf19ab1168a40800000000000000
+      internalID: 5369999098696676880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Meow-Knight_AttackLeft1_3
       rect:
         serializedVersion: 2
-        x: 43
-        y: 262
-        width: 17
-        height: 19
+        x: 0
+        y: 198
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,10 +236,10 @@ TextureImporter:
       name: Meow-Knight_AttackLeft1_4
       rect:
         serializedVersion: 2
-        x: 43
-        y: 230
-        width: 15
-        height: 22
+        x: 0
+        y: 166
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +258,10 @@ TextureImporter:
       name: Meow-Knight_AttackLeft1_5
       rect:
         serializedVersion: 2
-        x: 39
-        y: 198
-        width: 18
-        height: 20
+        x: 0
+        y: 134
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,13 +277,57 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: Meow-Knight_AttackLeft1_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 102
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd273d206e0f7d6c0800000000000000
+      internalID: -4118558463526472995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meow-Knight_AttackLeft1_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 70
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f1e64103bafcaba0800000000000000
+      internalID: -6076206150502129159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Meow-Knight_AttackLeft1_8
       rect:
         serializedVersion: 2
-        x: 25
-        y: 166
-        width: 30
-        height: 16
+        x: 0
+        y: 38
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,10 +346,10 @@ TextureImporter:
       name: Meow-Knight_AttackLeft1_9
       rect:
         serializedVersion: 2
-        x: 25
-        y: 134
-        width: 30
-        height: 16
+        x: 0
+        y: 6
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,94 +360,6 @@ TextureImporter:
       bones: []
       spriteID: 187d06e07cbe4e830800000000000000
       internalID: 4099660800986240897
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meow-Knight_AttackLeft1_12
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 102
-        width: 31
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 190f89e8b65237940bf783070d0f7b12
-      internalID: -959876890
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meow-Knight_AttackLeft1_13
-      rect:
-        serializedVersion: 2
-        x: 41
-        y: 70
-        width: 14
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f696394140de0944b8a0f5f4ecc27842
-      internalID: -74165506
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meow-Knight_AttackLeft1_14
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 38
-        width: 13
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f166fedd3645b34db8d11c153f11a5c
-      internalID: 2067933100
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meow-Knight_AttackLeft1_15
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 6
-        width: 12
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9dc05bf7fb9b01041ac5af6d0fe58164
-      internalID: 1289297991
       vertices: []
       indices: 
       edges: []
@@ -380,12 +380,6 @@ TextureImporter:
     nameFileIdTable:
       Meow-Knight_AttackLeft1_0: -7251163017581133863
       Meow-Knight_AttackLeft1_1: 4512024942348795184
-      Meow-Knight_AttackLeft1_10: 817556042
-      Meow-Knight_AttackLeft1_11: -24893204
-      Meow-Knight_AttackLeft1_12: -959876890
-      Meow-Knight_AttackLeft1_13: -74165506
-      Meow-Knight_AttackLeft1_14: 2067933100
-      Meow-Knight_AttackLeft1_15: 1289297991
       Meow-Knight_AttackLeft1_2: 5369999098696676880
       Meow-Knight_AttackLeft1_3: 6532877971930577089
       Meow-Knight_AttackLeft1_4: 8119276309968534004

@@ -118,10 +118,10 @@ TextureImporter:
       name: Meow-Knight_LeftDeath_0
       rect:
         serializedVersion: 2
-        x: 40
+        x: 0
         y: 160
-        width: 16
-        height: 16
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,13 +137,35 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: Meow-Knight_LeftDeath_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83d1d11c78cf80050800000000000000
+      internalID: 5767136982838615352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Meow-Knight_LeftDeath_2
       rect:
         serializedVersion: 2
-        x: 40
-        y: 127
-        width: 16
-        height: 16
+        x: 0
+        y: 96
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,13 +181,35 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: Meow-Knight_LeftDeath_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 684809d62ec323db0800000000000000
+      internalID: -4813718108507175802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Meow-Knight_LeftDeath_4
       rect:
         serializedVersion: 2
-        x: 40
-        y: 96
-        width: 16
-        height: 16
+        x: 0
+        y: 32
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,67 +225,23 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meow-Knight_LeftDeath_6
+      name: Meow-Knight_LeftDeath_5
       rect:
         serializedVersion: 2
-        x: 31
-        y: 63
-        width: 25
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d77a096ecc794446acab53912e8faee
-      internalID: 1466319041
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meow-Knight_LeftDeath_8
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 32
-        width: 23
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17d8fc24a488df044a0877ecccd0c2b3
-      internalID: -89948881
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meow-Knight_LeftDeath_10
-      rect:
-        serializedVersion: 2
-        x: 33
+        x: 0
         y: 0
-        width: 23
-        height: 17
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4cceaf6700a1b834faa8d3ade955eef1
-      internalID: 1608369745
+      spriteID: ef564ee6948d16600800000000000000
+      internalID: 459886446873175550
       vertices: []
       indices: 
       edges: []
@@ -262,15 +262,10 @@ TextureImporter:
     nameFileIdTable:
       Meow-Knight_LeftDeath_0: 1215757086437113969
       Meow-Knight_LeftDeath_1: 5767136982838615352
-      Meow-Knight_LeftDeath_10: 1608369745
       Meow-Knight_LeftDeath_2: -2123326665996799391
       Meow-Knight_LeftDeath_3: -4813718108507175802
       Meow-Knight_LeftDeath_4: 8080931917946651051
       Meow-Knight_LeftDeath_5: 459886446873175550
-      Meow-Knight_LeftDeath_6: 1466319041
-      Meow-Knight_LeftDeath_7: 2026138512
-      Meow-Knight_LeftDeath_8: -89948881
-      Meow-Knight_LeftDeath_9: -1925686077
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
