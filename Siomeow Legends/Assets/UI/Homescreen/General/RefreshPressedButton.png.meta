@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 860784a41d649cd4094b15c4cb1596e4
+guid: 77b15f620dd9a1b4a84a11b013f07bda
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6098811495627338115
-    second: KingIcon_0
+      213: 5437833724326615602
+    second: RefreshPressedButton_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KingIcon_0
+      name: RefreshPressedButton_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 242
-        height: 194
+        width: 19
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d7e4013f14bac5ba0800000000000000
-      internalID: -6098811495627338115
+      spriteID: 23a902e16f0177b40800000000000000
+      internalID: 5437833724326615602
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      KingIcon_0: -6098811495627338115
+      RefreshPressedButton_0: 5437833724326615602
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

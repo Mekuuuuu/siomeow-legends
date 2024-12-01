@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ArcherButtonDisabled_0: -5618735638206684373
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WizardButtonDisabled_0: -4517460941202148507
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
