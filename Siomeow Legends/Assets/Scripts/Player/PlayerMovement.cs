@@ -1,47 +1,99 @@
 using UnityEngine;
-using Unity.Netcode;
+using System.Collections;
 
-public class PlayerMovement : NetworkBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    private float speed = 5f;
+    private Rigidbody2D body;
 
-    public Rigidbody2D rb;
+    public Animator anim;
 
-    public Animator animator;
+    private bool isFacingRight = true;
+    private bool moving;
 
-    Vector2 movement;
+    private bool canDash = true;
+    private bool isDashing; 
+    private float dashingPower = 10f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 1f;
+    [SerializeField] private TrailRenderer tr;
 
-    public override void OnNetworkSpawn()
+    private void Awake() 
     {
-        if (!IsOwner)
+        body = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+
+        if(isDashing)
         {
-            enabled = false;
             return;
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        // Get input axis values
+        Vector2 inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        // Normalize the movement vector to prevent faster diagonal movement
-        if (movement.sqrMagnitude > 1)
+        // Normalize the direction and apply speed
+        Vector2 velocity = inputDirection.normalized * speed;
+
+        // Animate running 
+        Animate(inputDirection);
+
+        // Set the Rigidbody2D velocity
+        body.linearVelocity = velocity;
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash) 
         {
-            movement.Normalize();
+            StartCoroutine(Dash());
         }
 
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-
-        animator.SetFloat("Speed", movement.sqrMagnitude);
-
-
+        Flip(inputDirection.x);
     }
 
-    void FixedUpdate()
+    private void Animate(Vector2 input)
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if(input.magnitude > 0.1f || input.magnitude < -0.1f)
+        {
+            moving = true;
+        }
+        else
+        {
+            moving = false;
+        }
+
+
+
+        if(moving)
+        {
+            anim.SetFloat("Horizontal", input.x);
+            anim.SetFloat("Vertical", input.y);
+        }
+
+        anim.SetBool("Moving", moving);
+    }
+
+    private void Flip(float inputX)
+    {
+        if (isFacingRight && inputX < 0f || !isFacingRight && inputX > 0f)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
+    }
+
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        body.linearVelocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        tr.emitting = false;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
     }
 }
