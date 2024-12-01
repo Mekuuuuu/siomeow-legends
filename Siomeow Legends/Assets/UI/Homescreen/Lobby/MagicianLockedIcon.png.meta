@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MagicianLockedIcon_0: 4801455824174794150
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

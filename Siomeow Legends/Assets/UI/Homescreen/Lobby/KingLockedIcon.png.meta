@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      KingLockedIcon_0: -196735786573723213
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

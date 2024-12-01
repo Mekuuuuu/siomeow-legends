@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      KnightButtonPressed_0: 4471931460141063720
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

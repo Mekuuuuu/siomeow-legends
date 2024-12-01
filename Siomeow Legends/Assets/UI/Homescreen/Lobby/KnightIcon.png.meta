@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      KnightIcon_0: -1325743788792974033
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
