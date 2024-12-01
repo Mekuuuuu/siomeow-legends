@@ -18,9 +18,10 @@ GameObject:
   - component: {fileID: 4438647150595740491}
   - component: {fileID: 5997404412245588594}
   - component: {fileID: 8109892040201226873}
+  - component: {fileID: 4936176027349757255}
   m_Layer: 0
   m_Name: Meow-Rogue
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -202,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4025177392
+  GlobalObjectIdHash: 2073810526
   InScenePlacedSourceGlobalObjectIdHash: 94973536
   DeferredDespawnTick: 0
   Ownership: 1
@@ -396,3 +397,16 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &4936176027349757255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535507565916046626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa138de5cb1c8f4e9ba38f830ccfcac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickup: 0
