@@ -121,10 +121,10 @@ TextureImporter:
       name: Meow-Knight_Attack2_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 34
         y: 294
-        width: 96
-        height: 32
+        width: 18
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,10 +143,10 @@ TextureImporter:
       name: Meow-Knight_Attack2_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 40
         y: 262
-        width: 96
-        height: 32
+        width: 29
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,35 +162,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meow-Knight_Attack2_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 230
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cfe016d03b126edb0800000000000000
-      internalID: -4763082502990393604
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Meow-Knight_Attack2_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 198
-        width: 96
-        height: 32
+        x: 43
+        y: 230
+        width: 31
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,6 +179,28 @@ TextureImporter:
       bones: []
       spriteID: 59c0db6d90063c0c0800000000000000
       internalID: -4556692802595124075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Meow-Knight_Attack2_6
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 198
+        width: 33
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03976b230ad7f5241bc4cf43b5e49a93
+      internalID: -133309066
       vertices: []
       indices: 
       edges: []
@@ -223,6 +223,9 @@ TextureImporter:
       Meow-Knight_Attack2_1: -2748747678285281766
       Meow-Knight_Attack2_2: -4763082502990393604
       Meow-Knight_Attack2_3: -4556692802595124075
+      Meow-Knight_Attack2_4: -1494281949
+      Meow-Knight_Attack2_5: -1328796873
+      Meow-Knight_Attack2_6: -133309066
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
