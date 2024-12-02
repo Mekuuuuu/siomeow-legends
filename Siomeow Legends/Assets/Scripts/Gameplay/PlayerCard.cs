@@ -16,13 +16,13 @@ public class PlayerCard : MonoBehaviour
         {
             var character = characterDatabase.GetCharacterById(state.CharacterId);
             Debug.Log(character);
-            characterIconImage.sprite = character.Icon;
-            characterIconImage.enabled = true;
+            // characterIconImage.sprite = character.Icon;
+            // characterIconImage.enabled = true;
             // characterNameText.text = character.DisplayName;
         }
         else
         {
-            characterIconImage.enabled = false;
+            // characterIconImage.enabled = false;
         }
 
         // Make separate text for picking in card when player is not locked in / disappear when locked in
