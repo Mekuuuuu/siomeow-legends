@@ -1,17 +1,22 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RandomSpawner : MonoBehaviour
 {
-    public GameObject[] ItemPrefabs; 
-    public float Radius = 5; 
-    public int MaxObjects = 10; 
-    public float SpawnInterval = 5.0f; 
-    public int ObjectsPerSpawn = 1; 
-    public float CheckRadius = 0.5f; // Radius to check for obstacles
-    public LayerMask ObstacleLayer; // Layer to detect obstacles like walls
+    [SerializeField] private float width = 5f;
+    [SerializeField] private float height = 2f;
+    [SerializeField] private float MinSpawnDistance = 1.0f;
+    [SerializeField] private Vector2 spawnCenter = Vector2.zero;
+
+    public GameObject[] ItemPrefabs;
+    public LayerMask[] ObstacleLayer;
 
     private List<GameObject> spawnedObjects = new List<GameObject>();
+
+    public int MaxObjects = 10;
+    public float SpawnInterval = 5.0f;
+    public int ObjectsPerSpawn = 1;
 
     void Start()
     {
@@ -20,54 +25,76 @@ public class RandomSpawner : MonoBehaviour
 
     void SpawnObjectsAtRandom()
     {
-        // Remove inactive or destroyed objects from the list
         spawnedObjects.RemoveAll(obj => obj == null || !obj.activeInHierarchy);
 
         int currentCount = spawnedObjects.Count;
-
         if (currentCount < MaxObjects)
         {
-            Vector3 randomPos;
-            int safetyCounter = 0;
             int objectsToSpawn = Mathf.Min(ObjectsPerSpawn, MaxObjects - currentCount);
-
             HashSet<int> chosenIndices = new HashSet<int>();
-            while (chosenIndices.Count < objectsToSpawn)
+            List<Vector2> validPositions = new List<Vector2>();
+
+            GenerateValidPositions(validPositions);
+
+            int safetyCounter = 0;
+            while (objectsToSpawn > 0 && safetyCounter < 100)
             {
-                int randomIndex = Random.Range(0, ItemPrefabs.Length);
-                chosenIndices.Add(randomIndex);
-
-                do
+                Vector2 spawnPos = validPositions[Random.Range(0, validPositions.Count)];
+                if (!IsPositionTooCloseToOthers(spawnPos) && !IsOverlappingWithObstacles(spawnPos))
                 {
-                    randomPos = this.transform.position + (Vector3)(Random.insideUnitCircle * Radius);
-                    safetyCounter++;
-                } 
-                while (Physics2D.OverlapCircle(randomPos, CheckRadius, ObstacleLayer) && safetyCounter < 100);
-
-            }
-
-            if (safetyCounter < 100)
-            {
-                foreach (int index in chosenIndices)
-                {
-                    randomPos = this.transform.position + (Vector3)(Random.insideUnitCircle * Radius);
-
-                    GameObject spawned = Instantiate(ItemPrefabs[index], randomPos, Quaternion.identity);
+                    GameObject spawned = Instantiate(ItemPrefabs[Random.Range(0, ItemPrefabs.Length)], spawnPos, Quaternion.identity);
                     spawnedObjects.Add(spawned);
+                    objectsToSpawn--;
                 }
+                safetyCounter++;
             }
-            else
+
+            if (safetyCounter >= 100)
             {
                 Debug.LogWarning("Could not find a valid spawn position!");
             }
         }
     }
 
+    private void GenerateValidPositions(List<Vector2> validPositions)
+    {
+        for (float x = -width / 2; x <= width / 2; x += MinSpawnDistance)
+        {
+            for (float y = -height / 2; y <= height / 2; y += MinSpawnDistance)
+            {
+                validPositions.Add(new Vector2(x, y) + spawnCenter);
+            }
+        }
+    }
+
+    private bool IsPositionTooCloseToOthers(Vector2 position)
+    {
+        foreach (GameObject obj in spawnedObjects)
+        {
+            if (obj != null && Vector2.Distance(obj.transform.position, position) < MinSpawnDistance)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private bool IsOverlappingWithObstacles(Vector2 position)
+    {
+        foreach (LayerMask obstacleLayer in ObstacleLayer)
+        {
+            if (Physics2D.OverlapBox(position, new Vector2(width / 10f, height / 10f), 0f, obstacleLayer))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Vector3 center = this.transform.position;
-        Vector3 size = new Vector3(Radius * 2, Radius * 2, 0);
-        Gizmos.DrawWireCube(center, size);
+        Vector3 size = new Vector2(width, height);
+        Gizmos.DrawWireCube(spawnCenter, size);
     }
 }
