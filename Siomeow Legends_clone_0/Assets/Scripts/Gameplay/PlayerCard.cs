@@ -42,14 +42,6 @@ public class PlayerCard : MonoBehaviour
             ShowSelected(state);
             ClearUnselected(state);
            
-
-            // characterIconImage.sprite = character.Icon;
-            // characterIconImage.enabled = true;
-            // characterNameText.text = character.DisplayName;
-        }
-        else
-        {
-            // characterIconImage.enabled = false;
         }
 
         // Make separate text for picking in card when player is not locked in / disappear when locked in

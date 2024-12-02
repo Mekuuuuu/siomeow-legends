@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   displayName: Meow-Knight
-  icon: {fileID: 2100246829016467080, guid: 05327fdd17d491f409f61c95420787d1, type: 3}
+  icon: {fileID: -5217297360446286561, guid: 438aa99344aa76541914fd2c42e5cab1, type: 3}
   gameplayPrefab: {fileID: 1881418066040155737, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
