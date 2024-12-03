@@ -20,6 +20,8 @@ public class GameLobbyDisplay : NetworkBehaviour
 
     private List<CharacterSelectButton> characterButtons = new List<CharacterSelectButton>();
     private NetworkList<GameLobbyState> players;
+    private string joinCode;
+
 
     private void Awake()
     {
@@ -40,6 +42,12 @@ public class GameLobbyDisplay : NetworkBehaviour
             }
 
             players.OnListChanged += HandlePlayersStateChanged;
+
+        }
+        
+        if (IsHost)
+        {
+            joinCode = HostManager.Instance.JoinCode;
         }
 
         // Could change this to IsHost but using this if we decide to use dedicated servers in the future
@@ -56,17 +64,14 @@ public class GameLobbyDisplay : NetworkBehaviour
             }
         }
 
-        if(IsHost)
-        {
-            joinCodeText.text = HostManager.Instance.JoinCode;
-        }
+        
     }
 
     public override void OnNetworkDespawn()
     {
         if (IsClient)
         {
-            players.OnListChanged += HandlePlayersStateChanged;
+            players.OnListChanged -= HandlePlayersStateChanged; // prev += was working fine but seems wrong so changed to -=
         }
 
         if (!IsHost)
@@ -84,6 +89,8 @@ public class GameLobbyDisplay : NetworkBehaviour
     private void HandleClientConnected(ulong clientId)
     {
         players.Add(new GameLobbyState(clientId));
+        SetJoinCode();
+        Debug.Log(players);
     }
 
     private void HandleClientDisconnected(ulong clientId)
@@ -252,6 +259,17 @@ public class GameLobbyDisplay : NetworkBehaviour
         }
 
         return false;
+    }
+
+    private void SetJoinCode()
+    {
+        SetJoinCodeClientRpc(joinCode);
+    }
+
+    [ClientRpc]
+    private void SetJoinCodeClientRpc(string joinCode)
+    {
+        joinCodeText.text = joinCode;
     }
 
     public void LeaveLobby()

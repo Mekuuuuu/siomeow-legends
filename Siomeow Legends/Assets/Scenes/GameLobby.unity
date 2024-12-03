@@ -959,7 +959,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Join Code
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b0dc77626e14d9046a1c1bbc30c3beb3, type: 2}
   m_sharedMaterial: {fileID: 8944127969684354443, guid: b0dc77626e14d9046a1c1bbc30c3beb3, type: 2}
