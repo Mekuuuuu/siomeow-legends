@@ -44,17 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d53c2773c4fc8848beb618471441e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 22
-  height: 14
+  width: 23
+  height: 20
   MinSpawnDistance: 1
-  spawnCenter: {x: 0, y: 0}
+  spawnCenter: {x: -18, y: 1.5}
+  InitialSpawnDelay: 2
   ItemPrefabs:
   - {fileID: 1835547865163386838, guid: ae8c3e84a3cbef14ab0fa5b4d4b1fe2b, type: 3}
   ObstacleLayer:
   - serializedVersion: 2
     m_Bits: 128
   - serializedVersion: 2
-    m_Bits: 144
+    m_Bits: 16
   MaxObjects: 3
-  SpawnInterval: 20
-  ObjectsPerSpawn: 3
+  SpawnInterval: 6
+  ObjectsPerSpawn: 1
