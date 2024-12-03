@@ -98,6 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterDatabase: {fileID: 11400000, guid: d2c9d51c77f787d449e5f94021878b00, type: 2}
+  gameLobbyDisplay: {fileID: 0}
+  lockInButton: {fileID: 7457902938731997441}
+  pickingLabel: {fileID: 6061769134165849781}
   visuals: {fileID: 405930333828447838}
   playerNameText: {fileID: 7199970153676615273}
   playerBackground: {fileID: 2633920632496291639}
@@ -681,12 +684,12 @@ GameObject:
   - component: {fileID: 3012330851507825416}
   - component: {fileID: 5364383989680142557}
   m_Layer: 5
-  m_Name: ReadyButton
+  m_Name: LockInButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2070488638098883766
 RectTransform:
   m_ObjectHideFlags: 0
@@ -788,7 +791,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3012330851507825416}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7805045222325971648}
+        m_TargetAssemblyTypeName: PlayerCard, Assembly-CSharp
+        m_MethodName: LockIn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &756739938384702404
 PrefabInstance:
   m_ObjectHideFlags: 0

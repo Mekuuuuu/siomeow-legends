@@ -1,11 +1,16 @@
 using TMPro;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerCard : MonoBehaviour
 {
+
     [Header("General")]
     [SerializeField] private CharacterDatabase characterDatabase;
+    [SerializeField] private GameLobbyDisplay gameLobbyDisplay;
+    [SerializeField] private GameObject lockInButton;
+    [SerializeField] private GameObject pickingLabel;
     [SerializeField] private GameObject visuals;
     [SerializeField] private TMP_Text playerNameText;
 
@@ -30,10 +35,13 @@ public class PlayerCard : MonoBehaviour
     [Header("Meow Rogue")]
     [SerializeField] private GameObject meowRogueIcon;
     [SerializeField] private GameObject meowRogueLockedInIcon;
-    
 
     public void UpdateDisplay(GameLobbyState state)
     {
+
+        // Show the lock-in button only if this is the local player's card
+        lockInButton.SetActive(state.ClientId == NetworkManager.Singleton.LocalClientId && !state.IsLockedIn);
+
         if (state.CharacterId != -1)
         {
             var character = characterDatabase.GetCharacterById(state.CharacterId);
@@ -53,6 +61,11 @@ public class PlayerCard : MonoBehaviour
     public void DisableDisplay()
     {
         visuals.SetActive(false);
+    }
+
+    public void LockIn()
+    {
+        gameLobbyDisplay.LockIn();
     }
 
     private void ClearUnselected(GameLobbyState state)
