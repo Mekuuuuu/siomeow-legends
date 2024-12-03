@@ -3,71 +3,44 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class TextAnimator : MonoBehaviour
+public static class TextAnimator
 {
-    [Header("References")]
-    [SerializeField] private TMP_Text targetText;
+    private static Dictionary<TMP_Text, Coroutine> activeAnimations = new Dictionary<TMP_Text, Coroutine>();
 
-    [Header("Animation Settings")]
-    [SerializeField] private List<string> textSequence;
-    [SerializeField] private float animationSpeed = 0.5f; // Time between text changes
-
-    private Coroutine animationCoroutine;
-
-    private void Start()
+    public static void StartAnimation(MonoBehaviour host, TMP_Text textComponent, List<string> textSequence, float animationSpeed)
     {
-        if (targetText == null)
-        {
-            targetText = GetComponent<TMP_Text>();
-        }
+        if (textComponent == null || host == null) return;
 
-        if (textSequence.Count > 0)
-        {
-            StartAnimation();
-        }
+        // Stop any existing animation for this text component
+        StopAnimation(host, textComponent);
+
+        // Start a new animation
+        Coroutine animationCoroutine = host.StartCoroutine(AnimateTextCoroutine(host, textComponent, textSequence, animationSpeed));
+        activeAnimations[textComponent] = animationCoroutine;
     }
 
-    public void StartAnimation()
+
+    public static void StopAnimation(MonoBehaviour host, TMP_Text textComponent)
     {
-        if (animationCoroutine == null)
+        if (textComponent == null || !activeAnimations.ContainsKey(textComponent)) return;
+
+        if (activeAnimations[textComponent] != null)
         {
-            animationCoroutine = StartCoroutine(AnimateText());
+            host.StopCoroutine(activeAnimations[textComponent]);
         }
+
+        activeAnimations.Remove(textComponent);
     }
 
-    public void StopAnimation()
-    {
-        if (animationCoroutine != null)
-        {
-            StopCoroutine(animationCoroutine);
-            animationCoroutine = null;
-        }
-    }
-
-    private IEnumerator AnimateText()
+    private static IEnumerator AnimateTextCoroutine(MonoBehaviour host, TMP_Text textComponent, List<string> textSequence, float animationSpeed)
     {
         int index = 0;
 
         while (true)
         {
-            if (textSequence.Count > 0)
-            {
-                targetText.text = textSequence[index];
-                index = (index + 1) % textSequence.Count; // Cycle back to the start
-            }
-
+            textComponent.text = textSequence[index];
+            index = (index + 1) % textSequence.Count;
             yield return new WaitForSeconds(animationSpeed);
-        }
-    }
-
-    public void UpdateTextSequence(List<string> newTextSequence)
-    {
-        textSequence = newTextSequence;
-
-        if (animationCoroutine != null)
-        {
-            StopAnimation();
-            StartAnimation();
         }
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
@@ -37,7 +38,7 @@ public class PlayerCard : MonoBehaviour
     [SerializeField] private GameObject meowRogueIcon;
     [SerializeField] private GameObject meowRogueLockedInIcon;
 
-    private Coroutine pickingAnimationCoroutine;
+    // private Coroutine pickingAnimationCoroutine;
 
     public void UpdateDisplay(GameLobbyState state)
     {
@@ -50,21 +51,12 @@ public class PlayerCard : MonoBehaviour
         if (!(state.ClientId == NetworkManager.Singleton.LocalClientId) && !state.IsLockedIn)
         {
             pickingLabel.gameObject.SetActive(true);
-
-            if (pickingAnimationCoroutine == null)
-            {
-                pickingAnimationCoroutine = StartCoroutine(AnimatePickingLabel());
-            }
+            StartCoroutine(AnimatePickingLabel());
         }
         else
         {
             pickingLabel.gameObject.SetActive(false);
-
-            if (pickingAnimationCoroutine != null)
-            {
-                StopCoroutine(pickingAnimationCoroutine);
-                pickingAnimationCoroutine = null;
-            }
+            StopCoroutine(AnimatePickingLabel());
         }
 
         if (state.CharacterId != -1)
@@ -86,11 +78,7 @@ public class PlayerCard : MonoBehaviour
     public void DisableDisplay()
     {
         visuals.SetActive(false);
-        if (pickingAnimationCoroutine != null)
-        {
-            StopCoroutine(pickingAnimationCoroutine);
-            pickingAnimationCoroutine = null;
-        }
+
     }
 
     public void LockIn()
@@ -135,14 +123,9 @@ public class PlayerCard : MonoBehaviour
 
     private IEnumerator AnimatePickingLabel()
     {
-        string baseText = "Picking";
-        int dotCount = 0;
-
-        while (true)
-        {
-            dotCount = (dotCount + 1) % 4; // Cycles through 0, 1, 2, 3
-            pickingLabel.text = baseText + new string('.', dotCount);
-            yield return new WaitForSeconds(0.5f); // Adjust the speed of animation as needed
-        }
+        // Start the Picking label animation
+        List<string> pickingSequence = new List<string> { "Picking.", "Picking..", "Picking..." };
+        TextAnimator.StartAnimation(this, pickingLabel, pickingSequence, 0.5f);
+        yield return null;
     }
 }
