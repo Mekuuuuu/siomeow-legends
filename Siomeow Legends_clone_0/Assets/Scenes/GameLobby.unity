@@ -764,6 +764,7 @@ MonoBehaviour:
   characterNameText: {fileID: 1159189728}
   joinCodeText: {fileID: 391151478}
   lockInButton: {fileID: 846489752}
+  StartGameButton: {fileID: 846489752}
   hostDisconnectedPanel: {fileID: 34313904}
   mainMenuScene: MainMenu
 --- !u!1 &288729529
@@ -1632,12 +1633,12 @@ GameObject:
   - component: {fileID: 846489753}
   - component: {fileID: 846489752}
   m_Layer: 5
-  m_Name: LockInButton
+  m_Name: StartGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &846489752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1677,14 +1678,14 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 846489753}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 101368658}
         m_TargetAssemblyTypeName: GameLobbyDisplay, Assembly-CSharp
-        m_MethodName: LockIn
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

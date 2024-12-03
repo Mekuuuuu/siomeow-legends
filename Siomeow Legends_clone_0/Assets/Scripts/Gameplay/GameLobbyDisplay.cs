@@ -15,12 +15,14 @@ public class GameLobbyDisplay : NetworkBehaviour
     [SerializeField] private TMP_Text characterNameText; // REMOVE THIS SINCE WE WILL NOT USE IT. ctrl+f for instances of this.
     [SerializeField] private TMP_Text joinCodeText;
     [SerializeField] private Button lockInButton;
+    [SerializeField] private Button StartGameButton;
     [SerializeField] private GameObject hostDisconnectedPanel;
     [SerializeField] private string mainMenuScene;
 
     private List<CharacterSelectButton> characterButtons = new List<CharacterSelectButton>();
     private NetworkList<GameLobbyState> players;
     private string joinCode;
+    private bool isAllLockedIn = false;
 
 
     private void Awake()
@@ -48,6 +50,8 @@ public class GameLobbyDisplay : NetworkBehaviour
         if (IsHost)
         {
             joinCode = HostManager.Instance.JoinCode;
+            StartGameButton.gameObject.SetActive(true);
+            StartGameButton.interactable = false;
         }
 
         // Could change this to IsHost but using this if we decide to use dedicated servers in the future
@@ -62,9 +66,7 @@ public class GameLobbyDisplay : NetworkBehaviour
             {
                 HandleClientConnected(client.ClientId);
             }
-        }
-
-        
+        }    
     }
 
     public override void OnNetworkDespawn()
@@ -190,7 +192,7 @@ public class GameLobbyDisplay : NetworkBehaviour
         // else
         // {
             // MIKO REMINDER. ATTACH THIS TO A BUTTON THAT ONLY THE HOST CAN SEE
-            HostManager.Instance.StartGame();
+            // HostManager.Instance.StartGame();
         // }
     }
 
@@ -240,6 +242,26 @@ public class GameLobbyDisplay : NetworkBehaviour
             lockInButton.interactable = true;
             break;
         }
+
+        foreach(var player in players)
+        {
+            if (!player.IsLockedIn)
+            {
+                isAllLockedIn = false;
+                break;
+            }
+            isAllLockedIn = true;
+        }
+
+        if (isAllLockedIn)
+        {
+            if (IsHost)
+            {
+                Debug.Log("Start Game Button Enabled");
+                StartGameButton.interactable = true;
+            }
+        }
+        
     }
 
     private bool IsCharacterTaken(int characterId, bool checkAll)
@@ -259,6 +281,11 @@ public class GameLobbyDisplay : NetworkBehaviour
         }
 
         return false;
+    }
+
+    public void StartGame()
+    {
+        HostManager.Instance.StartGame();
     }
 
     private void SetJoinCode()
