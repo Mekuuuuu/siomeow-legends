@@ -6,9 +6,9 @@ public class PlayerAttack : MonoBehaviour
 
     private bool isAttacking = false;
 
-    private float timeToAttack = 0.25f;
+    private float attackDuration = 0.25f;
 
-    private float timer = 0f;
+    private float attackTimer = 0f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,28 +20,38 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckAttackTimer();
+
         if (Input.GetKeyDown(KeyCode.J))
         {
             Attack();
-        }
-
-        if (isAttacking)
-        {
-            timer += Time.deltaTime;
-
-            if (timer >= timeToAttack)
-            {
-                timer = 0;
-                isAttacking = false;
-                attackArea.SetActive(isAttacking);
-            }
         }
     }
 
     private void Attack()
     {
-        isAttacking = true; 
-        attackArea.SetActive(isAttacking);
-        Debug.Log("Attacking");
+        if (!isAttacking)
+        {
+            attackArea.SetActive(isAttacking);
+            isAttacking = true; 
+            // Animator here for attack
+            Debug.Log("Attacking");
+        }
+        
+    }
+
+    private void CheckAttackTimer()
+    {
+        if (isAttacking)
+        {
+            attackTimer += Time.deltaTime;
+
+            if (attackTimer >= attackDuration)
+            {
+                attackTimer = 0;
+                isAttacking = false;
+                attackArea.SetActive(isAttacking);
+            }
+        }
     }
 }
