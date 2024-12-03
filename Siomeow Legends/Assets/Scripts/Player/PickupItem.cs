@@ -19,7 +19,7 @@ public class PickupItem : MonoBehaviour
             }
             PowerUpsHandler powerUpsHandler = player.GetComponent<PowerUpsHandler>();
             powerUpsHandler.Initialize(player);
-            powerUpsHandler.ApplyPowerUp(type, 15f, 5f);
+            powerUpsHandler.ApplyPowerUp(type);
 
             Destroy(gameObject);
         }
