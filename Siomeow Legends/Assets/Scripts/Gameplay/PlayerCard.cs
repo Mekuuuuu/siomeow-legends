@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using Unity.Netcode;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class PlayerCard : MonoBehaviour
     [SerializeField] private CharacterDatabase characterDatabase;
     [SerializeField] private GameLobbyDisplay gameLobbyDisplay;
     [SerializeField] private GameObject lockInButton;
-    [SerializeField] private GameObject pickingLabel;
+    [SerializeField] private TMP_Text pickingLabel;
     [SerializeField] private GameObject visuals;
     [SerializeField] private TMP_Text playerNameText;
 
@@ -36,13 +37,35 @@ public class PlayerCard : MonoBehaviour
     [SerializeField] private GameObject meowRogueIcon;
     [SerializeField] private GameObject meowRogueLockedInIcon;
 
+    private Coroutine pickingAnimationCoroutine;
+
     public void UpdateDisplay(GameLobbyState state)
     {
 
         // Show the lock-in button only if this is the local player's card
         lockInButton.SetActive(state.ClientId == NetworkManager.Singleton.LocalClientId && !state.IsLockedIn);
 
-        pickingLabel.SetActive(!(state.ClientId == NetworkManager.Singleton.LocalClientId) && !state.IsLockedIn);
+        // pickingLabel.SetActive(!(state.ClientId == NetworkManager.Singleton.LocalClientId) && !state.IsLockedIn);
+
+        if (!(state.ClientId == NetworkManager.Singleton.LocalClientId) && !state.IsLockedIn)
+        {
+            pickingLabel.gameObject.SetActive(true);
+
+            if (pickingAnimationCoroutine == null)
+            {
+                pickingAnimationCoroutine = StartCoroutine(AnimatePickingLabel());
+            }
+        }
+        else
+        {
+            pickingLabel.gameObject.SetActive(false);
+
+            if (pickingAnimationCoroutine != null)
+            {
+                StopCoroutine(pickingAnimationCoroutine);
+                pickingAnimationCoroutine = null;
+            }
+        }
 
         if (state.CharacterId != -1)
         {
@@ -63,6 +86,11 @@ public class PlayerCard : MonoBehaviour
     public void DisableDisplay()
     {
         visuals.SetActive(false);
+        if (pickingAnimationCoroutine != null)
+        {
+            StopCoroutine(pickingAnimationCoroutine);
+            pickingAnimationCoroutine = null;
+        }
     }
 
     public void LockIn()
@@ -103,5 +131,18 @@ public class PlayerCard : MonoBehaviour
 
         playerBackground.SetActive(!state.IsLockedIn);
         playerLockedInBackground.SetActive(state.IsLockedIn);
+    }
+
+    private IEnumerator AnimatePickingLabel()
+    {
+        string baseText = "Picking";
+        int dotCount = 0;
+
+        while (true)
+        {
+            dotCount = (dotCount + 1) % 4; // Cycles through 0, 1, 2, 3
+            pickingLabel.text = baseText + new string('.', dotCount);
+            yield return new WaitForSeconds(0.5f); // Adjust the speed of animation as needed
+        }
     }
 }

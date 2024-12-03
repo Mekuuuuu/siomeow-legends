@@ -100,7 +100,7 @@ MonoBehaviour:
   characterDatabase: {fileID: 11400000, guid: d2c9d51c77f787d449e5f94021878b00, type: 2}
   gameLobbyDisplay: {fileID: 0}
   lockInButton: {fileID: 7457902938731997441}
-  pickingLabel: {fileID: 6061769134165849781}
+  pickingLabel: {fileID: 4405258386981267277}
   visuals: {fileID: 405930333828447838}
   playerNameText: {fileID: 7199970153676615273}
   playerBackground: {fileID: 2633920632496291639}
