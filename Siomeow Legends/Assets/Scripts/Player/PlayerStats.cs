@@ -81,11 +81,10 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    
-
     private void Die()
     {
         // Temporary 
         Debug.Log("I am Dead!");
+        Destroy(gameObject);
     }
 }
