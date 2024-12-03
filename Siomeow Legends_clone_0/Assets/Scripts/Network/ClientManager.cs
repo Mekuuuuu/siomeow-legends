@@ -85,4 +85,9 @@ public class ClientManager : MonoBehaviour
         // NetworkManager.Singleton.StartClient();
     }
 
+    public void StopClient()
+    {
+        NetworkManager.Singleton.Shutdown();
+    }
+
 }

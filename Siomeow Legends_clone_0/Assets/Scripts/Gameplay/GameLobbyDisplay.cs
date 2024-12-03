@@ -252,47 +252,10 @@ public class GameLobbyDisplay : NetworkBehaviour
 
     public void LeaveLobby()
     {
-        if (IsServer)
-        {
-            HostManager.Instance.StopHost();
-            SceneManager.LoadScene(mainMenuScene, LoadSceneMode.Single);
 
-            
-        }
-        else
-        {
-            // If the user is a client, request the server to handle the scene change
-            LeaveLobbyServerRpc();
-        }
+        NetworkManager.Singleton.Shutdown();
+        SceneManager.LoadScene(mainMenuScene, LoadSceneMode.Single);
+
     }
 
-    [ServerRpc(RequireOwnership = false)]
-    private void LeaveLobbyServerRpc(ServerRpcParams serverRpcParams = default)
-    {
-        ulong clientId = serverRpcParams.Receive.SenderClientId;
-        Debug.Log($"Client {clientId} requested to leave the lobby.");
-
-        // Optionally, remove the client from the players list
-        HandleClientDisconnected(clientId);
-
-        // If this is the last client, the server might decide to shut down the lobby
-        if (players.Count == 0)
-        {
-            Debug.Log("No players left. Returning to the main menu.");
-        }
-
-        // Load the main menu for all clients
-        NetworkManager.Singleton.SceneManager.LoadScene(mainMenuScene, LoadSceneMode.Single);
-    }
-
-    // [ClientRpc]
-    // private void NotifyClientsToLeaveClientRpc()
-    // {
-    //     // Disconnect and load the main menu for clients
-    //     if (!IsServer)
-    //     {
-    //         NetworkManager.Singleton.Shutdown();
-    //         SceneManager.LoadScene(mainMenuScene, LoadSceneMode.Single);
-    //     }
-    // }
 }
