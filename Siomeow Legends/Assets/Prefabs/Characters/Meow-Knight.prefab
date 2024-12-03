@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef2e077747e90e458a599c00ce5c397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
   anim: {fileID: 3165092791418124409}
   tr: {fileID: 634177716571239403}
 --- !u!114 &1881418066040155737
@@ -217,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2342951665
+  GlobalObjectIdHash: 3318771758
   InScenePlacedSourceGlobalObjectIdHash: 2483412193
   DeferredDespawnTick: 0
   Ownership: 1
@@ -406,7 +407,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6981502042216279895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aa138de5cb1c8f4e9ba38f830ccfcac, type: 3}
+  m_Script: {fileID: 11500000, guid: 2805d55c958c9124398d81f820854dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup: 0
