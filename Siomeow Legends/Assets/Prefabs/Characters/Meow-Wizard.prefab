@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6941585621187706419}
   - component: {fileID: 7698916963531259112}
   - component: {fileID: 9158242255363826745}
+  - component: {fileID: -6207801035691957848}
   m_Layer: 0
   m_Name: Meow-Wizard
   m_TagString: Player
@@ -397,3 +398,15 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &-6207801035691957848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5765650432412494740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2805d55c958c9124398d81f820854dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
