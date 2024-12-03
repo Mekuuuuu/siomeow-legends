@@ -8,11 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
+  - Ground
+  - Collision
   - 
   - 
   - 
@@ -41,8 +41,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Hightlight
+  - name: Ground
     uniqueID: 230991415
+    locked: 0
+  - name: Lava
+    uniqueID: 1534083135
+    locked: 0
+  - name: WalkBehind
+    uniqueID: 3699894533
+    locked: 0
+  - name: Collision
+    uniqueID: 3137562525
+    locked: 0
+  - name: Player
+    uniqueID: 2709007773
     locked: 0
   m_RenderingLayers:
   - Default

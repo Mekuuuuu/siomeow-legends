@@ -18,4 +18,9 @@ public class MainMenuManager : MonoBehaviour
         SettingsMenu.SetActive(false);
         QuitMenu.SetActive(false);
     }
+
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
 }

@@ -30,14 +30,14 @@ RectTransform:
   m_Children:
   - {fileID: 4622138019947597705}
   - {fileID: 789040351440116815}
-  - {fileID: 4010208841119713709}
-  - {fileID: 7908822499339255533}
   - {fileID: 8637826435716139071}
   - {fileID: 8479122204067742602}
-  - {fileID: 6857812304308643210}
-  - {fileID: 9061344157976608241}
   - {fileID: 6748191650753260419}
   - {fileID: 4315926303613479709}
+  - {fileID: 7908822499339255533}
+  - {fileID: 4010208841119713709}
+  - {fileID: 6857812304308643210}
+  - {fileID: 9061344157976608241}
   - {fileID: 2070488638098883766}
   - {fileID: 1553505369834956801}
   - {fileID: 7966186521047134103}
@@ -99,9 +99,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterDatabase: {fileID: 11400000, guid: d2c9d51c77f787d449e5f94021878b00, type: 2}
   visuals: {fileID: 405930333828447838}
-  characterIconImage: {fileID: 4180971607474587389}
   playerNameText: {fileID: 7199970153676615273}
-  characterNameText: {fileID: 0}
+  playerBackground: {fileID: 2633920632496291639}
+  playerLockedInBackground: {fileID: 5441295078260289869}
+  meowKnightIcon: {fileID: 6719367784302865977}
+  meowKnightLockedInIcon: {fileID: 5177125415081532502}
+  meowWizardIcon: {fileID: 805811203056231691}
+  meowWizardLockedInIcon: {fileID: 7982791484704320108}
+  meowKingIcon: {fileID: 7417905238832455400}
+  meowKingLockedInIcon: {fileID: 8448893968638516522}
+  meowRogueIcon: {fileID: 4342560937169505396}
+  meowRogueLockedInIcon: {fileID: 4411202657080968196}
 --- !u!1 &1130868179694868666
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &789040351440116815
 RectTransform:
   m_ObjectHideFlags: 0
@@ -793,6 +801,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterIcon(Knight)
       objectReference: {fileID: 0}
+    - target: {fileID: 6322921457690478077, guid: 25b64d205963ca94f9a7d4928e758bd3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9034154427121116155, guid: 25b64d205963ca94f9a7d4928e758bd3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -878,6 +890,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25b64d205963ca94f9a7d4928e758bd3, type: 3}
+--- !u!1 &6719367784302865977 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6322921457690478077, guid: 25b64d205963ca94f9a7d4928e758bd3, type: 3}
+  m_PrefabInstance: {fileID: 756739938384702404}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8637826435716139071 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9034154427121116155, guid: 25b64d205963ca94f9a7d4928e758bd3, type: 3}
@@ -894,6 +911,10 @@ PrefabInstance:
     - target: {fileID: 1326004054779579608, guid: d304ea4545236be4eb47ee453c2aed85, type: 3}
       propertyPath: m_Name
       value: CharacterIcon(Wizard)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326004054779579608, guid: d304ea4545236be4eb47ee453c2aed85, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4967008736217956944, guid: d304ea4545236be4eb47ee453c2aed85, type: 3}
       propertyPath: m_Pivot.x
@@ -980,6 +1001,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d304ea4545236be4eb47ee453c2aed85, type: 3}
+--- !u!1 &805811203056231691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1326004054779579608, guid: d304ea4545236be4eb47ee453c2aed85, type: 3}
+  m_PrefabInstance: {fileID: 1821768363306592723}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6748191650753260419 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4967008736217956944, guid: d304ea4545236be4eb47ee453c2aed85, type: 3}
@@ -1077,22 +1103,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterIcon(King)
       objectReference: {fileID: 0}
+    - target: {fileID: 9187103295481796201, guid: 092e3709b50060c43baf7f2fec56f518, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 092e3709b50060c43baf7f2fec56f518, type: 3}
---- !u!114 &4180971607474587389 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2561246094543097468, guid: 092e3709b50060c43baf7f2fec56f518, type: 3}
+--- !u!1 &7417905238832455400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9187103295481796201, guid: 092e3709b50060c43baf7f2fec56f518, type: 3}
   m_PrefabInstance: {fileID: 1841572329367095425}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &7908822499339255533 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8381019067005728364, guid: 092e3709b50060c43baf7f2fec56f518, type: 3}
@@ -1190,6 +1214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterIcon(KingLock)
       objectReference: {fileID: 0}
+    - target: {fileID: 7522285708360894642, guid: 311bbb57db32b1a44bb01440bcd12a40, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1198,6 +1226,11 @@ PrefabInstance:
 --- !u!224 &4010208841119713709 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3063319669842156597, guid: 311bbb57db32b1a44bb01440bcd12a40, type: 3}
+  m_PrefabInstance: {fileID: 2099810695762335128}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8448893968638516522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7522285708360894642, guid: 311bbb57db32b1a44bb01440bcd12a40, type: 3}
   m_PrefabInstance: {fileID: 2099810695762335128}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2499063775545268727
@@ -1211,6 +1244,10 @@ PrefabInstance:
     - target: {fileID: 2228601670954505603, guid: 1d6e461f860fe964292f48d2e02159a1, type: 3}
       propertyPath: m_Name
       value: CharacterIcon(Archer)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2228601670954505603, guid: 1d6e461f860fe964292f48d2e02159a1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9044814336642694269, guid: 1d6e461f860fe964292f48d2e02159a1, type: 3}
       propertyPath: m_Pivot.x
@@ -1297,6 +1334,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d6e461f860fe964292f48d2e02159a1, type: 3}
+--- !u!1 &4342560937169505396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2228601670954505603, guid: 1d6e461f860fe964292f48d2e02159a1, type: 3}
+  m_PrefabInstance: {fileID: 2499063775545268727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6857812304308643210 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9044814336642694269, guid: 1d6e461f860fe964292f48d2e02159a1, type: 3}
@@ -1394,11 +1436,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterIcon(ArcherLock)
       objectReference: {fileID: 0}
+    - target: {fileID: 6519652235040647983, guid: 4bd009cde428df64aa36ddd1499e2d08, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bd009cde428df64aa36ddd1499e2d08, type: 3}
+--- !u!1 &4411202657080968196 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6519652235040647983, guid: 4bd009cde428df64aa36ddd1499e2d08, type: 3}
+  m_PrefabInstance: {fileID: 7443826055086862123}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &9061344157976608241 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1913349085239071450, guid: 4bd009cde428df64aa36ddd1499e2d08, type: 3}
@@ -1415,6 +1466,10 @@ PrefabInstance:
     - target: {fileID: 410404593297191788, guid: a94fc7d03e0704e46847f1cb82fcdf62, type: 3}
       propertyPath: m_Name
       value: CharacterIcon(WizardLock)
+      objectReference: {fileID: 0}
+    - target: {fileID: 410404593297191788, guid: a94fc7d03e0704e46847f1cb82fcdf62, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5809606518967890461, guid: a94fc7d03e0704e46847f1cb82fcdf62, type: 3}
       propertyPath: m_Pivot.x
@@ -1504,6 +1559,11 @@ PrefabInstance:
 --- !u!224 &4315926303613479709 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5809606518967890461, guid: a94fc7d03e0704e46847f1cb82fcdf62, type: 3}
+  m_PrefabInstance: {fileID: 7744676515865598208}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7982791484704320108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 410404593297191788, guid: a94fc7d03e0704e46847f1cb82fcdf62, type: 3}
   m_PrefabInstance: {fileID: 7744676515865598208}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8119623496097969496
@@ -1598,11 +1658,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterIcon(KnightLock)
       objectReference: {fileID: 0}
+    - target: {fileID: 3996499016929077518, guid: 31486f6f820a72c44b46a128f9c42b43, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31486f6f820a72c44b46a128f9c42b43, type: 3}
+--- !u!1 &5177125415081532502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3996499016929077518, guid: 31486f6f820a72c44b46a128f9c42b43, type: 3}
+  m_PrefabInstance: {fileID: 8119623496097969496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8479122204067742602 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 361790129469159122, guid: 31486f6f820a72c44b46a128f9c42b43, type: 3}

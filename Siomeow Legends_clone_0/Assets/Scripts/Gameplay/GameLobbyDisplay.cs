@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using TMPro;
 using Unity.Netcode;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameLobbyDisplay : NetworkBehaviour
 {
@@ -16,6 +15,8 @@ public class GameLobbyDisplay : NetworkBehaviour
     [SerializeField] private TMP_Text characterNameText; // REMOVE THIS SINCE WE WILL NOT USE IT. ctrl+f for instances of this.
     [SerializeField] private TMP_Text joinCodeText;
     [SerializeField] private Button lockInButton;
+    [SerializeField] private GameObject hostDisconnectedPanel;
+    [SerializeField] private string mainMenuScene;
 
     private List<CharacterSelectButton> characterButtons = new List<CharacterSelectButton>();
     private NetworkList<GameLobbyState> players;
@@ -68,12 +69,15 @@ public class GameLobbyDisplay : NetworkBehaviour
             players.OnListChanged += HandlePlayersStateChanged;
         }
 
+        if (!IsHost)
+        {
+            hostDisconnectedPanel.SetActive(true);
+        }
+
         if(IsServer)
         {
             NetworkManager.Singleton.OnClientConnectedCallback -= HandleClientConnected;
             NetworkManager.Singleton.OnClientDisconnectCallback -= HandleClientDisconnected;
-
-
         }
     }
 
@@ -249,4 +253,24 @@ public class GameLobbyDisplay : NetworkBehaviour
 
         return false;
     }
+
+    public void LeaveLobby()
+    {
+        if (IsHost)
+        {
+            HostManager.Instance.StopHost();
+        }
+        if (!IsHost)
+        {
+            ClientManager.Instance.StopClient();
+        }
+        NetworkManager.Singleton.ConnectionApprovalCallback = null;
+        ReturnToMainMenu();
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene(mainMenuScene);
+    }
+
 }
