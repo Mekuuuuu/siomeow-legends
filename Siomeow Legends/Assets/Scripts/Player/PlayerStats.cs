@@ -3,14 +3,14 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     // PLAYER STATS
-    [SerializeField] private int health = 100;
-    [SerializeField] private int defense = 50;
+    [SerializeField] private int health = 2423;
+    [SerializeField] private int defense = 400;
     // [SerializeField] private int mana = 0;
 
     // STAT LIMITS
-    private const int MAX_HEALTH = 100;
-    private const int MAX_DEFENSE = 50;
-    private const int MAX_MANA = 80;
+    private const int MAX_HEALTH = 2423;
+    private const int MAX_DEFENSE = 400;
+    private const int DAMAGE_REDUCTION = 50; 
 
     // Update is called once per frame
     void Update()
@@ -35,16 +35,16 @@ public class PlayerStats : MonoBehaviour
         }
 
         // Check if defense is greater than or equal to 5
-        if (this.defense >= 5)
+        if (this.defense >= DAMAGE_REDUCTION)
         {
             // Reduce damage by 5 if defense is greater than or equal to 5
-            int damageAfterDefense = rawDamage - 5;
+            int damageAfterDefense = rawDamage - DAMAGE_REDUCTION;
 
             // Apply damage after defense reduction
             this.health -= damageAfterDefense;
 
             // Reduce the defense value by 5
-            this.defense -= 5;
+            this.defense -= DAMAGE_REDUCTION;
 
             Debug.Log($"Damage after defense reduction: {damageAfterDefense}. Health: {this.health}, Defense: {this.defense}");
         }
