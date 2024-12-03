@@ -3,18 +3,16 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     private GameObject attackArea = default;
-
     private bool isAttacking = false;
-
     private float attackDuration = 0.25f;
-
     private float attackTimer = 0f;
+
+    public Animator anim;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         attackArea = transform.GetChild(0).gameObject;
-
     }
 
     // Update is called once per frame
@@ -34,8 +32,8 @@ public class PlayerAttack : MonoBehaviour
         {
             attackArea.SetActive(isAttacking);
             isAttacking = true; 
-            // Animator here for attack
-            Debug.Log("Attacking");
+
+            Animate();
         }
         
     }
@@ -51,7 +49,16 @@ public class PlayerAttack : MonoBehaviour
                 attackTimer = 0;
                 isAttacking = false;
                 attackArea.SetActive(isAttacking);
+                anim.SetBool("Attack", isAttacking); 
             }
+        }
+    }
+
+    private void Animate()
+    {
+        if(isAttacking)
+        {
+            anim.SetBool("Attack", isAttacking); 
         }
     }
 }

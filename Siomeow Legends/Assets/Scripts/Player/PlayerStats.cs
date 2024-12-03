@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour
     // [SerializeField] private int mana = 0;
 
     // STAT LIMITS
-    private const int MAX_HEALTH = 2423;
+    private const int MAX_HEALTH = 3607;
     private const int MAX_DEFENSE = 400;
     private const int DAMAGE_REDUCTION = 50; 
 
@@ -46,14 +46,14 @@ public class PlayerStats : MonoBehaviour
             // Reduce the defense value by 5
             this.defense -= DAMAGE_REDUCTION;
 
-            Debug.Log($"Damage after defense reduction: {damageAfterDefense}. Health: {this.health}, Defense: {this.defense}");
+            // Debug.Log($"Damage after defense reduction: {damageAfterDefense}. Health: {this.health}, Defense: {this.defense}");
         }
         else
         {
             // If defense is less than 5, apply full damage
             this.health -= rawDamage;
 
-            Debug.Log($"No damage reduction. Full damage: {rawDamage}. Health: {this.health}");
+            // Debug.Log($"No damage reduction. Full damage: {rawDamage}. Health: {this.health}");
         }
 
         if (this.health <= 0)
@@ -84,7 +84,7 @@ public class PlayerStats : MonoBehaviour
     private void Die()
     {
         // Temporary 
-        Debug.Log("I am Dead!");
+        // Debug.Log("I am Dead!");
         Destroy(gameObject);
     }
 }
