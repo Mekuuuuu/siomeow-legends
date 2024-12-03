@@ -13,9 +13,11 @@ public class PickupItem : MonoBehaviour
  
             if(powerup != null){
                 powerup.Pickup = powerup.Pickup + powers;
-                print("Player inventory has " + powerup.Pickup);
+                print("Player inventory has " + powerup.Pickup + " pickup(s)");
                 gameObject.SetActive(false);
             }
+
+            Destroy(gameObject);
         }
     }
 }
