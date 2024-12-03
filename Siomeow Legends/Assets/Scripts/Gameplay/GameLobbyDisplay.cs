@@ -15,6 +15,7 @@ public class GameLobbyDisplay : NetworkBehaviour
     [SerializeField] private TMP_Text characterNameText; // REMOVE THIS SINCE WE WILL NOT USE IT. ctrl+f for instances of this.
     [SerializeField] private TMP_Text joinCodeText;
     [SerializeField] private Button lockInButton;
+    [SerializeField] private GameObject hostDisconnectedPanel;
     [SerializeField] private string mainMenuScene;
 
     private List<CharacterSelectButton> characterButtons = new List<CharacterSelectButton>();
@@ -68,12 +69,15 @@ public class GameLobbyDisplay : NetworkBehaviour
             players.OnListChanged += HandlePlayersStateChanged;
         }
 
+        if (!IsHost)
+        {
+            hostDisconnectedPanel.SetActive(true);
+        }
+
         if(IsServer)
         {
             NetworkManager.Singleton.OnClientConnectedCallback -= HandleClientConnected;
             NetworkManager.Singleton.OnClientDisconnectCallback -= HandleClientDisconnected;
-
-
         }
     }
 
@@ -252,10 +256,13 @@ public class GameLobbyDisplay : NetworkBehaviour
 
     public void LeaveLobby()
     {
-
         NetworkManager.Singleton.Shutdown();
-        SceneManager.LoadScene(mainMenuScene, LoadSceneMode.Single);
+        ReturnToMainMenu();
+    }
 
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene(mainMenuScene);
     }
 
 }
