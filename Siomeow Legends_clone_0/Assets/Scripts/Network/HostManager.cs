@@ -42,11 +42,6 @@ public class HostManager : MonoBehaviour
 
     public async void StartHost()
     {
-        // if (NetworkManager.Singleton.ConnectionApprovalCallback != null)
-        // {
-        //     NetworkManager.Singleton.ConnectionApprovalCallback = null;
-        // }
-
         if (!NetworkSelector.Instance.isLAN)
         {
             Debug.Log("Multiplayer Process");
@@ -140,7 +135,7 @@ public class HostManager : MonoBehaviour
     public void StopHost()
     {
         NetworkManager.Singleton.Shutdown();
-        NetworkManager.Singleton.ConnectionApprovalCallback -= ApprovalCheck;
+        // NetworkManager.Singleton.ConnectionApprovalCallback -= ApprovalCheck;
     }
 
     // need to ping the service regularly so that it wont be erased by Lobby service

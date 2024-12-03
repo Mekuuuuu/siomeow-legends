@@ -256,7 +256,15 @@ public class GameLobbyDisplay : NetworkBehaviour
 
     public void LeaveLobby()
     {
-        NetworkManager.Singleton.Shutdown();
+        if (IsHost)
+        {
+            HostManager.Instance.StopHost();
+        }
+        if (!IsHost)
+        {
+            ClientManager.Instance.StopClient();
+        }
+        NetworkManager.Singleton.ConnectionApprovalCallback = null;
         ReturnToMainMenu();
     }
 
