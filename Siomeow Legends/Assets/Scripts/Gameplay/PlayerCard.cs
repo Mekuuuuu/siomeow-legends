@@ -70,98 +70,36 @@ public class PlayerCard : MonoBehaviour
 
     private void ClearUnselected(GameLobbyState state)
     {
-        if (state.CharacterId == 1)
-        {
-            meowWizardIcon.SetActive(false);
-            meowKingIcon.SetActive(false);
-            meowRogueIcon.SetActive(false);
-        }
-        else if (state.CharacterId == 2)
-        {
-            meowKnightIcon.SetActive(false);
-            meowKingIcon.SetActive(false);
-            meowRogueIcon.SetActive(false);
-        }
-        else if (state.CharacterId == 3)
-        {
-            meowKnightIcon.SetActive(false);
-            meowWizardIcon.SetActive(false);
-            meowRogueIcon.SetActive(false);
-        }
-        else if (state.CharacterId == 4)
-        {
-            meowKnightIcon.SetActive(false);
-            meowWizardIcon.SetActive(false);
-            meowKingIcon.SetActive(false);
-        }
+        meowKnightIcon.SetActive(state.CharacterId == 1);
+        meowWizardIcon.SetActive(state.CharacterId == 2);
+        meowKingIcon.SetActive(state.CharacterId == 3);
+        meowRogueIcon.SetActive(state.CharacterId == 4);
     }
 
     private void ShowSelected(GameLobbyState state)
     {
-        // Meow Knight
-        if (state.CharacterId == 1) 
+
+        switch (state.CharacterId)
         {
-            if (state.IsLockedIn)
-            {
-                meowKnightLockedInIcon.SetActive(true);
-                playerLockedInBackground.SetActive(true);
-            }
-            else
-            {
-                meowKnightIcon.SetActive(true);
-                playerBackground.SetActive(true);
-            }
+            case 1:
+                meowKnightIcon.SetActive(!state.IsLockedIn);
+                meowKnightLockedInIcon.SetActive(state.IsLockedIn);
+                break;
+            case 2:
+                meowWizardIcon.SetActive(!state.IsLockedIn);
+                meowWizardLockedInIcon.SetActive(state.IsLockedIn);
+                break;
+            case 3:
+                meowKingIcon.SetActive(!state.IsLockedIn);
+                meowKingLockedInIcon.SetActive(state.IsLockedIn);
+                break;
+            case 4:
+                meowRogueIcon.SetActive(!state.IsLockedIn);
+                meowRogueLockedInIcon.SetActive(state.IsLockedIn);
+                break;
         }
 
-        // Meow Wizard
-        else if (state.CharacterId == 2) 
-        {
-            if (state.IsLockedIn)
-            {
-                meowWizardLockedInIcon.SetActive(true);
-                playerLockedInBackground.SetActive(true);
-            }
-            else
-            {
-                meowWizardIcon.SetActive(true);
-                playerBackground.SetActive(true);
-            }
-        }
-
-        // Meow King
-        else if (state.CharacterId == 3) 
-        {
-            if (state.IsLockedIn)
-            {
-                meowKingLockedInIcon.SetActive(true);
-                playerLockedInBackground.SetActive(true);
-            }
-            else
-            {
-                meowKingIcon.SetActive(true);
-                playerBackground.SetActive(true);
-            }
-        }
-
-        // Meow Rogue
-        else if (state.CharacterId == 4) 
-        {
-            if (state.IsLockedIn)
-            {
-                meowRogueLockedInIcon.SetActive(true);
-                playerLockedInBackground.SetActive(true);
-            }
-            else
-            {
-                meowRogueIcon.SetActive(true);
-                playerBackground.SetActive(true);
-            }
-        }
-
-        // Invalid Character
-        else
-        {
-            // HANDLEEEEEE
-        }
+        playerBackground.SetActive(!state.IsLockedIn);
+        playerLockedInBackground.SetActive(state.IsLockedIn);
     }
 }
