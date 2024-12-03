@@ -42,6 +42,8 @@ public class PlayerCard : MonoBehaviour
         // Show the lock-in button only if this is the local player's card
         lockInButton.SetActive(state.ClientId == NetworkManager.Singleton.LocalClientId && !state.IsLockedIn);
 
+        pickingLabel.SetActive(!(state.ClientId == NetworkManager.Singleton.LocalClientId) && !state.IsLockedIn);
+
         if (state.CharacterId != -1)
         {
             var character = characterDatabase.GetCharacterById(state.CharacterId);
