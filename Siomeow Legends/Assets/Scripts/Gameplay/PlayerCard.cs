@@ -1,11 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerCard : MonoBehaviour
 {
+
     [Header("General")]
     [SerializeField] private CharacterDatabase characterDatabase;
+    [SerializeField] private GameLobbyDisplay gameLobbyDisplay;
+    [SerializeField] private GameObject lockInButton;
+    [SerializeField] private TMP_Text pickingLabel;
     [SerializeField] private GameObject visuals;
     [SerializeField] private TMP_Text playerNameText;
 
@@ -30,10 +37,28 @@ public class PlayerCard : MonoBehaviour
     [Header("Meow Rogue")]
     [SerializeField] private GameObject meowRogueIcon;
     [SerializeField] private GameObject meowRogueLockedInIcon;
-    
+
+    // private Coroutine pickingAnimationCoroutine;
 
     public void UpdateDisplay(GameLobbyState state)
     {
+
+        // Show the lock-in button only if this is the local player's card
+        lockInButton.SetActive(state.ClientId == NetworkManager.Singleton.LocalClientId && !state.IsLockedIn);
+
+        // pickingLabel.SetActive(!(state.ClientId == NetworkManager.Singleton.LocalClientId) && !state.IsLockedIn);
+
+        if (!(state.ClientId == NetworkManager.Singleton.LocalClientId) && !state.IsLockedIn)
+        {
+            pickingLabel.gameObject.SetActive(true);
+            StartCoroutine(AnimatePickingLabel());
+        }
+        else
+        {
+            pickingLabel.gameObject.SetActive(false);
+            StopCoroutine(AnimatePickingLabel());
+        }
+
         if (state.CharacterId != -1)
         {
             var character = characterDatabase.GetCharacterById(state.CharacterId);
@@ -53,102 +78,54 @@ public class PlayerCard : MonoBehaviour
     public void DisableDisplay()
     {
         visuals.SetActive(false);
+
+    }
+
+    public void LockIn()
+    {
+        gameLobbyDisplay.LockIn();
     }
 
     private void ClearUnselected(GameLobbyState state)
     {
-        if (state.CharacterId == 1)
-        {
-            meowWizardIcon.SetActive(false);
-            meowKingIcon.SetActive(false);
-            meowRogueIcon.SetActive(false);
-        }
-        else if (state.CharacterId == 2)
-        {
-            meowKnightIcon.SetActive(false);
-            meowKingIcon.SetActive(false);
-            meowRogueIcon.SetActive(false);
-        }
-        else if (state.CharacterId == 3)
-        {
-            meowKnightIcon.SetActive(false);
-            meowWizardIcon.SetActive(false);
-            meowRogueIcon.SetActive(false);
-        }
-        else if (state.CharacterId == 4)
-        {
-            meowKnightIcon.SetActive(false);
-            meowWizardIcon.SetActive(false);
-            meowKingIcon.SetActive(false);
-        }
+        meowKnightIcon.SetActive(state.CharacterId == 1);
+        meowWizardIcon.SetActive(state.CharacterId == 2);
+        meowKingIcon.SetActive(state.CharacterId == 3);
+        meowRogueIcon.SetActive(state.CharacterId == 4);
     }
 
     private void ShowSelected(GameLobbyState state)
     {
-        // Meow Knight
-        if (state.CharacterId == 1) 
+
+        switch (state.CharacterId)
         {
-            if (state.IsLockedIn)
-            {
-                meowKnightLockedInIcon.SetActive(true);
-                playerLockedInBackground.SetActive(true);
-            }
-            else
-            {
-                meowKnightIcon.SetActive(true);
-                playerBackground.SetActive(true);
-            }
+            case 1:
+                meowKnightIcon.SetActive(!state.IsLockedIn);
+                meowKnightLockedInIcon.SetActive(state.IsLockedIn);
+                break;
+            case 2:
+                meowWizardIcon.SetActive(!state.IsLockedIn);
+                meowWizardLockedInIcon.SetActive(state.IsLockedIn);
+                break;
+            case 3:
+                meowKingIcon.SetActive(!state.IsLockedIn);
+                meowKingLockedInIcon.SetActive(state.IsLockedIn);
+                break;
+            case 4:
+                meowRogueIcon.SetActive(!state.IsLockedIn);
+                meowRogueLockedInIcon.SetActive(state.IsLockedIn);
+                break;
         }
 
-        // Meow Wizard
-        else if (state.CharacterId == 2) 
-        {
-            if (state.IsLockedIn)
-            {
-                meowWizardLockedInIcon.SetActive(true);
-                playerLockedInBackground.SetActive(true);
-            }
-            else
-            {
-                meowWizardIcon.SetActive(true);
-                playerBackground.SetActive(true);
-            }
-        }
+        playerBackground.SetActive(!state.IsLockedIn);
+        playerLockedInBackground.SetActive(state.IsLockedIn);
+    }
 
-        // Meow King
-        else if (state.CharacterId == 3) 
-        {
-            if (state.IsLockedIn)
-            {
-                meowKingLockedInIcon.SetActive(true);
-                playerLockedInBackground.SetActive(true);
-            }
-            else
-            {
-                meowKingIcon.SetActive(true);
-                playerBackground.SetActive(true);
-            }
-        }
-
-        // Meow Rogue
-        else if (state.CharacterId == 4) 
-        {
-            if (state.IsLockedIn)
-            {
-                meowRogueLockedInIcon.SetActive(true);
-                playerLockedInBackground.SetActive(true);
-            }
-            else
-            {
-                meowRogueIcon.SetActive(true);
-                playerBackground.SetActive(true);
-            }
-        }
-
-        // Invalid Character
-        else
-        {
-            // HANDLEEEEEE
-        }
+    private IEnumerator AnimatePickingLabel()
+    {
+        // Start the Picking label animation
+        List<string> pickingSequence = new List<string> { "Picking.", "Picking..", "Picking..." };
+        TextAnimator.StartAnimation(this, pickingLabel, pickingSequence, 0.5f);
+        yield return null;
     }
 }
