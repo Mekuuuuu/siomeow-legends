@@ -5,10 +5,12 @@ using UnityEngine;
 public class PowerUpsHandler : MonoBehaviour
 {
     private PlayerMovement player;
+    private PlayerStats playerStats;
 
-    public void Initialize(PlayerMovement player)
+    public void Initialize(PlayerMovement player, PlayerStats playerStats)
     {
         this.player = player;
+        this.playerStats = playerStats;
     }
 
     public void ApplyPowerUp(PickupItem.PowerUp type)
@@ -25,7 +27,14 @@ public class PowerUpsHandler : MonoBehaviour
 
             case PickupItem.PowerUp.Stamina:
                 StartCoroutine(ApplyStaminaBoost());
-                // Debug.LogWarning("Stamina boost not yet implemented!");
+                break;
+
+            case PickupItem.PowerUp.Heal:
+                ApplyHeal();
+                break;
+
+            case PickupItem.PowerUp.Shield:
+                ApplyShield();
                 break;
 
             default:
@@ -52,15 +61,30 @@ public class PowerUpsHandler : MonoBehaviour
 
     private IEnumerator ApplyStaminaBoost()
     {
-        // Reset the dash cooldown immediately
-        player.canDash = true;  // Allow dashing immediately after reset
+        player.canDash = true; 
         player.dashingCooldown = 0f;
         Debug.Log("Stamina replenished. Dash cooldown reset to 0, you can doshge now!");
 
-        // Wait until the player finishes the dash
         yield return new WaitUntil(() => !player.isDashing);
         player.dashingCooldown = 10f;
         Debug.Log($"Cooldown reset to: {player.dashingCooldown}!");
     }
 
+    private void ApplyHeal()
+    {
+        int healAmount = 100;
+        int maxHealth = 5000;
+
+        playerStats.health = Mathf.Min(playerStats.health + healAmount, maxHealth);
+        Debug.Log($"Health is now {playerStats.health}!");
+    }
+
+    private void ApplyShield()
+    {
+        int defenseAmount = 50;
+        int maxDefense = 500;
+
+        playerStats.defense = Mathf.Min(playerStats.defense + defenseAmount, maxDefense);
+        Debug.Log($"Defense is now {playerStats.defense}!");
+    }
 }
