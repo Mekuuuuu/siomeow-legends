@@ -225,11 +225,19 @@ public class GameLobbyDisplay : NetworkBehaviour
 
         foreach(var button in characterButtons)
         {
-            if (button.IsDisabled) { continue; }
+            // if (button.IsDisabled) { continue; }
 
             if (IsCharacterTaken(button.Character.Id, false)) 
             { 
                 button.SetDisabled();
+            }
+            else
+            {
+                // If the character is not taken, check if the button is disabled
+                if (button.IsDisabled)
+                {
+                    button.ForceResetToNormal(); // Re-enable the button if the character is available
+                }
             }
 
         }

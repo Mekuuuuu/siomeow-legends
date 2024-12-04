@@ -44,6 +44,14 @@ public class CharacterSelectButton : MonoBehaviour
         if (!IsDisabled)
         {
             iconImage.sprite = Character.Icon; // Reset to normal icon
+            button.interactable = true;
         }
+    }
+
+    public void ForceResetToNormal()
+    {
+            iconImage.sprite = Character.Icon; // Reset to normal icon
+            disabledOverlay.SetActive(false);
+            button.interactable = true;
     }
 }
