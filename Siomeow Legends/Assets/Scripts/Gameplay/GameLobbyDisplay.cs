@@ -15,7 +15,7 @@ public class GameLobbyDisplay : NetworkBehaviour
     [SerializeField] private GameObject characterInfoPanel; // REMOVE THIS SINCE WE WILL NOT USE IT. ctrl+f for instances of this.
     [SerializeField] private TMP_Text characterNameText; // REMOVE THIS SINCE WE WILL NOT USE IT. ctrl+f for instances of this.
     [SerializeField] private TMP_Text joinCodeText;
-    [SerializeField] private Button lockInButton;
+    // [SerializeField] private Button lockInButton;
     [SerializeField] private Button StartGameButton;
     [SerializeField] private TMP_Text LobbyStatusText;
     [SerializeField] private GameObject hostDisconnectedPanel;
@@ -124,6 +124,11 @@ public class GameLobbyDisplay : NetworkBehaviour
 
         characterNameText.text = character.DisplayName;
         characterInfoPanel.SetActive(true);
+
+        // // Change button icon to pressed icon when the character is selected
+        // var selectedButton = characterButtons.Find(button => button.Character.Id == character.Id);
+        // selectedButton.SetPressed();  // Set the pressed state on the button
+
         SelectServerRpc(character.Id);
 
     }
@@ -147,6 +152,10 @@ public class GameLobbyDisplay : NetworkBehaviour
                 characterId,
                 players[i].IsLockedIn
             );
+
+            // // Handle Character Select Button Pressed to Normal Change
+            // var selectedButton = characterButtons.Find(button => button.Character.Id == characterId);
+            // selectedButton.ResetToNormal();
         }
     }
 
@@ -225,25 +234,25 @@ public class GameLobbyDisplay : NetworkBehaviour
 
         }
 
-        foreach(var player in players)
-        {
-            if (player.ClientId != NetworkManager.Singleton.LocalClientId) { continue; }
+        // foreach(var player in players)
+        // {
+        //     if (player.ClientId != NetworkManager.Singleton.LocalClientId) { continue; }
 
-            if (player.IsLockedIn)
-            {
-                lockInButton.interactable = false;
-                break;
-            }
+        //     if (player.IsLockedIn)
+        //     {
+        //         lockInButton.interactable = false;
+        //         break;
+        //     }
 
-            if (IsCharacterTaken(player.CharacterId, false))
-            {
-                lockInButton.interactable = false;
-                break;
-            }
+        //     if (IsCharacterTaken(player.CharacterId, false))
+        //     {
+        //         lockInButton.interactable = false;
+        //         break;
+        //     }
 
-            lockInButton.interactable = true;
-            break;
-        }
+        //     lockInButton.interactable = true;
+        //     break;
+        // }
 
         isAllLockedIn = true;
         foreach(var player in players)
@@ -286,7 +295,7 @@ public class GameLobbyDisplay : NetworkBehaviour
 
     public void StartGame()
     {
-        // StopCoroutine(AnimateLobbyStatusText());
+        StopAllCoroutines();
         HostManager.Instance.StartGame();
     }
 
@@ -313,8 +322,6 @@ public class GameLobbyDisplay : NetworkBehaviour
 
     private IEnumerator AnimateLobbyStatusText(List<string> sequence)
     {
-        // Start the Picking label animation
-        
         TextAnimator.StartAnimation(this, LobbyStatusText, sequence, 0.5f);
         yield return null;
     }

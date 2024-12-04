@@ -15,4 +15,6 @@ MonoBehaviour:
   id: 1
   displayName: Meow-Knight
   icon: {fileID: -5217297360446286561, guid: 438aa99344aa76541914fd2c42e5cab1, type: 3}
+  pressedIcon: {fileID: 4471931460141063720, guid: f443d0a3e9e1a604b8f285dea72b857f, type: 3}
+  disabledIcon: {fileID: 6076263517188138283, guid: f091d866e31b5174aacf821dd4738223, type: 3}
   gameplayPrefab: {fileID: 1881418066040155737, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}

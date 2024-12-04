@@ -26,7 +26,24 @@ public class CharacterSelectButton : MonoBehaviour
     public void SetDisabled()
     {
         IsDisabled = true;
+        iconImage.sprite = Character.DisabledIcon; 
         disabledOverlay.SetActive(true);
         button.interactable = false;
+    }
+
+    public void SetPressed()
+    {
+        if (!IsDisabled)
+        {
+            iconImage.sprite = Character.PressedIcon;
+        }
+    }
+
+    public void ResetToNormal()
+    {
+        if (!IsDisabled)
+        {
+            iconImage.sprite = Character.Icon; // Reset to normal icon
+        }
     }
 }

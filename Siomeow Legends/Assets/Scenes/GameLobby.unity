@@ -763,7 +763,6 @@ MonoBehaviour:
   characterInfoPanel: {fileID: 775341578}
   characterNameText: {fileID: 1159189728}
   joinCodeText: {fileID: 391151478}
-  lockInButton: {fileID: 846489752}
   StartGameButton: {fileID: 846489752}
   LobbyStatusText: {fileID: 1041095833}
   hostDisconnectedPanel: {fileID: 34313904}
@@ -1659,7 +1658,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1669,10 +1668,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: -6400055531046112167, guid: 54150ebabefd56c4bb1981410b4ae95c, type: 3}
+    m_PressedSprite: {fileID: -6400055531046112167, guid: 54150ebabefd56c4bb1981410b4ae95c, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: -6400055531046112167, guid: 54150ebabefd56c4bb1981410b4ae95c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
