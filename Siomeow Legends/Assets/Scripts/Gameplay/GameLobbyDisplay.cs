@@ -104,6 +104,7 @@ public class GameLobbyDisplay : NetworkBehaviour
             if (players[i].ClientId == clientId)
             {
                 players.RemoveAt(i);
+                playerCards[i].ClearPlayerCard();
                 break;
             }
         }
