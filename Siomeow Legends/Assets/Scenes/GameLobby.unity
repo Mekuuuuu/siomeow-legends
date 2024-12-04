@@ -765,7 +765,7 @@ MonoBehaviour:
   joinCodeText: {fileID: 391151478}
   lockInButton: {fileID: 846489752}
   StartGameButton: {fileID: 846489752}
-  waitingForHostText: {fileID: 1041095833}
+  LobbyStatusText: {fileID: 1041095833}
   hostDisconnectedPanel: {fileID: 34313904}
   mainMenuScene: MainMenu
 --- !u!1 &288729529
@@ -1841,12 +1841,12 @@ GameObject:
   - component: {fileID: 1041095834}
   - component: {fileID: 1041095833}
   m_Layer: 5
-  m_Name: WaitingForHostText
+  m_Name: LobbyStatusText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1041095832
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1886,7 +1886,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: waiting for host...
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b0dc77626e14d9046a1c1bbc30c3beb3, type: 2}
   m_sharedMaterial: {fileID: 8944127969684354443, guid: b0dc77626e14d9046a1c1bbc30c3beb3, type: 2}
@@ -1920,7 +1920,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0

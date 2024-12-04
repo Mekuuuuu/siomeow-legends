@@ -124,7 +124,7 @@ public class PlayerCard : MonoBehaviour
     private IEnumerator AnimatePickingLabel()
     {
         // Start the Picking label animation
-        List<string> pickingSequence = new List<string> { "Picking.", "Picking..", "Picking..." };
+        List<string> pickingSequence = new List<string> { "Picking", "Picking.", "Picking..", "Picking..." };
         TextAnimator.StartAnimation(this, pickingLabel, pickingSequence, 0.5f);
         yield return null;
     }

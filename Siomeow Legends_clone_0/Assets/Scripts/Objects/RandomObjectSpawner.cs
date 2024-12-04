@@ -8,6 +8,7 @@ public class RandomSpawner : MonoBehaviour
     [SerializeField] private float height = 2f;
     [SerializeField] private float MinSpawnDistance = 1.0f;
     [SerializeField] private Vector2 spawnCenter = Vector2.zero;
+    [SerializeField] private float InitialSpawnDelay = 0f; 
 
     public GameObject[] ItemPrefabs;
     public LayerMask[] ObstacleLayer;
@@ -23,7 +24,7 @@ public class RandomSpawner : MonoBehaviour
     {
         // Pre-generate valid positions
         GenerateValidPositions();
-        InvokeRepeating("SpawnObjectsAtRandom", 0, SpawnInterval);
+        InvokeRepeating("SpawnObjectsAtRandom", InitialSpawnDelay, SpawnInterval);
     }
 
     void GenerateValidPositions()
