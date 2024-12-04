@@ -16,6 +16,7 @@ public class GameLobbyDisplay : NetworkBehaviour
     [SerializeField] private TMP_Text joinCodeText;
     [SerializeField] private Button lockInButton;
     [SerializeField] private Button StartGameButton;
+    [SerializeField] private TMP_Text waitingForHostText;
     [SerializeField] private GameObject hostDisconnectedPanel;
     [SerializeField] private string mainMenuScene;
 
@@ -28,6 +29,7 @@ public class GameLobbyDisplay : NetworkBehaviour
     private void Awake()
     {
         players = new NetworkList<GameLobbyState>();
+        StartGameButton.interactable = false;
     }
 
     public override void OnNetworkSpawn()
@@ -93,6 +95,7 @@ public class GameLobbyDisplay : NetworkBehaviour
         players.Add(new GameLobbyState(clientId));
         SetJoinCode();
         Debug.Log(players);
+        Debug.Log("IsAllLockedIn: " + isAllLockedIn);
     }
 
     private void HandleClientDisconnected(ulong clientId)
@@ -243,6 +246,7 @@ public class GameLobbyDisplay : NetworkBehaviour
             break;
         }
 
+        isAllLockedIn = true;
         foreach(var player in players)
         {
             if (!player.IsLockedIn)
@@ -250,16 +254,12 @@ public class GameLobbyDisplay : NetworkBehaviour
                 isAllLockedIn = false;
                 break;
             }
-            isAllLockedIn = true;
+            
         }
-
-        if (isAllLockedIn)
+        if (IsHost)
         {
-            if (IsHost)
-            {
-                Debug.Log("Start Game Button Enabled");
-                StartGameButton.interactable = true;
-            }
+            StartGameButton.interactable = isAllLockedIn && players.Count > 1;
+            Debug.Log($"Start Game Button {(isAllLockedIn ? "Enabled" : "Disabled")}");
         }
         
     }

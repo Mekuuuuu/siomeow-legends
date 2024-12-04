@@ -765,6 +765,7 @@ MonoBehaviour:
   joinCodeText: {fileID: 391151478}
   lockInButton: {fileID: 846489752}
   StartGameButton: {fileID: 846489752}
+  waitingForHostText: {fileID: 1041095833}
   hostDisconnectedPanel: {fileID: 34313904}
   mainMenuScene: MainMenu
 --- !u!1 &288729529
@@ -1840,7 +1841,7 @@ GameObject:
   - component: {fileID: 1041095834}
   - component: {fileID: 1041095833}
   m_Layer: 5
-  m_Name: WaitingForHost
+  m_Name: WaitingForHostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1863,7 +1864,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 744.6, y: -477}
-  m_SizeDelta: {x: 258.1873, y: 50}
+  m_SizeDelta: {x: 258.18726, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1041095833
 MonoBehaviour:
@@ -1919,8 +1920,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
-  m_VerticalAlignment: 1024
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
