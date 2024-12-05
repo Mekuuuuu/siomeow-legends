@@ -110,6 +110,8 @@ GameObject:
   - component: {fileID: 3413527204744286041}
   - component: {fileID: 5322255758822225267}
   - component: {fileID: 3532214881748182148}
+  - component: {fileID: 8338445217744937238}
+  - component: {fileID: 8840867897090895413}
   - component: {fileID: 1564697607859244220}
   - component: {fileID: 5883339794914132220}
   - component: {fileID: 5885401106176682228}
@@ -222,7 +224,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!61 &3413527204744286041
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -309,6 +311,33 @@ MonoBehaviour:
   isDashing: 0
   dashingCooldown: 10
   tr: {fileID: 7207095745860624397}
+--- !u!114 &8338445217744937238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673091178698441929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c93109caf2b3846817c825c3c0bc6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3607
+  defense: 400
+--- !u!114 &8840867897090895413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673091178698441929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bce8fc5f0f6293340b6d167154a1c5f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 5322255758822225267}
 --- !u!114 &1564697607859244220
 MonoBehaviour:
   m_ObjectHideFlags: 0
