@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6941585621187706419}
   - component: {fileID: 7698916963531259112}
   - component: {fileID: 9158242255363826745}
-  - component: {fileID: 432733078839692473}
+  - component: {fileID: -6207801035691957848}
   m_Layer: 0
   m_Name: Meow-Wizard
   m_TagString: Player
@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef2e077747e90e458a599c00ce5c397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
   anim: {fileID: 7401254700737444048}
   tr: {fileID: 9158242255363826745}
 --- !u!114 &8415630832233122419
@@ -217,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 875607287
+  GlobalObjectIdHash: 3001382797
   InScenePlacedSourceGlobalObjectIdHash: 3001382797
   DeferredDespawnTick: 0
   Ownership: 1
@@ -397,7 +398,7 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &432733078839692473
+--- !u!114 &-6207801035691957848
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -406,7 +407,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5765650432412494740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aa138de5cb1c8f4e9ba38f830ccfcac, type: 3}
+  m_Script: {fileID: 11500000, guid: 2805d55c958c9124398d81f820854dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup: 0

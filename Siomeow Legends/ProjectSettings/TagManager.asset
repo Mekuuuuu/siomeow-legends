@@ -50,6 +50,9 @@ TagManager:
   - name: WalkBehind
     uniqueID: 3699894533
     locked: 0
+  - name: Item
+    uniqueID: 3774107817
+    locked: 0
   - name: Collision
     uniqueID: 3137562525
     locked: 0

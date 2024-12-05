@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3000586483877179073}
   - component: {fileID: 344041444161806259}
   - component: {fileID: 7757030828849547683}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: WaterAnimated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1975,7 +1975,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -37081,7 +37081,7 @@ GameObject:
   - component: {fileID: 5193014640825635694}
   - component: {fileID: 6195796258687068330}
   - component: {fileID: 1816599590026702872}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: High Flowers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37132,7 +37132,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -3, y: -17, z: 0}
+  - first: {x: -3, y: -16, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 17
@@ -38045,7 +38045,7 @@ GameObject:
   - component: {fileID: 9150721334364995092}
   - component: {fileID: 574183937461503520}
   - component: {fileID: 3308030552687488693}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Treeroot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38311,7 +38311,7 @@ GameObject:
   - component: {fileID: 4709198708899091461}
   - component: {fileID: 1630599483388925962}
   - component: {fileID: 5793721875428790764}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barrier Trees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53641,7 +53641,7 @@ GameObject:
   - component: {fileID: 4052284158133501043}
   - component: {fileID: 8254194473830993910}
   - component: {fileID: 8324899113015222085}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rocks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54805,7 +54805,7 @@ GameObject:
   - component: {fileID: 1145210551956325756}
   - component: {fileID: 4963624590577274348}
   - component: {fileID: 7807064768432911833}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Low Flowers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54876,16 +54876,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -3, y: -16, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 18
-      m_TileSpriteIndex: 18
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -23, y: -15, z: 0}
     second:
       serializedVersion: 2
@@ -54901,6 +54891,16 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 14
       m_TileSpriteIndex: 14
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -3, y: -15, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 18
+      m_TileSpriteIndex: 18
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -55888,7 +55888,7 @@ GameObject:
   - component: {fileID: 8246807709999170356}
   - component: {fileID: 3211382968453084339}
   - component: {fileID: 8550462708197202117}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58361,7 +58361,7 @@ GameObject:
   - component: {fileID: 2583587226771180076}
   - component: {fileID: 3379760995959917488}
   - component: {fileID: 7184079748451722119}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Treeleaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
