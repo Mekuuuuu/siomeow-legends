@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: d3181fe066411bb43b975624161d73dc
+guid: bb8a489ce74663e47b516caf76450503
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -728488644960612398
-    second: HealthPotion_0
+      213: -1362058913294850930
+    second: Crate_0
+  - first:
+      213: 7915073754930829435
+    second: Crate_1
+  - first:
+      213: -7623127877837247841
+    second: Crate_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HealthPotion_0
+      name: Crate_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 14
-        height: 14
+        x: 18
+        y: 84
+        width: 42
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2df8736ef63e3e5f0800000000000000
-      internalID: -728488644960612398
+      spriteID: e84e7e582aef81de0800000000000000
+      internalID: -1362058913294850930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crate_1
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 84
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b785bade4adf7dd60800000000000000
+      internalID: 7915073754930829435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crate_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 20
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9a222c8595353690800000000000000
+      internalID: -7623127877837247841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crate_3
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 20
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed5559d0abaccf4d9c6f9ce05d818c9
+      internalID: 637332115
       vertices: []
       indices: 
       edges: []
@@ -125,7 +197,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 22257bb2179a6b84eae4b57fc68eb209
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +207,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      HealthPotion_0: -728488644960612398
+      Crate_0: -1362058913294850930
+      Crate_1: 7915073754930829435
+      Crate_2: -7623127877837247841
+      Crate_3: 637332115
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

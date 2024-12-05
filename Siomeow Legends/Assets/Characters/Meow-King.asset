@@ -15,4 +15,6 @@ MonoBehaviour:
   id: 3
   displayName: Meow-King
   icon: {fileID: 2100246829016467080, guid: 05327fdd17d491f409f61c95420787d1, type: 3}
+  pressedIcon: {fileID: -7467369233178689594, guid: 5495dba5902998244941ac86c9f7edd8, type: 3}
+  disabledIcon: {fileID: 5060251865446696485, guid: 373241ec833c3c14c8da9598e0761924, type: 3}
   gameplayPrefab: {fileID: 5885401106176682228, guid: 974b9f5fc2c7cbd469206b46eacea8e5, type: 3}

@@ -3,8 +3,8 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     // PLAYER STATS
-    [SerializeField] private int health = 3607;
-    [SerializeField] private int defense = 400;
+    [SerializeField] public int health = 3607;
+    [SerializeField] public int defense = 400;
     // [SerializeField] private int mana = 0;
 
     // STAT LIMITS

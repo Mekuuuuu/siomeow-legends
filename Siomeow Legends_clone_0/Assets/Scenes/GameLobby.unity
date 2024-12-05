@@ -763,8 +763,8 @@ MonoBehaviour:
   characterInfoPanel: {fileID: 775341578}
   characterNameText: {fileID: 1159189728}
   joinCodeText: {fileID: 391151478}
-  lockInButton: {fileID: 846489752}
   StartGameButton: {fileID: 846489752}
+  LobbyStatusText: {fileID: 1041095833}
   hostDisconnectedPanel: {fileID: 34313904}
   mainMenuScene: MainMenu
 --- !u!1 &288729529
@@ -1658,7 +1658,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1668,10 +1668,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: -6400055531046112167, guid: 54150ebabefd56c4bb1981410b4ae95c, type: 3}
+    m_PressedSprite: {fileID: -6400055531046112167, guid: 54150ebabefd56c4bb1981410b4ae95c, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: -6400055531046112167, guid: 54150ebabefd56c4bb1981410b4ae95c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1840,12 +1840,12 @@ GameObject:
   - component: {fileID: 1041095834}
   - component: {fileID: 1041095833}
   m_Layer: 5
-  m_Name: WaitingForHost
+  m_Name: LobbyStatusText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1041095832
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1863,7 +1863,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 744.6, y: -477}
-  m_SizeDelta: {x: 258.1873, y: 50}
+  m_SizeDelta: {x: 258.18726, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1041095833
 MonoBehaviour:
@@ -1885,7 +1885,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: waiting for host...
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b0dc77626e14d9046a1c1bbc30c3beb3, type: 2}
   m_sharedMaterial: {fileID: 8944127969684354443, guid: b0dc77626e14d9046a1c1bbc30c3beb3, type: 2}
@@ -1919,8 +1919,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
-  m_VerticalAlignment: 1024
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

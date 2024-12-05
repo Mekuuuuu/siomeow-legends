@@ -12,14 +12,15 @@ public class PickupItem : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerMovement player = other.GetComponent<PlayerMovement>();
+            PlayerStats playerStats = other.GetComponent<PlayerStats>();
             if (player == null)
             {
                 Debug.LogWarning("PlayerMovement component not found on the player.");
                 return;
             }
             PowerUpsHandler powerUpsHandler = player.GetComponent<PowerUpsHandler>();
-            powerUpsHandler.Initialize(player);
-            powerUpsHandler.ApplyPowerUp(type, 15f, 5f);
+            powerUpsHandler.Initialize(player, playerStats);
+            powerUpsHandler.ApplyPowerUp(type);
 
             Destroy(gameObject);
         }

@@ -86,6 +86,22 @@ public class PlayerCard : MonoBehaviour
         gameLobbyDisplay.LockIn();
     }
 
+    public void ClearPlayerCard()
+    {
+        meowKnightIcon.SetActive(false);
+        meowKnightLockedInIcon.SetActive(false);
+        meowWizardIcon.SetActive(false);
+        meowWizardLockedInIcon.SetActive(false);
+        meowKingIcon.SetActive(false);
+        meowKingLockedInIcon.SetActive(false);
+        meowRogueIcon.SetActive(false);
+        meowRogueLockedInIcon.SetActive(false);
+        
+        playerLockedInBackground.SetActive(false);
+        
+        playerBackground.SetActive(true);
+    }
+
     private void ClearUnselected(GameLobbyState state)
     {
         meowKnightIcon.SetActive(state.CharacterId == 1);
@@ -124,7 +140,7 @@ public class PlayerCard : MonoBehaviour
     private IEnumerator AnimatePickingLabel()
     {
         // Start the Picking label animation
-        List<string> pickingSequence = new List<string> { "Picking.", "Picking..", "Picking..." };
+        List<string> pickingSequence = new List<string> { "Picking", "Picking.", "Picking..", "Picking..." };
         TextAnimator.StartAnimation(this, pickingLabel, pickingSequence, 0.5f);
         yield return null;
     }

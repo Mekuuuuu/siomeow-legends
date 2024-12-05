@@ -4,6 +4,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameLobbyDisplay : NetworkBehaviour
 {
@@ -14,8 +15,9 @@ public class GameLobbyDisplay : NetworkBehaviour
     [SerializeField] private GameObject characterInfoPanel; // REMOVE THIS SINCE WE WILL NOT USE IT. ctrl+f for instances of this.
     [SerializeField] private TMP_Text characterNameText; // REMOVE THIS SINCE WE WILL NOT USE IT. ctrl+f for instances of this.
     [SerializeField] private TMP_Text joinCodeText;
-    [SerializeField] private Button lockInButton;
+    // [SerializeField] private Button lockInButton;
     [SerializeField] private Button StartGameButton;
+    [SerializeField] private TMP_Text LobbyStatusText;
     [SerializeField] private GameObject hostDisconnectedPanel;
     [SerializeField] private string mainMenuScene;
 
@@ -28,6 +30,7 @@ public class GameLobbyDisplay : NetworkBehaviour
     private void Awake()
     {
         players = new NetworkList<GameLobbyState>();
+        StartGameButton.interactable = false;
     }
 
     public override void OnNetworkSpawn()
@@ -91,8 +94,7 @@ public class GameLobbyDisplay : NetworkBehaviour
     private void HandleClientConnected(ulong clientId)
     {
         players.Add(new GameLobbyState(clientId));
-        SetJoinCode();
-        Debug.Log(players);
+        SetJoinCodeClientRpc(joinCode);
     }
 
     private void HandleClientDisconnected(ulong clientId)
@@ -102,6 +104,7 @@ public class GameLobbyDisplay : NetworkBehaviour
             if (players[i].ClientId == clientId)
             {
                 players.RemoveAt(i);
+                playerCards[i].ClearPlayerCard();
                 break;
             }
         }
@@ -122,6 +125,11 @@ public class GameLobbyDisplay : NetworkBehaviour
 
         characterNameText.text = character.DisplayName;
         characterInfoPanel.SetActive(true);
+
+        // // Change button icon to pressed icon when the character is selected
+        // var selectedButton = characterButtons.Find(button => button.Character.Id == character.Id);
+        // selectedButton.SetPressed();  // Set the pressed state on the button
+
         SelectServerRpc(character.Id);
 
     }
@@ -145,6 +153,10 @@ public class GameLobbyDisplay : NetworkBehaviour
                 characterId,
                 players[i].IsLockedIn
             );
+
+            // // Handle Character Select Button Pressed to Normal Change
+            // var selectedButton = characterButtons.Find(button => button.Character.Id == characterId);
+            // selectedButton.ResetToNormal();
         }
     }
 
@@ -214,35 +226,44 @@ public class GameLobbyDisplay : NetworkBehaviour
 
         foreach(var button in characterButtons)
         {
-            if (button.IsDisabled) { continue; }
+            // if (button.IsDisabled) { continue; }
 
             if (IsCharacterTaken(button.Character.Id, false)) 
             { 
                 button.SetDisabled();
             }
+            else
+            {
+                // If the character is not taken, check if the button is disabled
+                if (button.IsDisabled)
+                {
+                    button.ForceResetToNormal(); // Re-enable the button if the character is available
+                }
+            }
 
         }
 
-        foreach(var player in players)
-        {
-            if (player.ClientId != NetworkManager.Singleton.LocalClientId) { continue; }
+        // foreach(var player in players)
+        // {
+        //     if (player.ClientId != NetworkManager.Singleton.LocalClientId) { continue; }
 
-            if (player.IsLockedIn)
-            {
-                lockInButton.interactable = false;
-                break;
-            }
+        //     if (player.IsLockedIn)
+        //     {
+        //         lockInButton.interactable = false;
+        //         break;
+        //     }
 
-            if (IsCharacterTaken(player.CharacterId, false))
-            {
-                lockInButton.interactable = false;
-                break;
-            }
+        //     if (IsCharacterTaken(player.CharacterId, false))
+        //     {
+        //         lockInButton.interactable = false;
+        //         break;
+        //     }
 
-            lockInButton.interactable = true;
-            break;
-        }
+        //     lockInButton.interactable = true;
+        //     break;
+        // }
 
+        isAllLockedIn = true;
         foreach(var player in players)
         {
             if (!player.IsLockedIn)
@@ -250,17 +271,15 @@ public class GameLobbyDisplay : NetworkBehaviour
                 isAllLockedIn = false;
                 break;
             }
-            isAllLockedIn = true;
+            
+        }
+        if (IsHost)
+        {
+            StartGameButton.interactable = isAllLockedIn && players.Count > 1;
+            Debug.Log($"Start Game Button {(isAllLockedIn ? "Enabled" : "Disabled")}");
         }
 
-        if (isAllLockedIn)
-        {
-            if (IsHost)
-            {
-                Debug.Log("Start Game Button Enabled");
-                StartGameButton.interactable = true;
-            }
-        }
+        UpdateLobbyStatusClientRpc(isAllLockedIn);
         
     }
 
@@ -285,18 +304,35 @@ public class GameLobbyDisplay : NetworkBehaviour
 
     public void StartGame()
     {
+        StopAllCoroutines();
         HostManager.Instance.StartGame();
-    }
-
-    private void SetJoinCode()
-    {
-        SetJoinCodeClientRpc(joinCode);
     }
 
     [ClientRpc]
     private void SetJoinCodeClientRpc(string joinCode)
     {
         joinCodeText.text = joinCode;
+    }
+
+    [ClientRpc]
+    private void UpdateLobbyStatusClientRpc(bool isAllLockedIn)
+    {
+        if (IsHost) return; // Skip for the host
+
+        LobbyStatusText.text = "Waiting for host...";
+        LobbyStatusText.gameObject.SetActive(true);
+
+        List<string> sequence = isAllLockedIn 
+        ? new List<string> { "Waiting for host", "Waiting for host.", "Waiting for host..", "Waiting for host..." } 
+        : new List<string> { "Players picking", "Players picking.", "Players picking..", "Players picking..." };
+
+        StartCoroutine(AnimateLobbyStatusText(sequence));
+    }
+
+    private IEnumerator AnimateLobbyStatusText(List<string> sequence)
+    {
+        TextAnimator.StartAnimation(this, LobbyStatusText, sequence, 0.5f);
+        yield return null;
     }
 
     public void LeaveLobby()
