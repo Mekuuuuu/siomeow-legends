@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2620469531004693773}
   - component: {fileID: 381206293727571791}
+  - component: {fileID: 7860310171042216242}
   m_Layer: 0
   m_Name: ItemSpawner
   m_TagString: Untagged
@@ -44,10 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d53c2773c4fc8848beb618471441e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 22
-  height: 15
+  width: 23
+  height: 20
   MinSpawnDistance: 1
-  spawnCenter: {x: 0, y: 0}
+  InitialSpawnDelay: 0
+  spawnCenter: {x: -18, y: 1.5}
   ItemPrefabs:
   - {fileID: 3497488610825323754, guid: a5e6ab133f20c824ba1dcf3d7c815315, type: 3}
   - {fileID: 5638637193193802672, guid: 5ac6f3b48df52ce409caeab79700daf5, type: 3}
@@ -57,6 +59,31 @@ MonoBehaviour:
     m_Bits: 128
   - serializedVersion: 2
     m_Bits: 16
-  MaxObjects: 20
+  MaxObjects: 10
   SpawnInterval: 10
   ObjectsPerSpawn: 1
+--- !u!114 &7860310171042216242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2816651023271173216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3447370402
+  InScenePlacedSourceGlobalObjectIdHash: 238982316
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
