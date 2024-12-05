@@ -10,7 +10,7 @@ public class PlayerAttack : MonoBehaviour
     private float attackTimer = 0f;
 
     private bool isSpecialAttacking = false;
-    private float specialAttackDuration = 0.65f;
+    private float specialAttackDuration = 1.0f;
     private float specialAttackCooldown = 5f;
     private float specialAttackTimer = 0f;
 
