@@ -124,12 +124,12 @@ TextureImporter:
       name: Meow-Knight_RunRight_0
       rect:
         serializedVersion: 2
-        x: 40
+        x: 0
         y: 264
-        width: 16
-        height: 17
+        width: 96
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -146,12 +146,12 @@ TextureImporter:
       name: Meow-Knight_RunRight_2
       rect:
         serializedVersion: 2
-        x: 40
-        y: 233
-        width: 16
-        height: 16
+        x: 0
+        y: 200
+        width: 96
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: Meow-Knight_RunRight_3
       rect:
         serializedVersion: 2
-        x: 40
-        y: 201
-        width: 16
-        height: 16
+        x: 0
+        y: 168
+        width: 96
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -190,12 +190,12 @@ TextureImporter:
       name: Meow-Knight_RunRight_4
       rect:
         serializedVersion: 2
-        x: 40
-        y: 166
-        width: 16
-        height: 19
+        x: 0
+        y: 136
+        width: 96
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -212,12 +212,12 @@ TextureImporter:
       name: Meow-Knight_RunRight_6
       rect:
         serializedVersion: 2
-        x: 40
-        y: 135
-        width: 16
-        height: 18
+        x: 0
+        y: 72
+        width: 96
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -231,67 +231,67 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meow-Knight_RunRight_8
+      name: Meow-Knight_RunRight_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 105
-        width: 16
-        height: 16
+        x: 0
+        y: 232
+        width: 96
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8055f781ff839b84385775981e48bf5f
-      internalID: -1999638935
+      spriteID: 832e71cb38daa404c9ebb25ec71257a3
+      internalID: 142489836763942572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meow-Knight_RunRight_9
+      name: Meow-Knight_RunRight_5
       rect:
         serializedVersion: 2
-        x: 40
-        y: 73
-        width: 16
-        height: 16
+        x: 0
+        y: 104
+        width: 96
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b345365f4fa712640afaa8c4a3d2c38e
-      internalID: -1723326759
+      spriteID: b3d6850d8d63c4546a28555e4dfc338d
+      internalID: -2671956263931228817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meow-Knight_RunRight_10
+      name: Meow-Knight_RunRight_7
       rect:
         serializedVersion: 2
-        x: 39
+        x: 0
         y: 40
-        width: 17
-        height: 17
+        width: 96
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b85c672888655346a280cc54129a3ed
-      internalID: 1126597631
+      spriteID: a7bfe66a812ba91459111ee4ee0d55f4
+      internalID: 3305214444467565727
       vertices: []
       indices: 
       edges: []
@@ -312,16 +312,12 @@ TextureImporter:
     nameFileIdTable:
       Meow-Knight_RunRight_0: 6952844108847272362
       Meow-Knight_RunRight_1: 142489836763942572
-      Meow-Knight_RunRight_10: 1126597631
-      Meow-Knight_RunRight_11: 197391485
       Meow-Knight_RunRight_2: -9103471364646907896
       Meow-Knight_RunRight_3: -1197828274974195522
       Meow-Knight_RunRight_4: -7267154842703113173
       Meow-Knight_RunRight_5: -2671956263931228817
       Meow-Knight_RunRight_6: 6749620596140080524
       Meow-Knight_RunRight_7: 3305214444467565727
-      Meow-Knight_RunRight_8: -1999638935
-      Meow-Knight_RunRight_9: -1723326759
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
