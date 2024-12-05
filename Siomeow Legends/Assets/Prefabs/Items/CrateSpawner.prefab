@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 829411460944803250}
   - component: {fileID: 6597954325518659162}
+  - component: {fileID: 1518967991169997679}
   m_Layer: 0
   m_Name: CrateSpawner
   m_TagString: Untagged
@@ -47,8 +48,8 @@ MonoBehaviour:
   width: 23
   height: 20
   MinSpawnDistance: 1
-  spawnCenter: {x: -18, y: 1.5}
   InitialSpawnDelay: 2
+  spawnCenter: {x: -18, y: 1.5}
   ItemPrefabs:
   - {fileID: 1835547865163386838, guid: ae8c3e84a3cbef14ab0fa5b4d4b1fe2b, type: 3}
   ObstacleLayer:
@@ -59,3 +60,28 @@ MonoBehaviour:
   MaxObjects: 3
   SpawnInterval: 6
   ObjectsPerSpawn: 1
+--- !u!114 &1518967991169997679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281245771705051328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3902320854
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0

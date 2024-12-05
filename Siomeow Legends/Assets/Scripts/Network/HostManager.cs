@@ -19,6 +19,11 @@ public class HostManager : MonoBehaviour
     [SerializeField] private int maxConnections = 4;
     [SerializeField] private string characterSelectScene = "GameLobby";
     [SerializeField] private string gameplaySceneName = "Gameplay";
+    [SerializeField] private string basicDungeonScene = "BasicDungeon";
+    [SerializeField] private string forestMapScene = "ForestMap";
+
+    [SerializeField] private string lavaMapScene = "LavaMap";
+
 
     public static HostManager Instance { get; private set; }
 
@@ -113,6 +118,7 @@ public class HostManager : MonoBehaviour
                 if (ip.AddressFamily == AddressFamily.InterNetwork)
                 {
                     JoinCode = ip.ToString();
+                    break;
                 }
             }
             if (JoinCode == null)
@@ -193,7 +199,27 @@ public class HostManager : MonoBehaviour
     {
         gameHasStarted = true;
 
-        NetworkManager.Singleton.SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
+        System.Random random = new System.Random();
+        int randomNumber = random.Next(1, 4); // Generates a number between 1 (inclusive) and 4 (exclusive)
+
+        switch (randomNumber)
+        {
+            case 1:
+            NetworkManager.Singleton.SceneManager.LoadScene(basicDungeonScene, LoadSceneMode.Single);
+            break;
+
+            case 2:
+            NetworkManager.Singleton.SceneManager.LoadScene(forestMapScene, LoadSceneMode.Single);
+            break;
+
+            case 3:
+            NetworkManager.Singleton.SceneManager.LoadScene(lavaMapScene, LoadSceneMode.Single);
+            break;
+        }
+
+        // NetworkManager.Singleton.SceneManager.LoadScene(lavaMapScene, LoadSceneMode.Single);
+
+        // NetworkManager.Singleton.SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
     }
 
     /**********************************************************************
