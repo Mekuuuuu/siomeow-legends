@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f03ea98fd4d7e9d4a8ec5407b72b98c5, type: 3}
+  m_Name: Meow-Wizard
+  m_EditorClassIdentifier: 
+  id: 2
+  displayName: Meow-Wizard
+  icon: {fileID: -2535798567994982835, guid: 19ec29f6e444b824f8f1b57dd6ec9c09, type: 3}
+  pressedIcon: {fileID: 4421442801202688406, guid: 85933c449f03d004b8f0a082158401e7, type: 3}
+  disabledIcon: {fileID: -4517460941202148507, guid: 1de4d1f87ee669c4fb56ac8b220a384b, type: 3}
+  gameplayPrefab: {fileID: 8415630832233122419, guid: 8b18576f0c251ed419b229c2ddf2eb19, type: 3}

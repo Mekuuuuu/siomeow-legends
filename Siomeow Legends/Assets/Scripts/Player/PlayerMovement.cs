@@ -11,11 +11,13 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
     private bool moving;
 
-    private bool canDash = true;
-    private bool isDashing; 
+    public bool canDash = true;
+    public bool isDashing; 
+    public float dashingCooldown = 10f;
     private float dashingPower = 10f;
     private float dashingTime = 0.2f;
-    private float dashingCooldown = 1f;
+    private float lastDashTime = -Mathf.Infinity; 
+
     [SerializeField] private TrailRenderer tr;
 
     private void Awake() 
@@ -43,10 +45,17 @@ public class PlayerMovement : MonoBehaviour
         // Set the Rigidbody2D velocity
         body.linearVelocity = velocity;
 
+        // Allow dash after 10 seconds
+        if (Time.time - lastDashTime >= dashingCooldown && !canDash)
+        {
+            canDash = true;  
+        }
+        
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash) 
         {
             StartCoroutine(Dash());
         }
+        
 
         Flip(inputDirection.x);
     }
@@ -86,14 +95,14 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator Dash()
     {
+        if (!canDash) yield break; 
         canDash = false;
         isDashing = true;
+        lastDashTime = Time.time; 
         body.linearVelocity = new Vector2(transform.localScale.x * dashingPower, 0f);
         tr.emitting = true;
         yield return new WaitForSeconds(dashingTime);
         tr.emitting = false;
         isDashing = false;
-        yield return new WaitForSeconds(dashingCooldown);
-        canDash = true;
     }
 }

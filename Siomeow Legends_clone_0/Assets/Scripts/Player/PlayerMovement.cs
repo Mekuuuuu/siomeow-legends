@@ -1,47 +1,108 @@
 using UnityEngine;
-using Unity.Netcode;
+using System.Collections;
 
-public class PlayerMovement : NetworkBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float speed = 5f;
+    private Rigidbody2D body;
 
-    public Rigidbody2D rb;
+    public Animator anim;
 
-    public Animator animator;
+    private bool isFacingRight = true;
+    private bool moving;
 
-    Vector2 movement;
+    public bool canDash = true;
+    public bool isDashing; 
+    public float dashingCooldown = 10f;
+    private float dashingPower = 10f;
+    private float dashingTime = 0.2f;
+    private float lastDashTime = -Mathf.Infinity; 
 
-    public override void OnNetworkSpawn()
+    [SerializeField] private TrailRenderer tr;
+
+    private void Awake() 
     {
-        if (!IsOwner)
+        body = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+
+        if(isDashing)
         {
-            enabled = false;
             return;
         }
+
+        // Get input axis values
+        Vector2 inputDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        // Normalize the direction and apply speed
+        Vector2 velocity = inputDirection.normalized * speed;
+
+        // Animate running 
+        Animate(inputDirection);
+
+        // Set the Rigidbody2D velocity
+        body.linearVelocity = velocity;
+
+        // Allow dash after 10 seconds
+        if (Time.time - lastDashTime >= dashingCooldown && !canDash)
+        {
+            canDash = true;  
+        }
+        
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash) 
+        {
+            StartCoroutine(Dash());
+        }
+        
+
+        Flip(inputDirection.x);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Animate(Vector2 input)
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        // Normalize the movement vector to prevent faster diagonal movement
-        if (movement.sqrMagnitude > 1)
+        if(input.magnitude > 0.1f || input.magnitude < -0.1f)
         {
-            movement.Normalize();
+            moving = true;
+        }
+        else
+        {
+            moving = false;
         }
 
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-
-        animator.SetFloat("Speed", movement.sqrMagnitude);
 
 
+        if(moving)
+        {
+            anim.SetFloat("Horizontal", input.x);
+            anim.SetFloat("Vertical", input.y);
+        }
+
+        anim.SetBool("Moving", moving);
     }
 
-    void FixedUpdate()
+    private void Flip(float inputX)
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if (isFacingRight && inputX < 0f || !isFacingRight && inputX > 0f)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
+    }
+
+    private IEnumerator Dash()
+    {
+        if (!canDash) yield break; 
+        canDash = false;
+        isDashing = true;
+        lastDashTime = Time.time; 
+        body.linearVelocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashingTime);
+        tr.emitting = false;
+        isDashing = false;
     }
 }

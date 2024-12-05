@@ -1,0 +1,383 @@
+fileFormatVersion: 2
+guid: cc1135483c46568439ae2ec8743ae389
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8681415662089628523
+    second: MEOWTAR_THE_BLUE_Attack_2_0
+  - first:
+      213: -8881908697170178260
+    second: MEOWTAR_THE_BLUE_Attack_2_1
+  - first:
+      213: 339524834154211050
+    second: MEOWTAR_THE_BLUE_Attack_2_2
+  - first:
+      213: 5526719151851643102
+    second: MEOWTAR_THE_BLUE_Attack_2_3
+  - first:
+      213: 153112363352731862
+    second: MEOWTAR_THE_BLUE_Attack_2_4
+  - first:
+      213: 4103963861442103117
+    second: MEOWTAR_THE_BLUE_Attack_2_5
+  - first:
+      213: -9054577291919178578
+    second: MEOWTAR_THE_BLUE_Attack_2_6
+  - first:
+      213: 968495617020102470
+    second: MEOWTAR_THE_BLUE_Attack_2_7
+  - first:
+      213: -7556439343887946733
+    second: MEOWTAR_THE_BLUE_Attack_2_8
+  - first:
+      213: -8515842494639484892
+    second: MEOWTAR_THE_BLUE_Attack_2_9
+  - first:
+      213: -1911029583122961704
+    second: MEOWTAR_THE_BLUE_Attack_2_10
+  - first:
+      213: -5318151010907995202
+    second: MEOWTAR_THE_BLUE_Attack_2_11
+  - first:
+      213: -8733945273109542523
+    second: MEOWTAR_THE_BLUE_Attack_2_12
+  - first:
+      213: 4922099680905831709
+    second: MEOWTAR_THE_BLUE_Attack_2_13
+  - first:
+      213: 3187942169636807499
+    second: MEOWTAR_THE_BLUE_Attack_2_14
+  - first:
+      213: -6309010130299688621
+    second: MEOWTAR_THE_BLUE_Attack_2_15
+  - first:
+      213: -7206826423683370983
+    second: MEOWTAR_THE_BLUE_Attack_2_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Attack_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 383
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59492a1937a658780800000000000000
+      internalID: -8681415662089628523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Attack_2_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 325
+        width: 15
+        height: 38
+      alignment: 9
+      pivot: {x: 0.53333336, y: 0.2236842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae66f2ca90c36b400800000000000000
+      internalID: 339524834154211050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Attack_2_4
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 267
+        width: 20
+        height: 41
+      alignment: 9
+      pivot: {x: 0.55, y: 0.20731707}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d03c5c12e6ff1200800000000000000
+      internalID: 153112363352731862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Attack_2_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 209
+        width: 22
+        height: 38
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.2236842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d470c44636534f830800000000000000
+      internalID: 4103963861442103117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Attack_2_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 167
+        width: 24
+        height: 32
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0.265625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6478103e1a9c07d00800000000000000
+      internalID: 968495617020102470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Attack_2_8
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 125
+        width: 51
+        height: 29
+      alignment: 9
+      pivot: {x: 0.25490198, y: 0.29310346}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31ce5c4d372222790800000000000000
+      internalID: -7556439343887946733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Attack_2_10
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 83
+        width: 64
+        height: 21
+      alignment: 9
+      pivot: {x: 0.28125, y: 0.4047619}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8da61be18b8aa75e0800000000000000
+      internalID: -1911029583122961704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Attack_2_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 41
+        width: 55
+        height: 22
+      alignment: 9
+      pivot: {x: 0.11818182, y: 0.38636363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5898a9c6c0bcac680800000000000000
+      internalID: -8733945273109542523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MEOWTAR_THE_BLUE_Attack_2_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 58
+        height: 23
+      alignment: 9
+      pivot: {x: 0.13793103, y: 0.36956522}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91034721d853cfb90800000000000000
+      internalID: -7206826423683370983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d0f048d8ff223e44e9556d6c60b149e3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      MEOWTAR_THE_BLUE_Attack_2_0: -8681415662089628523
+      MEOWTAR_THE_BLUE_Attack_2_1: -8881908697170178260
+      MEOWTAR_THE_BLUE_Attack_2_10: -1911029583122961704
+      MEOWTAR_THE_BLUE_Attack_2_11: -5318151010907995202
+      MEOWTAR_THE_BLUE_Attack_2_12: -8733945273109542523
+      MEOWTAR_THE_BLUE_Attack_2_13: 4922099680905831709
+      MEOWTAR_THE_BLUE_Attack_2_14: 3187942169636807499
+      MEOWTAR_THE_BLUE_Attack_2_15: -6309010130299688621
+      MEOWTAR_THE_BLUE_Attack_2_16: -7206826423683370983
+      MEOWTAR_THE_BLUE_Attack_2_2: 339524834154211050
+      MEOWTAR_THE_BLUE_Attack_2_3: 5526719151851643102
+      MEOWTAR_THE_BLUE_Attack_2_4: 153112363352731862
+      MEOWTAR_THE_BLUE_Attack_2_5: 4103963861442103117
+      MEOWTAR_THE_BLUE_Attack_2_6: -9054577291919178578
+      MEOWTAR_THE_BLUE_Attack_2_7: 968495617020102470
+      MEOWTAR_THE_BLUE_Attack_2_8: -7556439343887946733
+      MEOWTAR_THE_BLUE_Attack_2_9: -8515842494639484892
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

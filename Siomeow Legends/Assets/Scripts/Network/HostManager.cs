@@ -132,6 +132,12 @@ public class HostManager : MonoBehaviour
         NetworkManager.Singleton.StartHost();
     }
 
+    public void StopHost()
+    {
+        NetworkManager.Singleton.Shutdown();
+        // NetworkManager.Singleton.ConnectionApprovalCallback -= ApprovalCheck;
+    }
+
     // need to ping the service regularly so that it wont be erased by Lobby service
     private IEnumerator HeartbeatLobbyCoroutine(float waitTimeSeconds)
     {

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f03ea98fd4d7e9d4a8ec5407b72b98c5, type: 3}
+  m_Name: Meow-Rogue
+  m_EditorClassIdentifier: 
+  id: 4
+  displayName: Meow-Rogue
+  icon: {fileID: 5600408120948443098, guid: 48a748cecbbc27a48ab32b721a8fdcea, type: 3}
+  pressedIcon: {fileID: -5087874017358296362, guid: f385bcf10e09d0e4e8a23d7d2176da4d, type: 3}
+  disabledIcon: {fileID: -5618735638206684373, guid: f313796c55dd79047bb0e161d541267d, type: 3}
+  gameplayPrefab: {fileID: 222015634292500350, guid: 42dacb3144650c342a7914db54d18309, type: 3}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f03ea98fd4d7e9d4a8ec5407b72b98c5, type: 3}
+  m_Name: Meow-Knight
+  m_EditorClassIdentifier: 
+  id: 1
+  displayName: Meow-Knight
+  icon: {fileID: -5217297360446286561, guid: 438aa99344aa76541914fd2c42e5cab1, type: 3}
+  pressedIcon: {fileID: 4471931460141063720, guid: f443d0a3e9e1a604b8f285dea72b857f, type: 3}
+  disabledIcon: {fileID: 6076263517188138283, guid: f091d866e31b5174aacf821dd4738223, type: 3}
+  gameplayPrefab: {fileID: 1881418066040155737, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
