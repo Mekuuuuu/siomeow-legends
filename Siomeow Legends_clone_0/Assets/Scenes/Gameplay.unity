@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 98531220}
   - component: {fileID: 98531219}
   - component: {fileID: 98531222}
+  - component: {fileID: 98531223}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -181,7 +182,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -206,7 +207,7 @@ Transform:
   m_GameObject: {fileID: 98531218}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -3.9586535, y: -0.3645299, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -256,6 +257,40 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &98531223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98531218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &403757272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -307,6 +342,10 @@ PrefabInstance:
     - target: {fileID: 5765650432412494740, guid: 8b18576f0c251ed419b229c2ddf2eb19, type: 3}
       propertyPath: m_Name
       value: Meow-Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765650432412494740, guid: 8b18576f0c251ed419b229c2ddf2eb19, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8415630832233122419, guid: 8b18576f0c251ed419b229c2ddf2eb19, type: 3}
       propertyPath: GlobalObjectIdHash
@@ -4404,9 +4443,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3060598134705864522, guid: 974b9f5fc2c7cbd469206b46eacea8e5, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1600961354}
+    - target: {fileID: 3060598134705864522, guid: 974b9f5fc2c7cbd469206b46eacea8e5, type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 1600961354}
     - target: {fileID: 5673091178698441929, guid: 974b9f5fc2c7cbd469206b46eacea8e5, type: 3}
       propertyPath: m_Name
       value: Meow-King
+      objectReference: {fileID: 0}
+    - target: {fileID: 5673091178698441929, guid: 974b9f5fc2c7cbd469206b46eacea8e5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5885401106176682228, guid: 974b9f5fc2c7cbd469206b46eacea8e5, type: 3}
       propertyPath: GlobalObjectIdHash
@@ -4465,6 +4516,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 974b9f5fc2c7cbd469206b46eacea8e5, type: 3}
+--- !u!4 &1600961354 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8929144616903746312, guid: 974b9f5fc2c7cbd469206b46eacea8e5, type: 3}
+  m_PrefabInstance: {fileID: 1600961353}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2115825170
 GameObject:
   m_ObjectHideFlags: 0

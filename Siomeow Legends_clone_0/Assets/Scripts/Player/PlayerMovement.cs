@@ -1,7 +1,10 @@
 using UnityEngine;
 using System.Collections;
+using Unity.Netcode;
+using Cinemachine;
+using System.Net.Sockets;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
     public float speed = 5f;
     private Rigidbody2D body;
@@ -19,8 +22,19 @@ public class PlayerMovement : MonoBehaviour
     private float lastDashTime = -Mathf.Infinity; 
 
     [SerializeField] private TrailRenderer tr;
+    [SerializeField] private CinemachineVirtualCamera vc;
 
-    private void Awake() 
+    public override void OnNetworkSpawn()
+    {
+        if (IsOwner)
+        {
+            vc.Priority = 1;
+        } else
+        {
+            vc.Priority = 0;
+        }
+    }
+    private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
     }
