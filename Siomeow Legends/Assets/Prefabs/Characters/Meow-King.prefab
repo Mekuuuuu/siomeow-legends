@@ -79,10 +79,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.2, y: 0.75}
-      - {x: 1.2, y: 0.75}
-      - {x: 1.75, y: -0.5}
-      - {x: -1.7, y: -0.5}
+    - - {x: -0.3, y: 0.65}
+      - {x: 1.5, y: 0.75}
+      - {x: 1.5, y: -0.75}
+      - {x: -0.3, y: -0.65}
   m_UseDelaunayMesh: 0
 --- !u!114 &4332270691247189244
 MonoBehaviour:
@@ -222,7 +222,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!61 &3413527204744286041
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -305,6 +305,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   anim: {fileID: 5322255758822225267}
+  canDash: 1
+  isDashing: 0
+  dashingCooldown: 10
   tr: {fileID: 7207095745860624397}
 --- !u!114 &1564697607859244220
 MonoBehaviour:
@@ -537,7 +540,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2805d55c958c9124398d81f820854dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup: 0
 --- !u!1 &7688641129871426777
 GameObject:
   m_ObjectHideFlags: 0
