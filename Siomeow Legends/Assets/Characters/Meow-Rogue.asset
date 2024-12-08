@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   displayName: Meow-Rogue
+  portrait: {fileID: -2635998885222467207, guid: 9258e8a186c420341ac344fa8e5cd39d, type: 3}
   icon: {fileID: 5600408120948443098, guid: 48a748cecbbc27a48ab32b721a8fdcea, type: 3}
   pressedIcon: {fileID: -5087874017358296362, guid: f385bcf10e09d0e4e8a23d7d2176da4d, type: 3}
   disabledIcon: {fileID: -5618735638206684373, guid: f313796c55dd79047bb0e161d541267d, type: 3}
