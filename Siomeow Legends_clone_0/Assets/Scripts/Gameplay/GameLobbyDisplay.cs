@@ -93,7 +93,8 @@ public class GameLobbyDisplay : NetworkBehaviour
 
     private void HandleClientConnected(ulong clientId)
     {
-        players.Add(new GameLobbyState(clientId));
+        string playerName = HostManager.Instance.ClientData[clientId].playerName;
+        players.Add(new GameLobbyState(clientId, playerName));
         SetJoinCodeClientRpc(joinCode);
     }
 
@@ -150,6 +151,7 @@ public class GameLobbyDisplay : NetworkBehaviour
 
             players[i] = new GameLobbyState(
                 players[i].ClientId,
+                "miko",
                 characterId,
                 players[i].IsLockedIn
             );
@@ -181,6 +183,7 @@ public class GameLobbyDisplay : NetworkBehaviour
 
             players[i] = new GameLobbyState(
                 players[i].ClientId,
+                "miko",
                 players[i].CharacterId,
                 true
             );

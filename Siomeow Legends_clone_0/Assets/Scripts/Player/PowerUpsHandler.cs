@@ -18,7 +18,7 @@ public class PowerUpsHandler : MonoBehaviour
         switch (type)
         {
             case PickupItem.PowerUp.Berserk:
-                Debug.LogWarning("Berserk not yet implemented!");
+                StartCoroutine(ApplyBerserk());
                 break;
 
             case PickupItem.PowerUp.Movement:
@@ -41,6 +41,21 @@ public class PowerUpsHandler : MonoBehaviour
                 Debug.LogWarning("Power-up type not recognized!");
                 break;
         }
+    }
+    
+    private IEnumerator ApplyBerserk()
+    {
+        float originalMultiplier = 1f;
+        float boostMultiplier = 1.5f;
+        float duration = 10f;
+
+        playerStats.damageMultiplier = boostMultiplier;
+        Debug.Log($"Berserk activated! Increased damage by {playerStats.damageMultiplier}!");
+
+        yield return new WaitForSeconds(duration);
+
+        playerStats.damageMultiplier = originalMultiplier;
+        Debug.Log($"Berserk ended. Damage reverted to {playerStats.damageMultiplier}.");
     }
 
     private IEnumerator ApplySpeedBoost()

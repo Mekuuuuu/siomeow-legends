@@ -353,6 +353,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &554252238 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1219201815948283075, guid: a663018e83fb1a5429c1e0f67cdfddc4, type: 3}
+  m_PrefabInstance: {fileID: 8299172509159225902}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &608992686 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5909418493523181545, guid: 8fc9eb01488faae4ea48ca947a2bb62d, type: 3}
@@ -940,6 +951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7bbc8452290aa4288932454ecc2701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameInputField: {fileID: 554252238}
 --- !u!114 &1484362083 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8836187537902836921, guid: 527f3026dff92f540aa5878b384df4b6, type: 3}
@@ -1040,6 +1052,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1122838048107099518, guid: 5bb04c8d32563c64c90b83e23b506720, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122838048107099518, guid: 5bb04c8d32563c64c90b83e23b506720, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122838048107099518, guid: 5bb04c8d32563c64c90b83e23b506720, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122838048107099518, guid: 5bb04c8d32563c64c90b83e23b506720, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2627569173011161796, guid: 5bb04c8d32563c64c90b83e23b506720, type: 3}
       propertyPath: m_Name
       value: LANMenu
@@ -1082,6 +1110,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4174135903318545697, guid: 5bb04c8d32563c64c90b83e23b506720, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436435238952786359, guid: 5bb04c8d32563c64c90b83e23b506720, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436435238952786359, guid: 5bb04c8d32563c64c90b83e23b506720, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436435238952786359, guid: 5bb04c8d32563c64c90b83e23b506720, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436435238952786359, guid: 5bb04c8d32563c64c90b83e23b506720, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1202,6 +1246,10 @@ PrefabInstance:
       propertyPath: SettingsMenu
       value: 
       objectReference: {fileID: 1722975459}
+    - target: {fileID: 4591241422722067663, guid: acd22bfd4a4f48e4baee2b2c245fe49e, type: 3}
+      propertyPath: nameInputField
+      value: 
+      objectReference: {fileID: 554252238}
     - target: {fileID: 4591241422722067663, guid: acd22bfd4a4f48e4baee2b2c245fe49e, type: 3}
       propertyPath: MultiplayerMenu
       value: 

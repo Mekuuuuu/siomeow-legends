@@ -156,6 +156,10 @@ public class HostManager : MonoBehaviour
     }
     private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
     {
+        Debug.Log($"Approval request received from Client ID: {request.ClientNetworkId}");
+        Debug.Log($"Payload length: {request.Payload.Length}");
+        Debug.Log($"Raw payload: {BitConverter.ToString(request.Payload)}");
+
         // reject if room is full or game has started 
         if (ClientData.Count >= 4 || gameHasStarted)
         {
@@ -166,8 +170,30 @@ public class HostManager : MonoBehaviour
         response.CreatePlayerObject = false; // dont want to automatically happen. want to manually spawnm
         response.Pending = false;
 
-        ClientData[request.ClientNetworkId] = new ClientData(request.ClientNetworkId);
-        Debug.Log($"Added client {request.ClientNetworkId}");
+        string playerName;
+        if (request.ClientNetworkId == 0) // Host
+        {
+            playerName = NetworkSelector.Instance.PlayerName ?? "Host";
+            Debug.Log($"Host connected. Setting player name: {playerName}");
+        }
+        else // Clients
+        {
+            Debug.Log($"Payload received on host: {BitConverter.ToString(request.Payload)}");
+            // Parse player name from the connection payload.
+            playerName = System.Text.Encoding.UTF8.GetString(request.Payload);
+            Debug.Log($"Here is player name: {playerName}");
+        }
+        
+        ClientData[request.ClientNetworkId] = new ClientData(request.ClientNetworkId, playerName);
+        Debug.Log("Current clients:");
+        foreach (var client in ClientData)
+        {
+            ulong clientId = client.Key;
+            ClientData data = client.Value;
+
+            Debug.Log($"Client ID: {clientId}, Player Name: {data.playerName}");
+        }
+
     }
 
     private void OnNetworkReady()
