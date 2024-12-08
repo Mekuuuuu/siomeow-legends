@@ -5,20 +5,26 @@ public class PlayerStats : MonoBehaviour
     // PLAYER STATS
     [SerializeField] public int health = 3607;
     [SerializeField] public int defense = 400;
-    // [SerializeField] private int mana = 0;
+    [SerializeField] public int killCount = 0;  // Add kill count to the player
+
+    // To track the last player who caused damage
+    private PlayerStats lastAttacker;
 
     // STAT LIMITS
     private const int MAX_HEALTH = 3607;
     private const int MAX_DEFENSE = 400;
-    private const int DAMAGE_REDUCTION = 50; 
+    private const int DAMAGE_REDUCTION = 50;
 
     // Applies damage to the player, accounting for defense.
-    public void TakeDamage(int rawDamage)
+    public void TakeDamage(int rawDamage, PlayerStats attacker)
     {
         if (rawDamage < 0)
         {
             throw new System.ArgumentOutOfRangeException("Cannot take negative damage.");
         }
+
+        // Record the last attacker
+        lastAttacker = attacker;
 
         // Check if defense is greater than or equal to 5
         if (this.defense >= DAMAGE_REDUCTION)
@@ -36,7 +42,6 @@ public class PlayerStats : MonoBehaviour
         {
             // If defense is less than 5, apply full damage
             this.health -= rawDamage;
-
         }
 
         if (this.health <= 0)
@@ -66,6 +71,19 @@ public class PlayerStats : MonoBehaviour
 
     private void Die()
     {
+        // When the player dies, increment the kill count of the last attacker
+        if (lastAttacker != null)
+        {
+            lastAttacker.IncrementKillCount();
+        }
+
+        // Destroy the player object after death
         Destroy(gameObject);
+    }
+
+    public void IncrementKillCount()
+    {
+        killCount++;
+        Debug.Log($"{gameObject.name}'s Kill Count: {killCount}");
     }
 }
