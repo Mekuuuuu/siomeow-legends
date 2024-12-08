@@ -6,8 +6,8 @@ public class PlayerAttackRanged : MonoBehaviour
     public GameObject bullet; 
     public float fireForce = 10f;
     private bool isAttacking = false;
-    float shootCooldown = 0.15f;
-    float shootTimer = 0.3f;
+    float shootCooldown = 0.25f;
+    float shootTimer = 0.5f;
 
     private GameObject specialAttackArea = default;
     private bool isSpecialAttacking = false;
@@ -31,7 +31,7 @@ public class PlayerAttackRanged : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shootTimer += Time.deltaTime;
+        CheckShootingTimer();
 
         // Update facing direction based on input (replace with your movement logic)
         if (Input.GetKey(KeyCode.A)) // Moving left
@@ -51,27 +51,44 @@ public class PlayerAttackRanged : MonoBehaviour
 
     void OnShoot()
     {
-        if(shootTimer >  shootCooldown)
+        if(!isAttacking)
         {
-            shootTimer = 0;
+            // Instantiate bullet
             GameObject intBullet = Instantiate(bullet, Aim.position, Aim.rotation);
+
+            // Adjust bullet's shooting direction based on where the character is facing 
             Vector2 shootingDirection = Aim.right * facingDirection;
             intBullet.GetComponent<Rigidbody2D>().AddForce(shootingDirection * fireForce, ForceMode2D.Impulse);
 
             // Adjust bullet's rotation to face the correct direction
-            if (facingDirection < 0) // Player is facing left
+            if (facingDirection < 0) 
             {
                 intBullet.transform.rotation = Quaternion.Euler(0f, 180f, 0f); // Flip horizontally
             }
-            else // Player is facing right
+            else 
             {
                 intBullet.transform.rotation = Quaternion.Euler(0f, 0f, 0f); // Default rotation
             }
 
             isAttacking = true;
-            Animate();
+            anim.SetBool("Attack", isAttacking); 
 
             Destroy(intBullet, 2f);
+        }
+    }
+
+    private void CheckShootingTimer()
+    {
+        if (isAttacking)
+        {
+            shootTimer += Time.deltaTime;
+
+            if (shootTimer >=  shootCooldown)
+            {
+                shootTimer = 0;
+                isAttacking = false;
+                anim.SetBool("Attack", isAttacking); 
+            }
         }
     }
 
@@ -112,13 +129,5 @@ public class PlayerAttackRanged : MonoBehaviour
         }
     }
     */
-
-    private void Animate()
-    {
-        if(isAttacking)
-        {
-            anim.SetBool("Attack", isAttacking); 
-        }
-    }
     
 }
