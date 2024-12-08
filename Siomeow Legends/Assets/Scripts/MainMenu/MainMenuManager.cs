@@ -28,7 +28,6 @@ public class MainMenuManager : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject); // Optional: Persist across scenes
 
         HomeScreen.SetActive(true);
         StartPopUp.SetActive(false);
