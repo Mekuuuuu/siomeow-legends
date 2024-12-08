@@ -42,6 +42,7 @@ public class MainMenuManager : MonoBehaviour
         if (string.IsNullOrWhiteSpace(nameInputField.text))
         {
             Debug.Log("Invalid Name");
+            StartCoroutine(FlashInvalidInput());
         }
         else
         {
@@ -58,6 +59,7 @@ public class MainMenuManager : MonoBehaviour
         if (string.IsNullOrWhiteSpace(nameInputField.text))
         {
             Debug.Log("Invalid Name");
+            StartCoroutine(FlashInvalidInput());
         }
         else
         {
@@ -72,5 +74,24 @@ public class MainMenuManager : MonoBehaviour
     public void CloseGame()
     {
         Application.Quit();
+    }
+
+    private IEnumerator FlashInvalidInput()
+    {
+        // Save the original color of the placeholder text
+        Color originalColor = nameInputField.placeholder.color;
+        string originalPlaceholderText = nameInputField.placeholder.GetComponent<TMP_Text>().text;
+
+        // Change the placeholder text to "Invalid Name" and set color to red
+        TMP_Text placeholderText = nameInputField.placeholder.GetComponent<TMP_Text>();
+        placeholderText.text = "Invalid Name";
+        placeholderText.color = Color.red;
+
+        // Wait for 1 second
+        yield return new WaitForSeconds(1f);
+
+        // Revert the placeholder text and color back to original
+        placeholderText.text = originalPlaceholderText;
+        placeholderText.color = originalColor;
     }
 }
