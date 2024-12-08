@@ -6,69 +6,60 @@ using UnityEngine;
 public class GameCountdown : MonoBehaviour
 {
     [SerializeField] private TMP_Text countdownText;
-    [SerializeField] private float remainingTime;
+    [SerializeField] private float blinkThreshold = 30f; // Time threshold for blink (in seconds)
+    [SerializeField] private Color blinkColor = Color.red; // Color for blink warning
+    [SerializeField] private Color defaultColor = Color.white; // Default color for the text
 
-    private float minutes;
-    private float seconds;
+    private float lastBlinkTime = 0f; // Timer for blink effect
+    private bool isBlinking = false; // To toggle the blinking effect
 
-    private Color defaultColor;
-    private Color warningColor;
-    
-    private float blinkInterval;
-    private bool isBlinking = false;
-
-     public event Action OnCountdownFinished; // Event to notify when the countdown finishes
-
-    void Start()
+    public void UpdateCountdownUI(float time)
     {
-        defaultColor = countdownText.color;
-        warningColor = Color.red;
-        blinkInterval = 0.5f;
-    }
+        int minutes = Mathf.FloorToInt(time / 60);
+        int seconds = Mathf.FloorToInt(time % 60);
+        countdownText.text = $"{minutes}:{seconds:00}";
 
-
-
-    void Update()
-    {
-        if (remainingTime > 0)
+        // If the time reaches the blink threshold, start blinking
+        if (time <= blinkThreshold)
         {
-            remainingTime -= Time.deltaTime;
-
-            minutes = Mathf.FloorToInt(remainingTime / 60);
-            seconds = Mathf.FloorToInt(remainingTime % 60);
-            countdownText.text = string.Format("{0}:{1:00}", minutes, seconds);
-
-            if (remainingTime <= 30 && !isBlinking)
-            {
-                StartCoroutine(BlinkWarning());
-            }
+            HandleBlinking(time);
         }
         else
         {
-            remainingTime = 0;
-            countdownText.text = "0:00";
-
-            if (OnCountdownFinished != null)
-            {
-                OnCountdownFinished.Invoke(); // Notify listeners the countdown is finished
-                Debug.Log("Countdown Finished");
-            }
-
-            enabled = false; // Disable further updates
+            // Reset to default color if time exceeds threshold
+            ResetBlinking();
         }
     }
 
-    private IEnumerator BlinkWarning()
+    private void HandleBlinking(float time)
     {
-        isBlinking = true;
-
-        while (remainingTime > 0 && remainingTime <= 30)
+        if (!isBlinking)
         {
-            countdownText.color = countdownText.color == defaultColor ? warningColor : defaultColor;
-            yield return new WaitForSeconds(blinkInterval);
+            isBlinking = true;
+            lastBlinkTime = Time.time; // Start blinking
         }
 
-        countdownText.color = defaultColor;
-        isBlinking = false;
+        // Toggle blink effect every half second
+        if (Time.time - lastBlinkTime >= 0.5f)
+        {
+            lastBlinkTime = Time.time;
+
+            // Toggle the color of the text (blink effect)
+            countdownText.color = countdownText.color == blinkColor ? defaultColor : blinkColor;
+        }
+    }
+
+    private void ResetBlinking()
+    {
+        if (isBlinking)
+        {
+            isBlinking = false;
+            countdownText.color = defaultColor; // Ensure the text is in default color when no longer blinking
+        }
+    }
+
+    public void OnCountdownFinished()
+    {
+        // countdownText.text = "Time's up!";
     }
 }

@@ -1,37 +1,50 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
-    [SerializeField] private GameCountdown gameCountdown; // Reference to the GameCountdown script
+    [SerializeField] private GameCountdown countdown;
+    [SerializeField] private float remainingTime = 60f;
 
-    void Start()
+    public override void OnNetworkSpawn()
     {
-        // Subscribe to the OnCountdownFinished event
-        if (gameCountdown != null)
+        if (IsServer)
         {
-            gameCountdown.OnCountdownFinished += HandleCountdownFinished;
+            StartCountdown();
         }
     }
 
-    private void HandleCountdownFinished()
+    private void StartCountdown()
     {
-        // Logic to handle when the countdown reaches zero
-        Debug.Log("Countdown finished! Handle game over or next steps here.");
-        EndGame();
-    }
-
-    private void EndGame()
-    {
-        // Example end game logic
-        Debug.Log("Game Over!");
-    }
-
-    private void OnDestroy()
-    {
-        // Unsubscribe to avoid memory leaks
-        if (gameCountdown != null)
+        if (IsServer)
         {
-            gameCountdown.OnCountdownFinished -= HandleCountdownFinished;
+            InvokeRepeating(nameof(UpdateCountdown), 0f, 1f); // Update countdown every second
         }
+    }
+
+    private void UpdateCountdown()
+    {
+        if (remainingTime > 0)
+        {
+            remainingTime -= 1f;
+            UpdateCountdownClientRpc(remainingTime);
+        }
+        else
+        {
+            CancelInvoke(nameof(UpdateCountdown));
+            OnCountdownFinished();
+        }
+    }
+
+    [ClientRpc]
+    private void UpdateCountdownClientRpc(float time)
+    {
+        countdown.UpdateCountdownUI(time); // Update the UI on all clients
+    }
+
+    private void OnCountdownFinished()
+    {
+        countdown.OnCountdownFinished(); // Notify the countdown has finished
+        Debug.Log("Countdown finished! Transitioning to next phase.");
     }
 }

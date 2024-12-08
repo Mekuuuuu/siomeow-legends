@@ -464,6 +464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1183529266}
+  - component: {fileID: 1183529267}
   - component: {fileID: 1183529265}
   - component: {fileID: 1183529264}
   m_Layer: 0
@@ -486,7 +487,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 1432615013}
-  remainingTime: 10
+  blinkThreshold: 30
+  blinkColor: {r: 1, g: 0, b: 0, a: 1}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1183529265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,7 +502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5a728c53947c746b7bc5809a0caed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameCountdown: {fileID: 1183529264}
+  ShowTopMostFoldoutHeaderGroup: 1
+  countdown: {fileID: 1183529264}
 --- !u!4 &1183529266
 Transform:
   m_ObjectHideFlags: 0
@@ -515,6 +519,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1183529267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183529263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 221210688
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!1 &1213897730
 GameObject:
   m_ObjectHideFlags: 0

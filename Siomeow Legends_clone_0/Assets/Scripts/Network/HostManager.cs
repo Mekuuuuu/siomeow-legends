@@ -20,7 +20,7 @@ public class HostManager : MonoBehaviour
     [SerializeField] private string characterSelectScene = "GameLobby";
     [SerializeField] private string basicDungeonScene = "BasicDungeon";
     [SerializeField] private string forestMapScene = "ForestMap";
-
+    [SerializeField] private string gameplayScene = "Gameplay";
     [SerializeField] private string lavaMapScene = "LavaMap";
 
 
@@ -222,23 +222,25 @@ public class HostManager : MonoBehaviour
     {
         gameHasStarted = true;
 
-        System.Random random = new System.Random();
-        int randomNumber = random.Next(1, 4); // Generates a number between 1 (inclusive) and 4 (exclusive)
+        // System.Random random = new System.Random();
+        // int randomNumber = random.Next(1, 4); // Generates a number between 1 (inclusive) and 4 (exclusive)
 
-        switch (randomNumber)
-        {
-            case 1:
-            NetworkManager.Singleton.SceneManager.LoadScene(basicDungeonScene, LoadSceneMode.Single);
-            break;
+        // switch (randomNumber)
+        // {
+        //     case 1:
+        //     NetworkManager.Singleton.SceneManager.LoadScene(basicDungeonScene, LoadSceneMode.Single);
+        //     break;
 
-            case 2:
-            NetworkManager.Singleton.SceneManager.LoadScene(forestMapScene, LoadSceneMode.Single);
-            break;
+        //     case 2:
+        //     NetworkManager.Singleton.SceneManager.LoadScene(forestMapScene, LoadSceneMode.Single);
+        //     break;
 
-            case 3:
-            NetworkManager.Singleton.SceneManager.LoadScene(lavaMapScene, LoadSceneMode.Single);
-            break;
-        }
+        //     case 3:
+        //     NetworkManager.Singleton.SceneManager.LoadScene(lavaMapScene, LoadSceneMode.Single);
+        //     break;
+        // }
+
+        NetworkManager.Singleton.SceneManager.LoadScene(gameplayScene, LoadSceneMode.Single);
     }
 
     /**********************************************************************
