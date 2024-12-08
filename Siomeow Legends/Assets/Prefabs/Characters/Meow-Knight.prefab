@@ -279,7 +279,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1585959523
   m_SortingLayer: 6
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7600892937158987816, guid: 765768fe7139b5f4b8340a87c20e1069, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -429,9 +429,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c93109caf2b3846817c825c3c0bc6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2423
+  health: 5000
   defense: 400
-  damageMultiplier: 1.5
+  damageMultiplier: 1
+  anim: {fileID: 3165092791418124409}
 --- !u!114 &1881418066040155737
 MonoBehaviour:
   m_ObjectHideFlags: 0

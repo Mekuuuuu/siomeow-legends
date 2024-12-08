@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2382115497757905514}
   - component: {fileID: 222015634292500350}
   - component: {fileID: 6623825739990740400}
+  - component: {fileID: -7561741385060959896}
   - component: {fileID: 4438647150595740491}
   - component: {fileID: 5997404412245588594}
   - component: {fileID: 8109892040201226873}
@@ -234,6 +235,22 @@ MonoBehaviour:
   isDashing: 0
   dashingCooldown: 10
   tr: {fileID: 8109892040201226873}
+--- !u!114 &-7561741385060959896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535507565916046626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c93109caf2b3846817c825c3c0bc6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5000
+  defense: 400
+  damageMultiplier: 1
+  anim: {fileID: 2382115497757905514}
 --- !u!114 &4438647150595740491
 MonoBehaviour:
   m_ObjectHideFlags: 0
