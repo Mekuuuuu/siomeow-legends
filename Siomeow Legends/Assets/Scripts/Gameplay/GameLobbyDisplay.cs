@@ -16,6 +16,8 @@ public class GameLobbyDisplay : NetworkBehaviour
     [SerializeField] private Button StartGameButton;
     [SerializeField] private TMP_Text LobbyStatusText;
     [SerializeField] private GameObject hostDisconnectedPanel;
+    [SerializeField] private GameObject hostConfirmLeavePanel;
+    [SerializeField] private GameObject clientConfirmLeavePanel;
     [SerializeField] private string mainMenuScene;
 
     private List<CharacterSelectButton> characterButtons = new List<CharacterSelectButton>();
@@ -291,19 +293,26 @@ public class GameLobbyDisplay : NetworkBehaviour
         yield return null;
     }
 
+    public void Back()
+    {
+        if (IsHost) hostConfirmLeavePanel.SetActive(true);
+        else clientConfirmLeavePanel.SetActive(true);
+    }
+
     public void LeaveLobby()
     {
         if (IsHost)
         {
             HostManager.Instance.StopHost();
         }
-        if (!IsHost)
+        else
         {
             ClientManager.Instance.StopClient();
         }
         NetworkManager.Singleton.ConnectionApprovalCallback = null;
         ReturnToMainMenu();
     }
+
 
     public void ReturnToMainMenu()
     {
