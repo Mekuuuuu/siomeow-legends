@@ -61,6 +61,7 @@ public class PlayerCard : MonoBehaviour
 
         if (state.CharacterId != -1)
         {
+            lockInButton.GetComponent<Button>().interactable = true;
             var character = characterDatabase.GetCharacterById(state.CharacterId);
             Debug.Log(character);
 
@@ -68,6 +69,11 @@ public class PlayerCard : MonoBehaviour
             ClearUnselected(state);
            
         }
+        else
+        {
+            lockInButton.GetComponent<Button>().interactable = false;
+        }
+
         // Update player's name and status
         playerNameText.text = state.PlayerName.ToString();
 
