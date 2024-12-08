@@ -94,6 +94,7 @@ public class GameLobbyDisplay : NetworkBehaviour
     private void HandleClientConnected(ulong clientId)
     {
         string playerName = HostManager.Instance.ClientData[clientId].playerName;
+        Debug.Log("Game Lobby Display: Client Connected: " + playerName);
         players.Add(new GameLobbyState(clientId, playerName));
         SetJoinCodeClientRpc(joinCode);
     }
