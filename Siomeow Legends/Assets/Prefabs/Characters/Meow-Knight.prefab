@@ -277,8 +277,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1585959523
+  m_SortingLayer: 6
   m_SortingOrder: 1
   m_Sprite: {fileID: 7600892937158987816, guid: 765768fe7139b5f4b8340a87c20e1069, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -431,6 +431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2423
   defense: 400
+  damageMultiplier: 1.5
 --- !u!114 &1881418066040155737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,7 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 125930858
+  GlobalObjectIdHash: 2483412193
   InScenePlacedSourceGlobalObjectIdHash: 2483412193
   DeferredDespawnTick: 0
   Ownership: 1
