@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -13,6 +15,8 @@ public class PlayerStats : MonoBehaviour
     private const int MAX_HEALTH = 3607;
     private const int MAX_DEFENSE = 400;
     private const int DAMAGE_REDUCTION = 50; 
+
+    public Animator anim;
 
     // Applies damage to the player, accounting for defense.
     public void TakeDamage(int rawDamage)
@@ -43,13 +47,14 @@ public class PlayerStats : MonoBehaviour
 
         }
 
-        
-        Debug.Log(this.health);
-        
+        anim.SetBool("Damage", true); 
+        StartCoroutine(ResetDamageAnimation());
+
         if (this.health <= 0)
         {
-            Die();
+            StartCoroutine(Die());
         }
+
     }
 
     public void Heal(int healValue)
@@ -71,8 +76,16 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    private void Die()
+    private IEnumerator Die()
     {
+        anim.SetBool("Dead", true); 
+        yield return new WaitForSeconds(4f); 
         Destroy(gameObject);
+    }
+    
+    private IEnumerator ResetDamageAnimation()
+    {
+        yield return new WaitForSeconds(0.5f); // Adjust time as per your animation length
+        anim.SetBool("Damage", false);
     }
 }
