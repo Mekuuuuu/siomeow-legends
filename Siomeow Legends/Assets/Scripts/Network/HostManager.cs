@@ -18,7 +18,6 @@ public class HostManager : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private int maxConnections = 4;
     [SerializeField] private string characterSelectScene = "GameLobby";
-    [SerializeField] private string gameplaySceneName = "Gameplay";
     [SerializeField] private string basicDungeonScene = "BasicDungeon";
     [SerializeField] private string forestMapScene = "ForestMap";
 
@@ -28,9 +27,9 @@ public class HostManager : MonoBehaviour
     public static HostManager Instance { get; private set; }
 
     private bool gameHasStarted;
-    private String lobbyId;
+    private string lobbyId;
     public Dictionary<ulong, ClientData> ClientData { get; private set; }
-    public String JoinCode { get; private set; }
+    public string JoinCode { get; private set; }
 
     private void Awake()
     {
@@ -47,7 +46,7 @@ public class HostManager : MonoBehaviour
 
     public async void StartHost()
     {
-        if (!NetworkSelector.Instance.isLAN)
+        if (!MainMenuManager.Instance.isLAN)
         {
             Debug.Log("Multiplayer Process");
 
@@ -141,7 +140,6 @@ public class HostManager : MonoBehaviour
     public void StopHost()
     {
         NetworkManager.Singleton.Shutdown();
-        // NetworkManager.Singleton.ConnectionApprovalCallback -= ApprovalCheck;
     }
 
     // need to ping the service regularly so that it wont be erased by Lobby service
@@ -156,6 +154,10 @@ public class HostManager : MonoBehaviour
     }
     private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
     {
+        Debug.Log($"Approval request received from Client ID: {request.ClientNetworkId}");
+        Debug.Log($"Payload length: {request.Payload.Length}");
+        Debug.Log($"Raw payload: {BitConverter.ToString(request.Payload)}");
+
         // reject if room is full or game has started 
         if (ClientData.Count >= 4 || gameHasStarted)
         {
@@ -166,8 +168,29 @@ public class HostManager : MonoBehaviour
         response.CreatePlayerObject = false; // dont want to automatically happen. want to manually spawnm
         response.Pending = false;
 
-        ClientData[request.ClientNetworkId] = new ClientData(request.ClientNetworkId);
-        Debug.Log($"Added client {request.ClientNetworkId}");
+        string playerName;
+        if (request.ClientNetworkId == 0) // Host
+        {
+            playerName = MainMenuManager.Instance.PlayerName ?? "Host";
+            Debug.Log($"Host connected. Setting player name: {playerName}");
+        }
+        else // Clients
+        {
+            Debug.Log($"Payload received on host: {BitConverter.ToString(request.Payload)}");
+            playerName = System.Text.Encoding.UTF8.GetString(request.Payload);
+            Debug.Log($"Here is player name: {playerName}");
+        }
+        
+        ClientData[request.ClientNetworkId] = new ClientData(request.ClientNetworkId, playerName);
+        Debug.Log("Current clients:");
+        foreach (var client in ClientData)
+        {
+            ulong clientId = client.Key;
+            ClientData data = client.Value;
+
+            Debug.Log($"Client ID: {clientId}, Player Name: {data.playerName}");
+        }
+
     }
 
     private void OnNetworkReady()
@@ -216,10 +239,6 @@ public class HostManager : MonoBehaviour
             NetworkManager.Singleton.SceneManager.LoadScene(lavaMapScene, LoadSceneMode.Single);
             break;
         }
-
-        // NetworkManager.Singleton.SceneManager.LoadScene(lavaMapScene, LoadSceneMode.Single);
-
-        // NetworkManager.Singleton.SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
     }
 
     /**********************************************************************

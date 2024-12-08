@@ -1,25 +1,67 @@
 fileFormatVersion: 2
-guid: 0a0e5ea6e808d4740b0cf806b480230d
+guid: fbdbfd0b01e9c7c4b8970ab6fbe86c9b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1343858928017657871
-    second: Meow-Knight_IdleLeft_0
+      213: 2099055159055310883
+    second: Trap_0
   - first:
-      213: -8787804619049402338
-    second: Meow-Knight_IdleLeft_1
+      213: 3333967470306039257
+    second: Trap_1
   - first:
-      213: -7530772161221681046
-    second: Meow-Knight_IdleLeft_2
+      213: 6168736975187873401
+    second: Trap_2
   - first:
-      213: -3188825215051170469
-    second: Meow-Knight_IdleLeft_3
+      213: 1018633133331934498
+    second: Trap_3
   - first:
-      213: 7155884617715770402
-    second: Meow-Knight_IdleLeft_4
+      213: 6840254211512974232
+    second: Trap_4
   - first:
-      213: 6684352713457111384
-    second: Meow-Knight_IdleLeft_5
+      213: -6925860838805389657
+    second: Trap_5
+  - first:
+      213: 8052341174007337326
+    second: Trap_6
+  - first:
+      213: -8612709743352899840
+    second: Trap_7
+  - first:
+      213: -6401351591424919171
+    second: Trap_8
+  - first:
+      213: -2549942422911305277
+    second: Trap_9
+  - first:
+      213: 1781892945650459933
+    second: Trap_10
+  - first:
+      213: -220625508122475781
+    second: Trap_11
+  - first:
+      213: -4188068305429791607
+    second: Trap_12
+  - first:
+      213: 4297068374954249032
+    second: Trap_13
+  - first:
+      213: -5923962084708097218
+    second: Trap_14
+  - first:
+      213: -4689935406020257574
+    second: Trap_15
+  - first:
+      213: -8514561038716725602
+    second: Trap_16
+  - first:
+      213: 4603866977892939770
+    second: Trap_17
+  - first:
+      213: -4211028236918958343
+    second: Trap_18
+  - first:
+      213: 7014600545875090362
+    second: Trap_19
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,133 +157,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Meow-Knight_IdleLeft_0
+      name: Trap_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 166
-        width: 96
-        height: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f00dab0339856a210800000000000000
-      internalID: 1343858928017657871
+      spriteID: cfd097a0b042aa243909873e7a372cd8
+      internalID: 2099055159055310883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meow-Knight_IdleLeft_1
+      name: Trap_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 134
-        width: 96
-        height: 32
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e10060e32427b0680800000000000000
-      internalID: -8787804619049402338
+      spriteID: 186408b187f09d644b92d453ea6845cb
+      internalID: 3333967470306039257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meow-Knight_IdleLeft_2
+      name: Trap_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 102
-        width: 96
-        height: 32
+        x: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a602bfd7e925d7790800000000000000
-      internalID: -7530772161221681046
+      spriteID: 4d63fd5bcdb4e684b89193101e87868d
+      internalID: 6168736975187873401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meow-Knight_IdleLeft_3
+      name: Trap_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 70
-        width: 96
-        height: 32
+        x: 48
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b5df01eac540fb3d0800000000000000
-      internalID: -3188825215051170469
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meow-Knight_IdleLeft_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 38
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 22461a4752fce4360800000000000000
-      internalID: 7155884617715770402
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Meow-Knight_IdleLeft_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 6
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 851970fa06793cc50800000000000000
-      internalID: 6684352713457111384
+      spriteID: 310fcdbb4890fc542899112e485a0441
+      internalID: 1018633133331934498
       vertices: []
       indices: 
       edges: []
@@ -250,7 +248,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 24ca8bf2c12a7f649ac37cfd28bfc1f9
+    spriteID: 5763f6e216da7f344834d387e0e72477
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +258,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Meow-Knight_IdleLeft_0: 1343858928017657871
-      Meow-Knight_IdleLeft_1: -8787804619049402338
-      Meow-Knight_IdleLeft_2: -7530772161221681046
-      Meow-Knight_IdleLeft_3: -3188825215051170469
-      Meow-Knight_IdleLeft_4: 7155884617715770402
-      Meow-Knight_IdleLeft_5: 6684352713457111384
+      Trap_0: 2099055159055310883
+      Trap_1: 3333967470306039257
+      Trap_2: 6168736975187873401
+      Trap_3: 1018633133331934498
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
