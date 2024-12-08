@@ -46,7 +46,7 @@ public class HostManager : MonoBehaviour
 
     public async void StartHost()
     {
-        if (!NetworkSelector.Instance.isLAN)
+        if (!MainMenuManager.Instance.isLAN)
         {
             Debug.Log("Multiplayer Process");
 
@@ -171,7 +171,7 @@ public class HostManager : MonoBehaviour
         string playerName;
         if (request.ClientNetworkId == 0) // Host
         {
-            playerName = NetworkSelector.Instance.PlayerName ?? "Host";
+            playerName = MainMenuManager.Instance.PlayerName ?? "Host";
             Debug.Log($"Host connected. Setting player name: {playerName}");
         }
         else // Clients

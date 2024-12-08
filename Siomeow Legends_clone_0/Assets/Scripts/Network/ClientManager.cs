@@ -28,7 +28,7 @@ public class ClientManager : MonoBehaviour
 
     public async Task StartClient(string joinCode)
     {
-        if (!NetworkSelector.Instance.isLAN)
+        if (!MainMenuManager.Instance.isLAN)
         {    
             Debug.Log("Multiplayer Process");
 
@@ -74,7 +74,7 @@ public class ClientManager : MonoBehaviour
 
         try
         {
-            string playerName = NetworkSelector.Instance.PlayerName ?? "Player";
+            string playerName = MainMenuManager.Instance.PlayerName ?? "Player";
             byte[] payload = System.Text.Encoding.UTF8.GetBytes(playerName);
             NetworkManager.Singleton.NetworkConfig.ConnectionData = payload;
             Debug.Log("Before: Here is client name (playerName):" + playerName);
