@@ -2,36 +2,35 @@ using UnityEngine;
 
 public class PlayerAttackRanged : MonoBehaviour
 {
+    // Projectile Aim 
     public Transform Aim;
-    public GameObject bullet; 
-    public float fireForce = 10f;
+
+    // Objects that shoot out 
+    public GameObject bullet;
+    public GameObject specialBullet; 
+    public float fireForce = 10f; 
+
+    // Normal Attack
     private bool isAttacking = false;
     float shootCooldown = 0.25f;
     float shootTimer = 0.5f;
 
-    private GameObject specialAttackArea = default;
+    // Special Attack 
     private bool isSpecialAttacking = false;
-    private float specialAttackDuration = 0.65f;
     private float specialAttackCooldown = 5f;
     private float specialAttackTimer = 0f;
+    private float specialAttackDuration = 0.65f;
 
+    // Reference direction for the projectile. Primarily faces right. 
     private int facingDirection = 1; // 1 = right, -1 = left
 
     public Animator anim;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        // Aim = transform.GetChild(0).gameObject; 
-        // specialAttackArea = transform.GetChild(1).gameObject;
-
-        // specialAttackArea.SetActive(isSpecialAttacking);
-    }
 
     // Update is called once per frame
     void Update()
     {
         CheckShootingTimer();
+        CheckSpecialAttackCooldown(); 
 
         // Update facing direction based on input (replace with your movement logic)
         if (Input.GetKey(KeyCode.A)) // Moving left
@@ -43,9 +42,14 @@ public class PlayerAttackRanged : MonoBehaviour
             facingDirection = 1;
         }
 
+        // Shooot
         if (Input.GetKeyDown(KeyCode.J))
         {
             OnShoot();
+        }
+        else if (Input.GetKeyDown(KeyCode.K) && !isSpecialAttacking && specialAttackTimer <= 0)
+        {
+            SpecialAttack();
         }
     }
 
@@ -70,9 +74,11 @@ public class PlayerAttackRanged : MonoBehaviour
                 intBullet.transform.rotation = Quaternion.Euler(0f, 0f, 0f); // Default rotation
             }
 
-            isAttacking = true;
+            // Trigger animations
+            isAttacking = true; 
             anim.SetBool("Attack", isAttacking); 
 
+            // Removes bullet after 2 seconds
             Destroy(intBullet, 2f);
         }
     }
@@ -92,18 +98,36 @@ public class PlayerAttackRanged : MonoBehaviour
         }
     }
 
-    /*
-    private void SpecialAttack()
+        private void SpecialAttack()
     {
-        if (!isSpecialAttacking)
+        if(!isSpecialAttacking)
         {
-            isSpecialAttacking = true;
-            specialAttackArea.SetActive(isSpecialAttacking);
-            // Animate();
+            // Instantiate bullet
+            GameObject intSpecialBullet = Instantiate(specialBullet, Aim.position, Aim.rotation);
+
+            // Adjust bullet's shooting direction based on where the character is facing 
+            Vector2 shootingDirection = Aim.right * facingDirection;
+            intSpecialBullet.GetComponent<Rigidbody2D>().AddForce(shootingDirection * fireForce, ForceMode2D.Impulse);
+
+            // Adjust bullet's rotation to face the correct direction
+            if (facingDirection < 0) 
+            {
+                intSpecialBullet.transform.rotation = Quaternion.Euler(0f, 180f, 0f); // Flip horizontally
+            }
+            else 
+            {
+                intSpecialBullet.transform.rotation = Quaternion.Euler(0f, 0f, 0f); // Default rotation
+            }
+
+            // Trigger animations
+            isSpecialAttacking = true; 
+            anim.SetBool("SpecialAttack", isSpecialAttacking); 
+
+            // Removes bullet after 2 seconds
+            Destroy(intSpecialBullet, 2f);
         }
     }
 
-    
     private void CheckSpecialAttackCooldown()
     {
         if (isSpecialAttacking)
@@ -113,8 +137,7 @@ public class PlayerAttackRanged : MonoBehaviour
             if (specialAttackTimer >= specialAttackDuration)
             {
                 isSpecialAttacking = false;
-                specialAttackArea.SetActive(isSpecialAttacking);
-                anim.SetBool("Special", isSpecialAttacking);
+                anim.SetBool("SpecialAttack", isSpecialAttacking);
             }
         }
 
@@ -128,6 +151,4 @@ public class PlayerAttackRanged : MonoBehaviour
             specialAttackTimer = 0; // Cooldown complete
         }
     }
-    */
-    
 }
