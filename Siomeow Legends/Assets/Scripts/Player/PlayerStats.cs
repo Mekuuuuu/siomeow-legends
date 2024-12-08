@@ -7,7 +7,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] public int defense = 400;
     // [SerializeField] private int mana = 0;
 
-    public float damageMultiplier = 1.5f;
+    public float damageMultiplier = 1f;
 
     // STAT LIMITS
     private const int MAX_HEALTH = 3607;
@@ -18,10 +18,7 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int rawDamage)
     {
         rawDamage = (int)(rawDamage * damageMultiplier);
-        
-        Debug.Log($"X: {damageMultiplier}");
-        // Debug.Log($"Damage Value: {rawDamage}");
-        
+
         if (rawDamage < 0)
         {
             throw new System.ArgumentOutOfRangeException("Cannot take negative damage.");
@@ -46,6 +43,9 @@ public class PlayerStats : MonoBehaviour
 
         }
 
+        
+        Debug.Log(this.health);
+        
         if (this.health <= 0)
         {
             Die();
