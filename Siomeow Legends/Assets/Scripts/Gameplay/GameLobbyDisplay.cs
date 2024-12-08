@@ -12,10 +12,7 @@ public class GameLobbyDisplay : NetworkBehaviour
     [SerializeField] private Transform charactersHolder;
     [SerializeField] private CharacterSelectButton selectButtonPrefab;
     [SerializeField] private PlayerCard[] playerCards;
-    [SerializeField] private GameObject characterInfoPanel; // REMOVE THIS SINCE WE WILL NOT USE IT. ctrl+f for instances of this.
-    [SerializeField] private TMP_Text characterNameText; // REMOVE THIS SINCE WE WILL NOT USE IT. ctrl+f for instances of this.
     [SerializeField] private TMP_Text joinCodeText;
-    // [SerializeField] private Button lockInButton;
     [SerializeField] private Button StartGameButton;
     [SerializeField] private TMP_Text LobbyStatusText;
     [SerializeField] private GameObject hostDisconnectedPanel;
@@ -25,7 +22,6 @@ public class GameLobbyDisplay : NetworkBehaviour
     private NetworkList<GameLobbyState> players;
     private string joinCode;
     private bool isAllLockedIn = false;
-
 
     private void Awake()
     {
@@ -125,15 +121,7 @@ public class GameLobbyDisplay : NetworkBehaviour
             if (IsCharacterTaken(character.Id, false)) { return; }                      // false => client only, true => server-wide
         }
 
-        characterNameText.text = character.DisplayName;
-        characterInfoPanel.SetActive(true);
-
-        // // Change button icon to pressed icon when the character is selected
-        // var selectedButton = characterButtons.Find(button => button.Character.Id == character.Id);
-        // selectedButton.SetPressed();  // Set the pressed state on the button
-
         SelectServerRpc(character.Id);
-
     }
 
     [ServerRpc(RequireOwnership = false)]
@@ -156,10 +144,6 @@ public class GameLobbyDisplay : NetworkBehaviour
                 characterId,
                 players[i].IsLockedIn
             );
-
-            // // Handle Character Select Button Pressed to Normal Change
-            // var selectedButton = characterButtons.Find(button => button.Character.Id == characterId);
-            // selectedButton.ResetToNormal();
         }
     }
 
@@ -200,16 +184,6 @@ public class GameLobbyDisplay : NetworkBehaviour
         {
             HostManager.Instance.SetCharacter(player.ClientId, player.CharacterId);        
         }
-
-        // if (NetworkSelector.Instance.isLAN)
-        // {
-
-        // }
-        // else
-        // {
-            // MIKO REMINDER. ATTACH THIS TO A BUTTON THAT ONLY THE HOST CAN SEE
-            // HostManager.Instance.StartGame();
-        // }
     }
 
     private void HandlePlayersStateChanged(NetworkListEvent<GameLobbyState> changeEvent)
@@ -230,8 +204,6 @@ public class GameLobbyDisplay : NetworkBehaviour
 
         foreach(var button in characterButtons)
         {
-            // if (button.IsDisabled) { continue; }
-
             if (IsCharacterTaken(button.Character.Id, false)) 
             { 
                 button.SetDisabled();
@@ -246,26 +218,6 @@ public class GameLobbyDisplay : NetworkBehaviour
             }
 
         }
-
-        // foreach(var player in players)
-        // {
-        //     if (player.ClientId != NetworkManager.Singleton.LocalClientId) { continue; }
-
-        //     if (player.IsLockedIn)
-        //     {
-        //         lockInButton.interactable = false;
-        //         break;
-        //     }
-
-        //     if (IsCharacterTaken(player.CharacterId, false))
-        //     {
-        //         lockInButton.interactable = false;
-        //         break;
-        //     }
-
-        //     lockInButton.interactable = true;
-        //     break;
-        // }
 
         isAllLockedIn = true;
         foreach(var player in players)
@@ -357,5 +309,4 @@ public class GameLobbyDisplay : NetworkBehaviour
     {
         SceneManager.LoadScene(mainMenuScene);
     }
-
 }
