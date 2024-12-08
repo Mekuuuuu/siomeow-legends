@@ -18,7 +18,6 @@ public class HostManager : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private int maxConnections = 4;
     [SerializeField] private string characterSelectScene = "GameLobby";
-    [SerializeField] private string gameplaySceneName = "Gameplay";
     [SerializeField] private string basicDungeonScene = "BasicDungeon";
     [SerializeField] private string forestMapScene = "ForestMap";
 
@@ -28,9 +27,9 @@ public class HostManager : MonoBehaviour
     public static HostManager Instance { get; private set; }
 
     private bool gameHasStarted;
-    private String lobbyId;
+    private string lobbyId;
     public Dictionary<ulong, ClientData> ClientData { get; private set; }
-    public String JoinCode { get; private set; }
+    public string JoinCode { get; private set; }
 
     private void Awake()
     {
@@ -141,7 +140,6 @@ public class HostManager : MonoBehaviour
     public void StopHost()
     {
         NetworkManager.Singleton.Shutdown();
-        // NetworkManager.Singleton.ConnectionApprovalCallback -= ApprovalCheck;
     }
 
     // need to ping the service regularly so that it wont be erased by Lobby service
@@ -179,7 +177,6 @@ public class HostManager : MonoBehaviour
         else // Clients
         {
             Debug.Log($"Payload received on host: {BitConverter.ToString(request.Payload)}");
-            // Parse player name from the connection payload.
             playerName = System.Text.Encoding.UTF8.GetString(request.Payload);
             Debug.Log($"Here is player name: {playerName}");
         }
@@ -242,10 +239,6 @@ public class HostManager : MonoBehaviour
             NetworkManager.Singleton.SceneManager.LoadScene(lavaMapScene, LoadSceneMode.Single);
             break;
         }
-
-        // NetworkManager.Singleton.SceneManager.LoadScene(lavaMapScene, LoadSceneMode.Single);
-
-        // NetworkManager.Singleton.SceneManager.LoadScene(gameplaySceneName, LoadSceneMode.Single);
     }
 
     /**********************************************************************
