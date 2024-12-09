@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   displayName: Meow-Wizard
+  portrait: {fileID: -6615005137617614814, guid: 341546f100b140640aa753f4fdc3f815, type: 3}
   icon: {fileID: -2535798567994982835, guid: 19ec29f6e444b824f8f1b57dd6ec9c09, type: 3}
   pressedIcon: {fileID: 4421442801202688406, guid: 85933c449f03d004b8f0a082158401e7, type: 3}
   disabledIcon: {fileID: -4517460941202148507, guid: 1de4d1f87ee669c4fb56ac8b220a384b, type: 3}
