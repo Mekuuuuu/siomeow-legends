@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class GameManager : NetworkBehaviour
 {
+    [SerializeField] private CharacterDatabase characterDatabase;
     [SerializeField] private GameCountdown countdown;
     [SerializeField] private float remainingTime = 60f;
 
@@ -10,7 +11,35 @@ public class GameManager : NetworkBehaviour
     {
         if (IsServer)
         {
+            SyncPlayerPortraits();
             StartCountdown();
+        }
+    }
+
+    private void SyncPlayerPortraits()
+    {
+        foreach (var client in HostManager.Instance.ClientData)
+        {
+            ulong clientId = client.Key;
+            int characterId = client.Value.characterId;
+
+            if (characterDatabase.IsValidCharacterId(characterId))
+            {
+                AssignPortraitClientRpc(clientId, characterId);
+            }
+        }
+    }
+
+    [ClientRpc]
+    private void AssignPortraitClientRpc(ulong clientId, int characterId)
+    {
+        if (NetworkManager.Singleton.LocalClientId == clientId)
+        {
+            Character character = characterDatabase.GetCharacterById(characterId);
+            if (character != null)
+            {
+                PlayerUIManager.Instance.SetPlayerPortrait(character.Portrait);
+            }
         }
     }
 

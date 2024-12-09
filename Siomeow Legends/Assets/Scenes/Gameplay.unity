@@ -330,6 +330,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 389032128420132463, guid: a905ef500ac546a43b0924728115cfaa, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3024530574171115532, guid: a905ef500ac546a43b0924728115cfaa, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -426,6 +430,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5207105598691793478, guid: a905ef500ac546a43b0924728115cfaa, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6005044453555201321, guid: a905ef500ac546a43b0924728115cfaa, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -467,6 +475,7 @@ GameObject:
   - component: {fileID: 1183529267}
   - component: {fileID: 1183529265}
   - component: {fileID: 1183529264}
+  - component: {fileID: 1183529268}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -503,7 +512,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
+  characterDatabase: {fileID: 11400000, guid: d2c9d51c77f787d449e5f94021878b00, type: 2}
   countdown: {fileID: 1183529264}
+  remainingTime: 60
 --- !u!4 &1183529266
 Transform:
   m_ObjectHideFlags: 0
@@ -544,6 +555,19 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
+--- !u!114 &1183529268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183529263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e08b55daa70cd408a262a20f543d5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portrait: {fileID: 1227088765}
 --- !u!1 &1213897730
 GameObject:
   m_ObjectHideFlags: 0
@@ -5437,6 +5461,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1227088765 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1118841695458367799, guid: a905ef500ac546a43b0924728115cfaa, type: 3}
+  m_PrefabInstance: {fileID: 867751977}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1432615013 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3800824200111530924, guid: a905ef500ac546a43b0924728115cfaa, type: 3}
