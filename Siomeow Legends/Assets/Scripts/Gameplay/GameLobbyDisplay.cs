@@ -142,7 +142,7 @@ public class GameLobbyDisplay : NetworkBehaviour
 
             players[i] = new GameLobbyState(
                 players[i].ClientId,
-                "miko",
+                players[i].PlayerName,
                 characterId,
                 players[i].IsLockedIn
             );
@@ -170,7 +170,7 @@ public class GameLobbyDisplay : NetworkBehaviour
 
             players[i] = new GameLobbyState(
                 players[i].ClientId,
-                "miko",
+                players[i].PlayerName,
                 players[i].CharacterId,
                 true
             );
