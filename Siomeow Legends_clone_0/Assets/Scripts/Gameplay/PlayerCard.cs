@@ -61,6 +61,7 @@ public class PlayerCard : MonoBehaviour
 
         if (state.CharacterId != -1)
         {
+            lockInButton.GetComponent<Button>().interactable = true;
             var character = characterDatabase.GetCharacterById(state.CharacterId);
             Debug.Log(character);
 
@@ -68,9 +69,13 @@ public class PlayerCard : MonoBehaviour
             ClearUnselected(state);
            
         }
+        else
+        {
+            lockInButton.GetComponent<Button>().interactable = false;
+        }
 
-        // Make separate text for picking in card when player is not locked in / disappear when locked in
-        playerNameText.text = state.IsLockedIn ? $"Player {state.ClientId}" : $"Player {state.ClientId} (Picking...)";
+        // Update player's name and status
+        playerNameText.text = state.PlayerName.ToString();
 
         visuals.SetActive(true);
     }

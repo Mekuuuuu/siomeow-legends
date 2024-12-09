@@ -132,7 +132,7 @@ Transform:
   m_GameObject: {fileID: 5765650432412494740}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -1.73, z: 0}
+  m_LocalPosition: {x: -2.2659616, y: -0.17485508, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -304,6 +304,8 @@ MonoBehaviour:
   health: 3607
   defense: 400
   killCount: 0
+  damageMultiplier: 1
+  anim: {fileID: 7401254700737444048}
 --- !u!114 &8034644807691568706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1468890131
+  GlobalObjectIdHash: 3926141749
   InScenePlacedSourceGlobalObjectIdHash: 3001382797
   DeferredDespawnTick: 0
   Ownership: 1

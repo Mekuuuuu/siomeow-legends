@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -10,14 +12,22 @@ public class PlayerStats : MonoBehaviour
     // To track the last player who caused damage
     private PlayerStats lastAttacker;
 
+    public float damageMultiplier = 1f;
+
+    public delegate void StatsChangedDelegate();
+    public event StatsChangedDelegate OnStatsChanged;
+
     // STAT LIMITS
     private const int MAX_HEALTH = 3607;
     private const int MAX_DEFENSE = 400;
     private const int DAMAGE_REDUCTION = 50;
 
-    // Applies damage to the player, accounting for defense.
+    public Animator anim;
+
     public void TakeDamage(int rawDamage, PlayerStats attacker)
     {
+        rawDamage = (int)(rawDamage * damageMultiplier);
+
         if (rawDamage < 0)
         {
             throw new System.ArgumentOutOfRangeException("Cannot take negative damage.");
@@ -44,10 +54,17 @@ public class PlayerStats : MonoBehaviour
             this.health -= rawDamage;
         }
 
+        this.health = Mathf.Clamp(this.health, 0, MAX_HEALTH);
+        OnStatsChanged?.Invoke();
+        Debug.Log($"{this.health}");
+        anim.SetBool("Damage", true); 
+        StartCoroutine(ResetDamageAnimation());
+
         if (this.health <= 0)
         {
-            Die();
+            StartCoroutine(Die());
         }
+
     }
 
     public void Heal(int healValue)
@@ -57,19 +74,19 @@ public class PlayerStats : MonoBehaviour
             throw new System.ArgumentOutOfRangeException("Cannot have negative healing.");
         }
 
-        bool wouldBeOverMaxHealth = this.health + healValue > MAX_HEALTH;
+        this.health = Mathf.Min(this.health + healValue, MAX_HEALTH);
 
-        if (wouldBeOverMaxHealth)
-        {
-            this.health = MAX_HEALTH;
-        }
-        else
-        {
-            this.health += healValue;
-        }
+        OnStatsChanged?.Invoke();  
     }
 
-    private void Die()
+    public void IncreaseDefense(int defenseAmount)
+    {
+        this.defense = Mathf.Min(this.defense + defenseAmount, MAX_DEFENSE);
+
+        OnStatsChanged?.Invoke();
+    }
+
+    private IEnumerator Die()
     {
         // When the player dies, increment the kill count of the last attacker
         if (lastAttacker != null)
@@ -78,6 +95,8 @@ public class PlayerStats : MonoBehaviour
         }
 
         // Destroy the player object after death
+        anim.SetBool("Dead", true); 
+        yield return new WaitForSeconds(3f); 
         Destroy(gameObject);
     }
 
@@ -85,5 +104,11 @@ public class PlayerStats : MonoBehaviour
     {
         killCount++;
         Debug.Log($"{gameObject.name}'s Kill Count: {killCount}");
+    }
+    
+    private IEnumerator ResetDamageAnimation()
+    {
+        yield return new WaitForSeconds(0.5f); 
+        anim.SetBool("Damage", false);
     }
 }
