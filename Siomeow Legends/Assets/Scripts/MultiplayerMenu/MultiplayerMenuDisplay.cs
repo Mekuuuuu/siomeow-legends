@@ -17,9 +17,27 @@ public class MultiplayerMenuDisplay : MonoBehaviour
     {
         try
         {
-            await UnityServices.InitializeAsync();
-            await AuthenticationService.Instance.SignInAnonymouslyAsync();
-            Debug.Log($"Player Id: {AuthenticationService.Instance.PlayerId}");
+            // Ensure Unity Services are initialized
+            if (!UnityServices.State.Equals(ServicesInitializationState.Initialized))
+            {
+                await UnityServices.InitializeAsync();
+            }
+
+            // Check if the player is already signed in
+            if (!AuthenticationService.Instance.IsSignedIn)
+            {
+                await AuthenticationService.Instance.SignInAnonymouslyAsync();
+                Debug.Log($"Player Id: {AuthenticationService.Instance.PlayerId}");
+            }
+            else
+            {
+                Debug.Log("Player is already signed in.");
+            }
+
+
+            // await UnityServices.InitializeAsync();
+            // await AuthenticationService.Instance.SignInAnonymouslyAsync();
+            // Debug.Log($"Player Id: {AuthenticationService.Instance.PlayerId}");
         }
         catch (Exception e)
         {
