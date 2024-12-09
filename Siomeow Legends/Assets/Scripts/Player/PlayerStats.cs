@@ -18,9 +18,9 @@ public class PlayerStats : MonoBehaviour
     public event StatsChangedDelegate OnStatsChanged;
 
     // STAT LIMITS
-    private const int MAX_HEALTH = 3607;
-    private const int MAX_DEFENSE = 400;
-    private const int DAMAGE_REDUCTION = 50;
+    public const int MAX_HEALTH = 3607;
+    public const int MAX_DEFENSE = 400;
+    public const int DAMAGE_REDUCTION = 50;
 
     public Animator anim;
 
