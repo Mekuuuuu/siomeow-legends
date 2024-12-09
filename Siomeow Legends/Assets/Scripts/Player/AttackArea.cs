@@ -17,7 +17,7 @@ public class AttackArea : MonoBehaviour
             int damage = Random.Range(minDamage, maxDamage + 1); // Add 1 to include maxDamage in the range
             target.TakeDamage(damage, attacker);
 
-            Debug.Log($"Special Damage: {damage} dealt by {attacker.name}.");
+            Debug.Log($"Normal Damage: {damage} dealt by {attacker.name}.");
         }
     }
 }
