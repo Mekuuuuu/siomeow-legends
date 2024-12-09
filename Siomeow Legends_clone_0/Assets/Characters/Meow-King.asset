@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   displayName: Meow-King
+  portrait: {fileID: -2561481447360240282, guid: 26070cdcffe5b414aad64df42716d51e, type: 3}
   icon: {fileID: 2100246829016467080, guid: 05327fdd17d491f409f61c95420787d1, type: 3}
   pressedIcon: {fileID: -7467369233178689594, guid: 5495dba5902998244941ac86c9f7edd8, type: 3}
   disabledIcon: {fileID: 5060251865446696485, guid: 373241ec833c3c14c8da9598e0761924, type: 3}

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   displayName: Meow-Knight
+  portrait: {fileID: -838938178277206727, guid: e7ac8740ac095f343910907fe6637177, type: 3}
   icon: {fileID: -5217297360446286561, guid: 438aa99344aa76541914fd2c42e5cab1, type: 3}
   pressedIcon: {fileID: 4471931460141063720, guid: f443d0a3e9e1a604b8f285dea72b857f, type: 3}
   disabledIcon: {fileID: 6076263517188138283, guid: f091d866e31b5174aacf821dd4738223, type: 3}

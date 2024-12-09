@@ -112,7 +112,6 @@ GameObject:
   - component: {fileID: 3532214881748182148}
   - component: {fileID: 8338445217744937238}
   - component: {fileID: 8840867897090895413}
-  - component: {fileID: 1564697607859244220}
   - component: {fileID: 5883339794914132220}
   - component: {fileID: 5885401106176682228}
   - component: {fileID: 2433180557274707351}
@@ -184,8 +183,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1585959523
+  m_SortingLayer: 6
   m_SortingOrder: 2
   m_Sprite: {fileID: -16699313, guid: 0bd5641c71c17bc4bb4fdcf34fb4634d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -259,10 +258,10 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.04, y: 0.04}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.4375}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -323,8 +322,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c93109caf2b3846817c825c3c0bc6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3607
+  health: 5000
   defense: 400
+  damageMultiplier: 1
+  anim: {fileID: 5322255758822225267}
 --- !u!114 &8840867897090895413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,20 +339,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 5322255758822225267}
---- !u!114 &1564697607859244220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5673091178698441929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2c93109caf2b3846817c825c3c0bc6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3607
-  defense: 400
 --- !u!114 &5883339794914132220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,7 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 46133618
+  GlobalObjectIdHash: 3493437026
   InScenePlacedSourceGlobalObjectIdHash: 3493437026
   DeferredDespawnTick: 0
   Ownership: 1
