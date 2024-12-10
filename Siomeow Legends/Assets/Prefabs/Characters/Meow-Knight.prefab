@@ -481,7 +481,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.03, y: -0.2}
+  m_Offset: {x: -0.03, y: -0.13}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.61538464, y: 0.53333336}
@@ -491,7 +491,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.35, y: 0.6}
+  m_Size: {x: 0.56, y: 0.75}
   m_EdgeRadius: 0
 --- !u!95 &3165092791418124409
 Animator:
@@ -573,6 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce8fc5f0f6293340b6d167154a1c5f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   anim: {fileID: 3165092791418124409}
 --- !u!114 &5989210088562485593
 MonoBehaviour:
@@ -586,8 +587,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c93109caf2b3846817c825c3c0bc6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5000
-  defense: 400
+  ShowTopMostFoldoutHeaderGroup: 1
+  health:
+    m_InternalValue: 3607
+  defense:
+    m_InternalValue: 400
   killCount: 0
   damageMultiplier: 1
   anim: {fileID: 3165092791418124409}
