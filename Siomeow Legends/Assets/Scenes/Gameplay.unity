@@ -950,9 +950,9 @@ MonoBehaviour:
     m_Bits: 256
   - serializedVersion: 2
     m_Bits: 8
-  MaxObjects: 1000
-  SpawnInterval: 1
-  ObjectsPerSpawn: 10
+  MaxObjects: 10
+  SpawnInterval: 10
+  ObjectsPerSpawn: 1
 --- !u!1 &1183529263
 GameObject:
   m_ObjectHideFlags: 0
@@ -6191,9 +6191,9 @@ MonoBehaviour:
     m_Bits: 256
   - serializedVersion: 2
     m_Bits: 8
-  MaxObjects: 1000
-  SpawnInterval: 1
-  ObjectsPerSpawn: 10
+  MaxObjects: 3
+  SpawnInterval: 6
+  ObjectsPerSpawn: 1
 --- !u!1 &1574439458
 GameObject:
   m_ObjectHideFlags: 0
@@ -7614,6 +7614,34 @@ PrefabInstance:
     - target: {fileID: 5889204676306216150, guid: b27b60ec99e93f1498ab92a305cc7f89, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319341512623958571, guid: b27b60ec99e93f1498ab92a305cc7f89, type: 3}
+      propertyPath: width
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319341512623958571, guid: b27b60ec99e93f1498ab92a305cc7f89, type: 3}
+      propertyPath: height
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319341512623958571, guid: b27b60ec99e93f1498ab92a305cc7f89, type: 3}
+      propertyPath: ObstacleLayer.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319341512623958571, guid: b27b60ec99e93f1498ab92a305cc7f89, type: 3}
+      propertyPath: ObstacleLayer.Array.data[0].m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319341512623958571, guid: b27b60ec99e93f1498ab92a305cc7f89, type: 3}
+      propertyPath: ObstacleLayer.Array.data[1].m_Bits
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319341512623958571, guid: b27b60ec99e93f1498ab92a305cc7f89, type: 3}
+      propertyPath: ObstacleLayer.Array.data[2].m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319341512623958571, guid: b27b60ec99e93f1498ab92a305cc7f89, type: 3}
+      propertyPath: ObstacleLayer.Array.data[3].m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8139629863657369738, guid: b27b60ec99e93f1498ab92a305cc7f89, type: 3}
       propertyPath: m_Name
