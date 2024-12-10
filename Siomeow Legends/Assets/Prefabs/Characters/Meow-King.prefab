@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3803530360843365614}
   - component: {fileID: 3569058969203550572}
+  - component: {fileID: 5382882158031945559}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -72,6 +73,22 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 4413404939717757290}
+--- !u!114 &5382882158031945559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23751036406865137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BoundingShape2D: {fileID: 0}
+  m_Damping: 0.5
+  m_MaxWindowSize: -1
+  m_Padding: 0
 --- !u!1 &1533515212917611013
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3493437026
+  GlobalObjectIdHash: 46133618
   InScenePlacedSourceGlobalObjectIdHash: 3493437026
   DeferredDespawnTick: 0
   Ownership: 1
@@ -615,6 +632,7 @@ MonoBehaviour:
   dashingCooldown: 10
   tr: {fileID: 7207095745860624397}
   vc: {fileID: 3569058969203550572}
+  confiner: {fileID: 0}
   listener: {fileID: 8543930999940182135}
 --- !u!114 &8338445217744937238
 MonoBehaviour:
@@ -628,8 +646,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c93109caf2b3846817c825c3c0bc6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5000
-  defense: 400
+  ShowTopMostFoldoutHeaderGroup: 1
+  health:
+    m_InternalValue: 3607
+  defense:
+    m_InternalValue: 400
   killCount: 0
   damageMultiplier: 1
   anim: {fileID: 5322255758822225267}

@@ -161,7 +161,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.09, y: -0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -171,7 +171,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.9375, y: 1.0625}
+  m_Size: {x: 0.56, y: 0.8}
   m_EdgeRadius: 0
 --- !u!95 &2382115497757905514
 Animator:
@@ -260,6 +260,7 @@ MonoBehaviour:
   dashingCooldown: 10
   tr: {fileID: 8109892040201226873}
   vc: {fileID: 7321722864354090804}
+  confiner: {fileID: 0}
   listener: {fileID: 2147980540306640506}
 --- !u!114 &6150600906610464091
 MonoBehaviour:
@@ -273,6 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4e86b1e95b8db4886b3308afcae4b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   Aim: {fileID: 1915272916196124693}
   bullet: {fileID: 2645467820234173463, guid: b7b21e7128e31994492295ba1e37d7de, type: 3}
   specialBullet: {fileID: 6884882989944783388, guid: a3f63780759c52b43acadf453609d8d5, type: 3}
@@ -734,6 +736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4562367637376209398}
   - component: {fileID: 7321722864354090804}
+  - component: {fileID: 7607404276620609131}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -796,6 +799,22 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 5923642922992513879}
+--- !u!114 &7607404276620609131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4379808176209295078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BoundingShape2D: {fileID: 0}
+  m_Damping: 0.5
+  m_MaxWindowSize: -1
+  m_Padding: 0
 --- !u!1 &4774214060626763600
 GameObject:
   m_ObjectHideFlags: 0
