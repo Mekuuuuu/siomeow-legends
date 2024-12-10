@@ -109,9 +109,9 @@ GameObject:
   - component: {fileID: 1014853598259769692}
   - component: {fileID: 7401254700737444048}
   - component: {fileID: 7733184241009487898}
+  - component: {fileID: 8415630832233122419}
   - component: {fileID: 8034644807691568706}
   - component: {fileID: 8004193112641656779}
-  - component: {fileID: 8415630832233122419}
   - component: {fileID: 6941585621187706419}
   - component: {fileID: 7698916963531259112}
   - component: {fileID: 9158242255363826745}
@@ -306,6 +306,31 @@ MonoBehaviour:
   killCount: 0
   damageMultiplier: 1
   anim: {fileID: 7401254700737444048}
+--- !u!114 &8415630832233122419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5765650432412494740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2440002222
+  InScenePlacedSourceGlobalObjectIdHash: 3001382797
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
 --- !u!114 &8034644807691568706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,12 +343,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef2e077747e90e458a599c00ce5c397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   speed: 5
   anim: {fileID: 7401254700737444048}
   canDash: 1
   isDashing: 0
   dashingCooldown: 10
   tr: {fileID: 9158242255363826745}
+  vc: {fileID: 0}
+  listener: {fileID: 0}
 --- !u!114 &8004193112641656779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,31 +369,6 @@ MonoBehaviour:
   specialBullet: {fileID: 35666895065177008, guid: edebbbee03e4a7743858805713303a57, type: 3}
   fireForce: 10
   anim: {fileID: 7401254700737444048}
---- !u!114 &8415630832233122419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5765650432412494740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3926141749
-  InScenePlacedSourceGlobalObjectIdHash: 3001382797
-  DeferredDespawnTick: 0
-  Ownership: 1
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
-  SyncOwnerTransformWhenParented: 1
-  AllowOwnerToParent: 0
 --- !u!114 &6941585621187706419
 MonoBehaviour:
   m_ObjectHideFlags: 0
