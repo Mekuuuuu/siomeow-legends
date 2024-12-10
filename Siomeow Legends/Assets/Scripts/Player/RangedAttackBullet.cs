@@ -11,7 +11,7 @@ public class RangedAttackBullet : MonoBehaviour
             PlayerStats health = collider.GetComponent<PlayerStats>();
 
             int damage = Random.Range(minDamage, maxDamage + 1); // Add 1 to include maxDamage in the range
-            health.TakeDamage(damage);
+            health.TakeDamageServerRpc(damage);
 
             Destroy(gameObject);
 

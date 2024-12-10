@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : NetworkBehaviour
 {
     // PLAYER STATS
-    [SerializeField] public int health = 3607;
-    [SerializeField] public int defense = 400;
+    // [SerializeField] public int health = 3607;
+    // [SerializeField] public int defense = 400;
     // [SerializeField] private int mana = 0;
+
+    public NetworkVariable<int> health = new NetworkVariable<int>(3607, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    public NetworkVariable<int> defense = new NetworkVariable<int>(400, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
     public float damageMultiplier = 1f;
 
     public delegate void StatsChangedDelegate();
+    // public delegate void StatsChangedDelegate(int newHealth, int newDefense);
     public event StatsChangedDelegate OnStatsChanged;
 
     // STAT LIMITS
@@ -20,8 +25,9 @@ public class PlayerStats : MonoBehaviour
     private const int DAMAGE_REDUCTION = 50; 
 
     public Animator anim;
-
-    public void TakeDamage(int rawDamage)
+    
+    [ServerRpc(RequireOwnership = false)]
+    public void TakeDamageServerRpc(int rawDamage)
     {
         rawDamage = (int)(rawDamage * damageMultiplier);
 
@@ -31,30 +37,30 @@ public class PlayerStats : MonoBehaviour
         }
 
         // Check if defense is greater than or equal to 5
-        if (this.defense >= DAMAGE_REDUCTION)
+        if (defense.Value >= DAMAGE_REDUCTION)
         {
             // Reduce damage by 5 if defense is greater than or equal to 5
             int damageAfterDefense = rawDamage - DAMAGE_REDUCTION;
 
             // Apply damage after defense reduction
-            this.health -= damageAfterDefense;
+            health.Value -= damageAfterDefense;
 
             // Reduce the defense value by 5
-            this.defense -= DAMAGE_REDUCTION;
+            defense.Value -= DAMAGE_REDUCTION;
         }
         else
         {
             // If defense is less than 5, apply full damage
-            this.health -= rawDamage;
+            health.Value -= rawDamage;
         }
 
-        this.health = Mathf.Clamp(this.health, 0, MAX_HEALTH);
+        health.Value = Mathf.Clamp(health.Value, 0, MAX_HEALTH);
         OnStatsChanged?.Invoke();
-        Debug.Log($"{this.health}");
+        Debug.Log($"{health.Value}");
         anim.SetBool("Damage", true); 
         StartCoroutine(ResetDamageAnimation());
 
-        if (this.health <= 0)
+        if (health.Value <= 0)
         {
             StartCoroutine(Die());
         }
@@ -68,14 +74,14 @@ public class PlayerStats : MonoBehaviour
             throw new System.ArgumentOutOfRangeException("Cannot have negative healing.");
         }
 
-        this.health = Mathf.Min(this.health + healValue, MAX_HEALTH);
+        health.Value = Mathf.Min(health.Value + healValue, MAX_HEALTH);
 
         OnStatsChanged?.Invoke();  
     }
 
     public void IncreaseDefense(int defenseAmount)
     {
-        this.defense = Mathf.Min(this.defense + defenseAmount, MAX_DEFENSE);
+        defense.Value = Mathf.Min(defense.Value + defenseAmount, MAX_DEFENSE);
 
         OnStatsChanged?.Invoke();
     }
