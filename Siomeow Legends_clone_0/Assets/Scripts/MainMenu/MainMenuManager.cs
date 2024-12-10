@@ -41,6 +41,7 @@ public class MainMenuManager : MonoBehaviour
     {
         if (string.IsNullOrWhiteSpace(nameInputField.text))
         {
+            AudioManager.instance.PlayError();
             Debug.Log("Invalid Name");
             StartCoroutine(FlashInvalidInput());
         }
@@ -51,6 +52,7 @@ public class MainMenuManager : MonoBehaviour
             isLAN = true;
             LANMenu.SetActive(true);
             StartPopUp.SetActive(false);
+            AudioManager.instance.PlayButtonClick();
         }
     }
 
@@ -59,6 +61,7 @@ public class MainMenuManager : MonoBehaviour
         if (string.IsNullOrWhiteSpace(nameInputField.text))
         {
             Debug.Log("Invalid Name");
+            AudioManager.instance.PlayError();
             StartCoroutine(FlashInvalidInput());
         }
         else
@@ -68,11 +71,13 @@ public class MainMenuManager : MonoBehaviour
             isLAN = false;
             MultiplayerMenu.SetActive(true);
             StartPopUp.SetActive(false);
+            AudioManager.instance.PlayButtonClick();
         }
     }
 
     public void CloseGame()
     {
+        AudioManager.instance.PlayButtonClick();
         Application.Quit();
     }
 
