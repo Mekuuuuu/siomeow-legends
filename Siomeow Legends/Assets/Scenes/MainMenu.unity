@@ -1782,6 +1782,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 208134088724079424, guid: a663018e83fb1a5429c1e0f67cdfddc4, type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 960833272786462434, guid: a663018e83fb1a5429c1e0f67cdfddc4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1833,6 +1837,10 @@ PrefabInstance:
     - target: {fileID: 960833272786462434, guid: a663018e83fb1a5429c1e0f67cdfddc4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219201815948283075, guid: a663018e83fb1a5429c1e0f67cdfddc4, type: 3}
+      propertyPath: m_CharacterLimit
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1879526243102024141, guid: a663018e83fb1a5429c1e0f67cdfddc4, type: 3}
       propertyPath: m_Name
