@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 46133618
+  GlobalObjectIdHash: 3493437026
   InScenePlacedSourceGlobalObjectIdHash: 3493437026
   DeferredDespawnTick: 0
   Ownership: 1
@@ -628,8 +628,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c93109caf2b3846817c825c3c0bc6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5000
-  defense: 400
+  ShowTopMostFoldoutHeaderGroup: 1
+  health:
+    m_InternalValue: 3607
+  defense:
+    m_InternalValue: 400
   damageMultiplier: 1
   anim: {fileID: 5322255758822225267}
 --- !u!114 &8840867897090895413
@@ -644,6 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce8fc5f0f6293340b6d167154a1c5f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   anim: {fileID: 5322255758822225267}
 --- !u!114 &5883339794914132220
 MonoBehaviour:
@@ -657,6 +661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce8fc5f0f6293340b6d167154a1c5f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   anim: {fileID: 5322255758822225267}
 --- !u!114 &2433180557274707351
 MonoBehaviour:

@@ -946,9 +946,13 @@ MonoBehaviour:
     m_Bits: 128
   - serializedVersion: 2
     m_Bits: 16
-  MaxObjects: 10
-  SpawnInterval: 10
-  ObjectsPerSpawn: 1
+  - serializedVersion: 2
+    m_Bits: 256
+  - serializedVersion: 2
+    m_Bits: 8
+  MaxObjects: 1000
+  SpawnInterval: 1
+  ObjectsPerSpawn: 10
 --- !u!1 &1183529263
 GameObject:
   m_ObjectHideFlags: 0
@@ -6180,12 +6184,16 @@ MonoBehaviour:
   - {fileID: 1835547865163386838, guid: ae8c3e84a3cbef14ab0fa5b4d4b1fe2b, type: 3}
   ObstacleLayer:
   - serializedVersion: 2
+    m_Bits: 16
+  - serializedVersion: 2
     m_Bits: 128
   - serializedVersion: 2
-    m_Bits: 16
-  MaxObjects: 3
-  SpawnInterval: 6
-  ObjectsPerSpawn: 1
+    m_Bits: 256
+  - serializedVersion: 2
+    m_Bits: 8
+  MaxObjects: 1000
+  SpawnInterval: 1
+  ObjectsPerSpawn: 10
 --- !u!1 &1574439458
 GameObject:
   m_ObjectHideFlags: 0
