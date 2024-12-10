@@ -102,7 +102,8 @@ public class PlayerStats : NetworkBehaviour
             if (client.Key == lastAttackerClientId)
             {
                 client.Value.IncrementKillCount();
-                Debug.Log($"ClientId {client.Value.clientId} has killed. Kill counter: {client.Value.killCount}");
+                UpdateKillCountClientRpc(client.Key, client.Value.KillCount); // Notify all clients
+                Debug.Log($"ClientId {client.Value.clientId} has killed. Kill counter: {client.Value.KillCount}");
             }
         }
 
@@ -124,6 +125,15 @@ public class PlayerStats : NetworkBehaviour
         killCount++;
         Debug.Log($"{gameObject.name}'s Kill Count: {killCount}");
     }
+
+    [ClientRpc]
+    private void UpdateKillCountClientRpc(ulong clientId, int newKillCount)
+        {
+            if (NetworkManager.Singleton.LocalClientId == clientId)
+            {
+                PlayerUIManager.Instance.SetKillCount(newKillCount);
+            }
+        }
     
     private IEnumerator ResetDamageAnimation()
     {
