@@ -1,6 +1,7 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerAttackRanged : MonoBehaviour
+public class PlayerAttackRanged : NetworkBehaviour
 {
     // Projectile Aim 
     public Transform Aim;
@@ -98,7 +99,7 @@ public class PlayerAttackRanged : MonoBehaviour
         }
     }
 
-        private void SpecialAttack()
+    private void SpecialAttack()
     {
         if(!isSpecialAttacking)
         {

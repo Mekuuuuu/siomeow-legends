@@ -1,3 +1,4 @@
+using Unity.Netcode;
 using UnityEngine;
 
 public class SpecialAttackArea : MonoBehaviour
@@ -13,10 +14,11 @@ public class SpecialAttackArea : MonoBehaviour
 
             // Get the player who initiated the special attack (the one triggering the attack)
             PlayerStats attacker = GetComponentInParent<PlayerStats>();  
+            ulong attackerClientId = attacker.GetComponent<NetworkObject>().OwnerClientId;
 
             // Apply random damage to the target and pass the attacker reference
             int damage = Random.Range(minDamage, maxDamage + 1); // Add 1 to include maxDamage in the range
-            target.TakeDamage(damage, attacker);
+            target.TakeDamageServerRpc(damage, attackerClientId);
 
             Debug.Log($"Special Damage: {damage} dealt by {attacker.name}.");
         }

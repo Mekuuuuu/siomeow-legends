@@ -262,6 +262,7 @@ public class GameLobbyDisplay : NetworkBehaviour
 
     public void StartGame()
     {
+        AudioManager.instance.PlayButtonClick();
         StopAllCoroutines();
         HostManager.Instance.StartGame();
     }
@@ -295,6 +296,7 @@ public class GameLobbyDisplay : NetworkBehaviour
 
     public void Back()
     {
+        AudioManager.instance.PlayButtonClick();
         if (IsHost) hostConfirmLeavePanel.SetActive(true);
         else clientConfirmLeavePanel.SetActive(true);
     }
@@ -315,7 +317,8 @@ public class GameLobbyDisplay : NetworkBehaviour
 
 
     public void ReturnToMainMenu()
-    {
+    {   
+        AudioManager.instance.PlayButtonClick();
         SceneManager.LoadScene(mainMenuScene);
     }
 }

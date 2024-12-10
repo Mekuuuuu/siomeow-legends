@@ -55,11 +55,11 @@ public class PlayerOverlay : MonoBehaviour
          switch (type)
         {
             case StatType.Health:
-                SetValue(PlayerStats.MAX_HEALTH, playerStats.health); 
+                SetValue(PlayerStats.MAX_HEALTH, playerStats.health.Value); // change this
                 break;
 
             case StatType.Defense:
-                SetValue(PlayerStats.MAX_DEFENSE, playerStats.defense); 
+                SetValue(PlayerStats.MAX_DEFENSE, playerStats.defense.Value); // change this 
                 break;
 
             default:

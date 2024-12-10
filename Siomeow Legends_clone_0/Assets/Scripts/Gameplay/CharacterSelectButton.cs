@@ -20,6 +20,7 @@ public class CharacterSelectButton : MonoBehaviour
 
     public void SelectCharacter()
     {
+        AudioManager.instance.PlaySelect();
         characterSelect.Select(Character);
     }
 

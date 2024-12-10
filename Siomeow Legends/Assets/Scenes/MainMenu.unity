@@ -1271,6 +1271,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 116192871698784245, guid: 8fc9eb01488faae4ea48ca947a2bb62d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 116192871698784245, guid: 8fc9eb01488faae4ea48ca947a2bb62d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 1868687379743861878, guid: 8fc9eb01488faae4ea48ca947a2bb62d, type: 3}
       propertyPath: m_Name
       value: Settings
@@ -1327,10 +1335,38 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1598290993}
+    - target: {fileID: 6776803114620130962, guid: 8fc9eb01488faae4ea48ca947a2bb62d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776803114620130962, guid: 8fc9eb01488faae4ea48ca947a2bb62d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776803114620130962, guid: 8fc9eb01488faae4ea48ca947a2bb62d, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776803114620130962, guid: 8fc9eb01488faae4ea48ca947a2bb62d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776803114620130962, guid: 8fc9eb01488faae4ea48ca947a2bb62d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 382
+      objectReference: {fileID: 0}
+    - target: {fileID: 6776803114620130962, guid: 8fc9eb01488faae4ea48ca947a2bb62d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 155
+      objectReference: {fileID: 0}
     - target: {fileID: 6880005193652144643, guid: 8fc9eb01488faae4ea48ca947a2bb62d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1598290993}
+    - target: {fileID: 7617264676073410250, guid: 8fc9eb01488faae4ea48ca947a2bb62d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
