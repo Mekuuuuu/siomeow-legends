@@ -10,7 +10,7 @@ public class PickupItem : NetworkBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!IsServer) return; // Only the server handles the pickup logic
+        // if (!IsServer) return; // Only the server handles the pickup logic
 
         if (other.CompareTag("Player"))
         {

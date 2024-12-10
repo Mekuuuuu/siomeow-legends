@@ -245,8 +245,8 @@ Camera:
   m_GameObject: {fileID: 455897299}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1995,6 +1995,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 208134088724079424, guid: a663018e83fb1a5429c1e0f67cdfddc4, type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 960833272786462434, guid: a663018e83fb1a5429c1e0f67cdfddc4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -2046,6 +2050,10 @@ PrefabInstance:
     - target: {fileID: 960833272786462434, guid: a663018e83fb1a5429c1e0f67cdfddc4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219201815948283075, guid: a663018e83fb1a5429c1e0f67cdfddc4, type: 3}
+      propertyPath: m_CharacterLimit
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1879526243102024141, guid: a663018e83fb1a5429c1e0f67cdfddc4, type: 3}
       propertyPath: m_Name
