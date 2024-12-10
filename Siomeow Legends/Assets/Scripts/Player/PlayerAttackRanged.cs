@@ -58,7 +58,7 @@ public class PlayerAttackRanged : MonoBehaviour
         if(!isAttacking)
         {
             // Instantiate bullet
-            GameObject intBullet = Instantiate(bullet, Aim.position, Aim.rotation);
+            GameObject intBullet = Instantiate(bullet, Aim.position, Aim.rotation, Aim);
 
             // Adjust bullet's shooting direction based on where the character is facing 
             Vector2 shootingDirection = Aim.right * facingDirection;
@@ -103,7 +103,7 @@ public class PlayerAttackRanged : MonoBehaviour
         if(!isSpecialAttacking)
         {
             // Instantiate bullet
-            GameObject intSpecialBullet = Instantiate(specialBullet, Aim.position, Aim.rotation);
+            GameObject intSpecialBullet = Instantiate(specialBullet, Aim.position, Aim.rotation, Aim);
 
             // Adjust bullet's shooting direction based on where the character is facing 
             Vector2 shootingDirection = Aim.right * facingDirection;

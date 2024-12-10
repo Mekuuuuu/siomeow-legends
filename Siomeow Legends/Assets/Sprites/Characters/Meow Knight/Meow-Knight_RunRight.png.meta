@@ -124,12 +124,12 @@ TextureImporter:
       name: Meow-Knight_RunRight_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 40
         y: 264
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 12
+        height: 14
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.5714286}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -146,12 +146,12 @@ TextureImporter:
       name: Meow-Knight_RunRight_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 200
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 40
+        y: 202
+        width: 12
+        height: 15
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: Meow-Knight_RunRight_3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 40
         y: 168
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 11
+        height: 16
+      alignment: 9
+      pivot: {x: 0.72727275, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -190,12 +190,12 @@ TextureImporter:
       name: Meow-Knight_RunRight_4
       rect:
         serializedVersion: 2
-        x: 0
+        x: 40
         y: 136
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 12
+        height: 14
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.5714286}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -212,12 +212,12 @@ TextureImporter:
       name: Meow-Knight_RunRight_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 72
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 40
+        y: 74
+        width: 13
+        height: 15
+      alignment: 9
+      pivot: {x: 0.61538464, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -234,12 +234,12 @@ TextureImporter:
       name: Meow-Knight_RunRight_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 232
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 40
+        y: 233
+        width: 11
+        height: 15
+      alignment: 9
+      pivot: {x: 0.72727275, y: 0.46666667}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -256,12 +256,12 @@ TextureImporter:
       name: Meow-Knight_RunRight_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 104
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 40
+        y: 105
+        width: 12
+        height: 15
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.46666667}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -278,12 +278,12 @@ TextureImporter:
       name: Meow-Knight_RunRight_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 40
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 40
+        y: 41
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -318,6 +318,7 @@ TextureImporter:
       Meow-Knight_RunRight_5: -2671956263931228817
       Meow-Knight_RunRight_6: 6749620596140080524
       Meow-Knight_RunRight_7: 3305214444467565727
+      Meow-Knight_RunRight_8: 1709539098
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -6,12 +6,12 @@ using UnityEngine;
 public class PlayerStats : NetworkBehaviour
 {
     // PLAYER STATS
-    // [SerializeField] public int health = 3607;
-    // [SerializeField] public int defense = 400;
-    // [SerializeField] private int mana = 0;
+    [SerializeField] public int health = 3607;
+    [SerializeField] public int defense = 400;
+    [SerializeField] public int killCount = 0;  // Add kill count to the player
 
-    public NetworkVariable<int> health = new NetworkVariable<int>(3607, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
-    public NetworkVariable<int> defense = new NetworkVariable<int>(400, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    // To track the last player who caused damage
+    private PlayerStats lastAttacker;
 
     public float damageMultiplier = 1f;
 
@@ -22,12 +22,11 @@ public class PlayerStats : NetworkBehaviour
     // STAT LIMITS
     public const int MAX_HEALTH = 3607;
     public const int MAX_DEFENSE = 400;
-    private const int DAMAGE_REDUCTION = 50; 
+    public const int DAMAGE_REDUCTION = 50;
 
     public Animator anim;
-    
-    [ServerRpc(RequireOwnership = false)]
-    public void TakeDamageServerRpc(int rawDamage)
+
+    public void TakeDamage(int rawDamage, PlayerStats attacker)
     {
         rawDamage = (int)(rawDamage * damageMultiplier);
 
@@ -35,6 +34,9 @@ public class PlayerStats : NetworkBehaviour
         {
             throw new System.ArgumentOutOfRangeException("Cannot take negative damage.");
         }
+
+        // Record the last attacker
+        lastAttacker = attacker;
 
         // Check if defense is greater than or equal to 5
         if (defense.Value >= DAMAGE_REDUCTION)
@@ -88,9 +90,22 @@ public class PlayerStats : NetworkBehaviour
 
     private IEnumerator Die()
     {
+        // When the player dies, increment the kill count of the last attacker
+        if (lastAttacker != null)
+        {
+            lastAttacker.IncrementKillCount();
+        }
+
+        // Destroy the player object after death
         anim.SetBool("Dead", true); 
         yield return new WaitForSeconds(3f); 
         Destroy(gameObject);
+    }
+
+    public void IncrementKillCount()
+    {
+        killCount++;
+        Debug.Log($"{gameObject.name}'s Kill Count: {killCount}");
     }
     
     private IEnumerator ResetDamageAnimation()

@@ -2860,7 +2860,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 846489753}
   m_OnClick:
     m_PersistentCalls:
@@ -3329,8 +3329,8 @@ RectTransform:
   - {fileID: 775341579}
   - {fileID: 1517024551}
   - {fileID: 1824297381}
-  - {fileID: 846489755}
   - {fileID: 1041095832}
+  - {fileID: 846489755}
   - {fileID: 391151477}
   - {fileID: 581975919}
   - {fileID: 31199874}
