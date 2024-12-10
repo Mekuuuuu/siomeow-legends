@@ -130,12 +130,12 @@ TextureImporter:
       name: Meow-Knight_Attack4_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 294
-        width: 96
-        height: 32
+        x: 42
+        y: 300
+        width: 15
+        height: 26
       alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+      pivot: {x: 0.53333336, y: 0.1923077}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -152,12 +152,12 @@ TextureImporter:
       name: Meow-Knight_Attack4_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 262
-        width: 96
-        height: 32
+        x: 42
+        y: 266
+        width: 14
+        height: 26
       alignment: 9
-      pivot: {x: 0.5, y: 0.3}
+      pivot: {x: 0.5714286, y: 0.26923078}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -174,12 +174,12 @@ TextureImporter:
       name: Meow-Knight_Attack4_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 230
-        width: 96
-        height: 32
+        x: 41
+        y: 233
+        width: 15
+        height: 26
       alignment: 9
-      pivot: {x: 0.5, y: 0.7}
+      pivot: {x: 0.6, y: 0.3846154}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -196,12 +196,12 @@ TextureImporter:
       name: Meow-Knight_Attack4_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 198
-        width: 96
-        height: 32
+        x: 36
+        y: 191
+        width: 27
+        height: 34
       alignment: 9
-      pivot: {x: 0.5, y: 0.7}
+      pivot: {x: 0.5185185, y: 0.6764706}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -218,12 +218,12 @@ TextureImporter:
       name: Meow-Knight_Attack4_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 166
-        width: 96
-        height: 32
+        x: 30
+        y: 173
+        width: 40
+        height: 15
       alignment: 9
-      pivot: {x: 0.5, y: 0.7}
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -240,12 +240,12 @@ TextureImporter:
       name: Meow-Knight_Attack4_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 134
-        width: 96
-        height: 32
+        x: 16
+        y: 109
+        width: 73
+        height: 15
       alignment: 9
-      pivot: {x: 0.5, y: 0.7}
+      pivot: {x: 0.47945204, y: 0.53333336}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -262,12 +262,12 @@ TextureImporter:
       name: Meow-Knight_Attack4_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 70
-        width: 96
-        height: 32
+        x: 21
+        y: 141
+        width: 58
+        height: 16
       alignment: 9
-      pivot: {x: 0.5, y: 0.7}
+      pivot: {x: 0.5, y: 0.4375}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -281,23 +281,23 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Meow-Knight_Attack4_6
+      name: Meow-Knight_Attack4_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 102
-        width: 96
-        height: 32
+        x: 11
+        y: 77
+        width: 79
+        height: 15
       alignment: 9
-      pivot: {x: 0.5, y: 0.7}
+      pivot: {x: 0.5063291, y: 0.53333336}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59e501709488e3844b2df93c213e808b
-      internalID: 4240045782760616564
+      spriteID: 2474a14eb80625c42a6ab3fa350ad27b
+      internalID: -1292897440
       vertices: []
       indices: 
       edges: []
@@ -324,6 +324,8 @@ TextureImporter:
       Meow-Knight_Attack4_5: -5938076947665635869
       Meow-Knight_Attack4_6: 4240045782760616564
       Meow-Knight_Attack4_7: 3797456700566541298
+      Meow-Knight_Attack4_8: -1292897440
+      Meow-Knight_Attack4_9: -504791566
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
