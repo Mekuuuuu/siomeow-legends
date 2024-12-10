@@ -1,10 +1,28 @@
 fileFormatVersion: 2
-guid: 04087ab3ab912214c84978fb56e9c1e4
+guid: df30fdf7da7aade43991a416865ea31b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 729840642494031660
-    second: Group 98_0
+      213: -4018221150159453668
+    second: TestBasicAtk_0
+  - first:
+      213: -5312358237363239204
+    second: TestBasicAtk_1
+  - first:
+      213: 7942437462015040981
+    second: TestBasicAtk_2
+  - first:
+      213: 5293191439230556354
+    second: TestBasicAtk_3
+  - first:
+      213: 9131864170294467492
+    second: TestBasicAtk_4
+  - first:
+      213: 5704186100137238671
+    second: TestBasicAtk_5
+  - first:
+      213: 834040008438106877
+    second: TestBasicAtk_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +93,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +118,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Group 98_0
+      name: TestBasicAtk_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 8
-        width: 288
-        height: 288
+        x: 0
+        y: 294
+        width: 96
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +133,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c27ef7e823ae02a00800000000000000
-      internalID: 729840642494031660
+      spriteID: c12c8c347296c38c0800000000000000
+      internalID: -4018221150159453668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestBasicAtk_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 262
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd608564456b646b0800000000000000
+      internalID: -5312358237363239204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestBasicAtk_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 230
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dd59267ac4393e60800000000000000
+      internalID: 7942437462015040981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestBasicAtk_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 198
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c8d977c191357940800000000000000
+      internalID: 5293191439230556354
       vertices: []
       indices: 
       edges: []
@@ -125,7 +209,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1418f3c0cf851c04d9c04770056241da
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +219,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Group 98_0: 729840642494031660
+      TestBasicAtk_0: -4018221150159453668
+      TestBasicAtk_1: -5312358237363239204
+      TestBasicAtk_2: 7942437462015040981
+      TestBasicAtk_3: 5293191439230556354
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
