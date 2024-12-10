@@ -8,7 +8,6 @@ public class CharacterSpawner : NetworkBehaviour
     [SerializeField] private float width = 5f;
     [SerializeField] private float height = 2f;
     [SerializeField] private float MinSpawnDistance = 1.0f;
-    [SerializeField] private float InitialSpawnDelay = 0f;
     [SerializeField] private Vector2 spawnCenter = Vector2.zero;
 
     [SerializeField] private LayerMask[] ObstacleLayer;

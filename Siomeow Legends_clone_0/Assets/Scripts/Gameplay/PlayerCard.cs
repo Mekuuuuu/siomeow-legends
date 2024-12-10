@@ -88,6 +88,7 @@ public class PlayerCard : MonoBehaviour
 
     public void LockIn()
     {
+        AudioManager.instance.PlayLockin();
         gameLobbyDisplay.LockIn();
     }
 

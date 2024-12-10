@@ -18,6 +18,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource heal;
     [SerializeField] private AudioSource crate;
     [SerializeField] private AudioSource error;
+    [SerializeField] private AudioSource select;
+    [SerializeField] private AudioSource lockin;
 
     [SerializeField] private List<AudioSource> audioSources = new List<AudioSource>();
 
@@ -121,4 +123,13 @@ public class AudioManager : MonoBehaviour
         error.Play();
     }
 
+    public void PlaySelect()
+    {
+        select.Play();
+    }
+
+    public void PlayLockin()
+    {
+        lockin.Play();
+    }
 }

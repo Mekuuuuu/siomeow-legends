@@ -299,14 +299,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -179122077908381866, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
-      propertyPath: m_Size.x
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: -179122077908381866, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
-      propertyPath: m_Size.y
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 1881418066040155737, guid: a92691e4faa183d479295b2722ee9dc7, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 3884110452
@@ -444,14 +436,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3413527204744286041, guid: 974b9f5fc2c7cbd469206b46eacea8e5, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 3413527204744286041, guid: 974b9f5fc2c7cbd469206b46eacea8e5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.04
-      objectReference: {fileID: 0}
     - target: {fileID: 3803571904795725324, guid: 974b9f5fc2c7cbd469206b46eacea8e5, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -5983,7 +5967,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1247737400457691935}
   - {fileID: 594563903}
-  - {fileID: 98531221}
   - {fileID: 986746584}
   - {fileID: 98531221}
   - {fileID: 212848743}
