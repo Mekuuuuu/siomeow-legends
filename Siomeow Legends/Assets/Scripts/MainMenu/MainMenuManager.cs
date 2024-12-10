@@ -77,6 +77,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void CloseGame()
     {
+        AudioManager.instance.PlayButtonClick();
         Application.Quit();
     }
 
