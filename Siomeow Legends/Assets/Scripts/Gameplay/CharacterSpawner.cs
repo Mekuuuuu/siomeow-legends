@@ -130,12 +130,27 @@ public class CharacterSpawner : NetworkBehaviour
             if (playerObject != null)
             {
                 playerObject.transform.position = spawnPos;
+                UpdatePlayerPositionClientRpc(clientId, spawnPos);
                 Debug.Log($"Respawned player {clientId} at {spawnPos}");
             }
         }
         else
         {
             Debug.LogWarning($"No valid spawn positions available for respawning player {clientId}.");
+        }
+    }
+
+    [ClientRpc]
+    private void UpdatePlayerPositionClientRpc(ulong clientId, Vector2 position)
+    {
+        // Ensure the local player object is updated on all clients
+        if (NetworkManager.Singleton.LocalClientId == clientId)
+        {
+            var playerObject = NetworkManager.Singleton.ConnectedClients[clientId].PlayerObject;
+            if (playerObject != null)
+            {
+                playerObject.transform.position = position;
+            }
         }
     }
 
