@@ -47,7 +47,7 @@ public class PlayerOverlay : MonoBehaviour
 
     private void OnDestroy()
     {
-        // playerStats.OnStatsChanged -= UpdateBar;
+        playerStats.OnStatsChanged -= UpdateBar;
     }
 
     private void UpdateBar()
