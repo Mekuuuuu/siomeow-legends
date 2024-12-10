@@ -18,7 +18,7 @@ public class PowerUpsHandler : MonoBehaviour
         switch (type)
         {
             case PickupItem.PowerUp.Berserk:
-                Debug.LogWarning("Berserk not yet implemented!");
+                StartCoroutine(ApplyBerserk());
                 break;
 
             case PickupItem.PowerUp.Movement:
@@ -41,6 +41,21 @@ public class PowerUpsHandler : MonoBehaviour
                 Debug.LogWarning("Power-up type not recognized!");
                 break;
         }
+    }
+    
+    private IEnumerator ApplyBerserk()
+    {
+        float originalMultiplier = 1f;
+        float boostMultiplier = 1.5f;
+        float duration = 10f;
+
+        playerStats.damageMultiplier = boostMultiplier;
+        Debug.Log($"Berserk activated! Increased damage by {playerStats.damageMultiplier}!");
+
+        yield return new WaitForSeconds(duration);
+
+        playerStats.damageMultiplier = originalMultiplier;
+        Debug.Log($"Berserk ended. Damage reverted to {playerStats.damageMultiplier}.");
     }
 
     private IEnumerator ApplySpeedBoost()
@@ -73,18 +88,16 @@ public class PowerUpsHandler : MonoBehaviour
     private void ApplyHeal()
     {
         int healAmount = 100;
-        int maxHealth = 5000;
 
-        playerStats.health = Mathf.Min(playerStats.health + healAmount, maxHealth);
+        playerStats.Heal(healAmount);
         Debug.Log($"Health is now {playerStats.health}!");
     }
 
     private void ApplyShield()
     {
         int defenseAmount = 50;
-        int maxDefense = 500;
 
-        playerStats.defense = Mathf.Min(playerStats.defense + defenseAmount, maxDefense);
+        playerStats.IncreaseDefense(defenseAmount);
         Debug.Log($"Defense is now {playerStats.defense}!");
     }
 }
