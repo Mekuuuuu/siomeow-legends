@@ -118,12 +118,12 @@ TextureImporter:
       name: Meow-Knight_RightDeath_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 41
         y: 160
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 12
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5833333, y: 0.53333336}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: Meow-Knight_RightDeath_2
       rect:
         serializedVersion: 2
-        x: 0
+        x: 40
         y: 96
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 16
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5714286}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: Meow-Knight_RightDeath_4
       rect:
         serializedVersion: 2
-        x: 0
+        x: 40
         y: 32
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 21
+        height: 10
+      alignment: 9
+      pivot: {x: 0.3809524, y: 0.8}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: Meow-Knight_RightDeath_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 40
         y: 128
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 13
+        height: 14
+      alignment: 9
+      pivot: {x: 0.61538464, y: 0.5714286}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: Meow-Knight_RightDeath_3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 40
         y: 64
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 23
+        height: 9
+      alignment: 9
+      pivot: {x: 0.39130434, y: 0.8888889}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,12 +228,12 @@ TextureImporter:
       name: Meow-Knight_RightDeath_5
       rect:
         serializedVersion: 2
-        x: 0
+        x: 40
         y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 21
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5714286, y: 1.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

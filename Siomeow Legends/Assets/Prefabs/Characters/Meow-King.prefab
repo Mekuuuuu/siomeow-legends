@@ -261,7 +261,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.4375}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -324,6 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5000
   defense: 400
+  killCount: 0
   damageMultiplier: 1
   anim: {fileID: 5322255758822225267}
 --- !u!114 &8840867897090895413
