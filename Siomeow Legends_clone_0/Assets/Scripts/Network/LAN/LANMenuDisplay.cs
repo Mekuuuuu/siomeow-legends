@@ -12,12 +12,14 @@ public class LANMenuDisplay : MonoBehaviour
 
     public void StartHost()
     {
+        AudioManager.instance.PlayButtonClick();
         HostManager.Instance.StartHost();
         Debug.Log("Start Host for LAN");
     }
 
     public async void StartClient()
     {
+        AudioManager.instance.PlayButtonClick();
         await ClientManager.Instance.StartClient(ipAddressInputField.text);
         Debug.Log("Start Client for LAN");
 
