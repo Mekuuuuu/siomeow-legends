@@ -2471,6 +2471,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 856151411}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &747434274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2935,6 +2947,68 @@ RectTransform:
   m_AnchoredPosition: {x: 773.6982, y: -467}
   m_SizeDelta: {x: 200, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &856151410
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1566717109966009431, guid: af192c82a765d4d4885ee8f6bf96d603, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606811284627403048, guid: af192c82a765d4d4885ee8f6bf96d603, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 733.4705
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606811284627403048, guid: af192c82a765d4d4885ee8f6bf96d603, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 510.51196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606811284627403048, guid: af192c82a765d4d4885ee8f6bf96d603, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.6244383
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606811284627403048, guid: af192c82a765d4d4885ee8f6bf96d603, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606811284627403048, guid: af192c82a765d4d4885ee8f6bf96d603, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606811284627403048, guid: af192c82a765d4d4885ee8f6bf96d603, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606811284627403048, guid: af192c82a765d4d4885ee8f6bf96d603, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606811284627403048, guid: af192c82a765d4d4885ee8f6bf96d603, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606811284627403048, guid: af192c82a765d4d4885ee8f6bf96d603, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4606811284627403048, guid: af192c82a765d4d4885ee8f6bf96d603, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af192c82a765d4d4885ee8f6bf96d603, type: 3}
+--- !u!82 &856151411 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7769338181021298735, guid: af192c82a765d4d4885ee8f6bf96d603, type: 3}
+  m_PrefabInstance: {fileID: 856151410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1014769607
 GameObject:
   m_ObjectHideFlags: 0
@@ -4821,6 +4895,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 856151411}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1921920130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5386,3 +5472,4 @@ SceneRoots:
   - {fileID: 726514546}
   - {fileID: 104438604}
   - {fileID: 648617744}
+  - {fileID: 856151410}
