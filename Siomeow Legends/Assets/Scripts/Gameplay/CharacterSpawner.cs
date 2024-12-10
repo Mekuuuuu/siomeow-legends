@@ -21,6 +21,15 @@ public class CharacterSpawner : NetworkBehaviour
         GenerateValidPositions();
         SpawnAllCharacters();
     }
+    private void OnEnable()
+    {
+        PlayerStats.OnPlayerDied += HandlePlayerRespawn;
+    }
+
+    private void OnDisable()
+    {
+        PlayerStats.OnPlayerDied -= HandlePlayerRespawn;
+    }
 
     private void SpawnAllCharacters()
     {
@@ -107,6 +116,27 @@ public class CharacterSpawner : NetworkBehaviour
 
         spawnPosition = Vector2.zero;
         return false;
+    }
+
+    private void HandlePlayerRespawn(ulong clientId)
+    {
+        // Only the server should handle respawning
+        if (!IsServer) return;
+
+        Vector2 spawnPos;
+        if (TryGetValidSpawnPosition(out spawnPos))
+        {
+            var playerObject = NetworkManager.Singleton.ConnectedClients[clientId].PlayerObject;
+            if (playerObject != null)
+            {
+                playerObject.transform.position = spawnPos;
+                Debug.Log($"Respawned player {clientId} at {spawnPos}");
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"No valid spawn positions available for respawning player {clientId}.");
+        }
     }
 
     // Draw the spawn area in the editor for visual debugging
