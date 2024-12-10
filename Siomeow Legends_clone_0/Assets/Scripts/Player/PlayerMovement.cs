@@ -22,6 +22,7 @@ public class PlayerMovement : NetworkBehaviour
 
     [SerializeField] private TrailRenderer tr;
     [SerializeField] private CinemachineVirtualCamera vc;
+    [SerializeField] private GameObject confiner;
     [SerializeField] private AudioListener listener;
 
     public override void OnNetworkSpawn()
@@ -30,6 +31,8 @@ public class PlayerMovement : NetworkBehaviour
         {
             listener.enabled = true;
             vc.Priority = 1;
+
+            SetupConfinerServerRpc();
         }
         else
         {
@@ -129,4 +132,62 @@ public class PlayerMovement : NetworkBehaviour
         tr.emitting = false;
         isDashing = false;
     }
+    [ServerRpc(RequireOwnership = false)]
+    private void SetupConfinerServerRpc()
+    {
+        // Ensure the confiner is properly assigned on the server
+        SetupConfiner();
+
+        SetupConfinerClientRpc();
+    }
+
+    [ClientRpc]
+    private void SetupConfinerClientRpc()
+    {
+        SetupConfiner();
+    }
+
+    private void SetupConfiner()
+    {
+        if (vc == null)
+        {
+            Debug.LogError("Virtual Camera is not assigned.");
+            return;
+        }
+
+        var confiner2D = vc.GetComponent<CinemachineConfiner2D>();
+        if (confiner2D == null)
+        {
+            Debug.LogError("CinemachineConfiner2D component not found on the Virtual Camera.");
+            return;
+        }
+
+        // Dynamically find the Confiner if it's not assigned
+        if (confiner == null)
+        {
+            confiner = GameObject.FindWithTag("Confiner");
+            if (confiner == null)
+            {
+                Debug.LogError("Confiner GameObject is not assigned and could not be found.");
+                return;
+            }
+        }
+
+        // Ensure the Confiner has a Collider2D
+        Collider2D collider = confiner.GetComponent<Collider2D>();
+        if (collider == null)
+        {
+            Debug.LogError("Confiner GameObject does not have a Collider2D component.");
+            return;
+        }
+
+        // Assign the Collider2D to the Confiner2D component
+        confiner2D.m_BoundingShape2D = collider;
+
+        // Invalidate the cache to apply changes
+        confiner2D.InvalidateCache();
+
+        Debug.Log("Confiner setup completed successfully.");
+    }
+
 }
