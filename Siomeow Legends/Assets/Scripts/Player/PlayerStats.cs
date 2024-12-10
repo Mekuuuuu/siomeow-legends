@@ -6,12 +6,12 @@ using UnityEngine;
 public class PlayerStats : NetworkBehaviour
 {
     // PLAYER STATS
-    [SerializeField] public int health = 3607;
-    [SerializeField] public int defense = 400;
+    public NetworkVariable<int> health = new NetworkVariable<int>(3607, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    public NetworkVariable<int> defense = new NetworkVariable<int>(400, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     [SerializeField] public int killCount = 0;  // Add kill count to the player
 
     // To track the last player who caused damage
-    private PlayerStats lastAttacker;
+    private ulong lastAttackerClientId;
 
     public float damageMultiplier = 1f;
 
@@ -26,7 +26,8 @@ public class PlayerStats : NetworkBehaviour
 
     public Animator anim;
 
-    public void TakeDamage(int rawDamage, PlayerStats attacker)
+    [ServerRpc(RequireOwnership = false)]
+    public void TakeDamageServerRpc(int rawDamage, ulong attackerClientId)
     {
         rawDamage = (int)(rawDamage * damageMultiplier);
 
@@ -36,7 +37,7 @@ public class PlayerStats : NetworkBehaviour
         }
 
         // Record the last attacker
-        lastAttacker = attacker;
+        lastAttackerClientId = attackerClientId;
 
         // Check if defense is greater than or equal to 5
         if (defense.Value >= DAMAGE_REDUCTION)
@@ -91,9 +92,13 @@ public class PlayerStats : NetworkBehaviour
     private IEnumerator Die()
     {
         // When the player dies, increment the kill count of the last attacker
-        if (lastAttacker != null)
+        foreach (var client in HostManager.Instance.ClientData)
         {
-            lastAttacker.IncrementKillCount();
+            if (client.Key == lastAttackerClientId)
+            {
+                client.Value.IncrementKillCount();
+                Debug.Log($"ClientId {client.Value.clientId} has killed. Kill counter: {client.Value.killCount}");
+            }
         }
 
         // Destroy the player object after death
