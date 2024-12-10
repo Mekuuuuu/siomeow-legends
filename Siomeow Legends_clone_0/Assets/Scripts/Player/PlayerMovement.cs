@@ -1,7 +1,9 @@
 using UnityEngine;
 using System.Collections;
+using Unity.Netcode;
+using Cinemachine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
     public float speed = 5f;
     private Rigidbody2D body;
@@ -19,6 +21,21 @@ public class PlayerMovement : MonoBehaviour
     private float lastDashTime = -Mathf.Infinity; 
 
     [SerializeField] private TrailRenderer tr;
+    [SerializeField] private CinemachineVirtualCamera vc;
+    [SerializeField] private AudioListener listener;
+
+    public override void OnNetworkSpawn()
+    {
+        if (IsOwner)
+        {
+            listener.enabled = true;
+            vc.Priority = 1;
+        }
+        else
+        {
+            vc.Priority = 0;
+        }
+    }
 
     private void Awake() 
     {
@@ -27,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-
+        if (!IsOwner) return;
         if(isDashing)
         {
             return;

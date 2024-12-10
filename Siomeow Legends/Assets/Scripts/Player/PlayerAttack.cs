@@ -1,6 +1,7 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class PlayerAttack : NetworkBehaviour
 {
     private GameObject attackArea = default;
     private GameObject specialAttackArea = default;
@@ -29,6 +30,8 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!IsOwner) return;
+        
         CheckAttackTimer();
         CheckSpecialAttackCooldown();
 

@@ -7,6 +7,12 @@ public class PowerUpsHandler : MonoBehaviour
     private PlayerMovement player;
     private PlayerStats playerStats;
 
+    private bool isSpeedBoostActive = false;
+    private float speedBoostEndTime = 0f;
+
+    private bool isBerserkBoostActive = false;
+    private float berserkBoostEndTime = 0f;
+
     public void Initialize(PlayerMovement player, PlayerStats playerStats)
     {
         this.player = player;
@@ -49,12 +55,25 @@ public class PowerUpsHandler : MonoBehaviour
         float boostMultiplier = 1.5f;
         float duration = 10f;
 
+        berserkBoostEndTime = Mathf.Max(berserkBoostEndTime, Time.time + duration);
+
+        if (isBerserkBoostActive)
+        {
+            Debug.Log($"Berserk Boost duration extended to: {berserkBoostEndTime - Time.time} seconds remaining.");
+            yield break;
+        }
+
+        isBerserkBoostActive = true;   
         playerStats.damageMultiplier = boostMultiplier;
         Debug.Log($"Berserk activated! Increased damage by {playerStats.damageMultiplier}!");
 
-        yield return new WaitForSeconds(duration);
-
+        while (Time.time < speedBoostEndTime)
+        {
+            yield return null; 
+        }
+        
         playerStats.damageMultiplier = originalMultiplier;
+        isBerserkBoostActive = false;
         Debug.Log($"Berserk ended. Damage reverted to {playerStats.damageMultiplier}.");
     }
 
@@ -65,12 +84,25 @@ public class PowerUpsHandler : MonoBehaviour
         float maxSpeed = 20f;
         float duration = 5f;
 
+        speedBoostEndTime = Mathf.Max(speedBoostEndTime, Time.time + duration);
+
+        if (isSpeedBoostActive)
+        {
+            Debug.Log($"Speed Boost duration extended to: {speedBoostEndTime - Time.time} seconds remaining.");
+            yield break;
+        }
+
+        isSpeedBoostActive = true;   
         player.speed = Mathf.Min(originalSpeed + boostAmount, maxSpeed);
         Debug.Log($"Speed boosted to: {player.speed}");
 
-        yield return new WaitForSeconds(duration);
+        while (Time.time < speedBoostEndTime)
+        {
+            yield return null; 
+        }
 
         player.speed = originalSpeed;
+        isSpeedBoostActive = false;
         Debug.Log($"Speed reverted to original value: {player.speed}");
     }
 
