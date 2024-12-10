@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : NetworkBehaviour
 {
     // PLAYER STATS
-    [SerializeField] public int health = 3607;
-    [SerializeField] public int defense = 400;
+    public NetworkVariable<int> health = new NetworkVariable<int>(3607, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    public NetworkVariable<int> defense = new NetworkVariable<int>(400, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     [SerializeField] public int killCount = 0;  // Add kill count to the player
 
     // To track the last player who caused damage
-    private PlayerStats lastAttacker;
+    private ulong lastAttackerClientId;
 
     public float damageMultiplier = 1f;
 
     public delegate void StatsChangedDelegate();
+    // public delegate void StatsChangedDelegate(int newHealth, int newDefense);
     public event StatsChangedDelegate OnStatsChanged;
 
     // STAT LIMITS
@@ -24,7 +26,8 @@ public class PlayerStats : MonoBehaviour
 
     public Animator anim;
 
-    public void TakeDamage(int rawDamage, PlayerStats attacker)
+    [ServerRpc(RequireOwnership = false)]
+    public void TakeDamageServerRpc(int rawDamage, ulong attackerClientId)
     {
         rawDamage = (int)(rawDamage * damageMultiplier);
 
@@ -34,33 +37,33 @@ public class PlayerStats : MonoBehaviour
         }
 
         // Record the last attacker
-        lastAttacker = attacker;
+        lastAttackerClientId = attackerClientId;
 
         // Check if defense is greater than or equal to 5
-        if (this.defense >= DAMAGE_REDUCTION)
+        if (defense.Value >= DAMAGE_REDUCTION)
         {
             // Reduce damage by 5 if defense is greater than or equal to 5
             int damageAfterDefense = rawDamage - DAMAGE_REDUCTION;
 
             // Apply damage after defense reduction
-            this.health -= damageAfterDefense;
+            health.Value -= damageAfterDefense;
 
             // Reduce the defense value by 5
-            this.defense -= DAMAGE_REDUCTION;
+            defense.Value -= DAMAGE_REDUCTION;
         }
         else
         {
             // If defense is less than 5, apply full damage
-            this.health -= rawDamage;
+            health.Value -= rawDamage;
         }
 
-        this.health = Mathf.Clamp(this.health, 0, MAX_HEALTH);
+        health.Value = Mathf.Clamp(health.Value, 0, MAX_HEALTH);
         OnStatsChanged?.Invoke();
-        Debug.Log($"{this.health}");
+        Debug.Log($"{health.Value}");
         anim.SetBool("Damage", true); 
         StartCoroutine(ResetDamageAnimation());
 
-        if (this.health <= 0)
+        if (health.Value <= 0)
         {
             StartCoroutine(Die());
         }
@@ -74,14 +77,14 @@ public class PlayerStats : MonoBehaviour
             throw new System.ArgumentOutOfRangeException("Cannot have negative healing.");
         }
 
-        this.health = Mathf.Min(this.health + healValue, MAX_HEALTH);
+        health.Value = Mathf.Min(health.Value + healValue, MAX_HEALTH);
 
         OnStatsChanged?.Invoke();  
     }
 
     public void IncreaseDefense(int defenseAmount)
     {
-        this.defense = Mathf.Min(this.defense + defenseAmount, MAX_DEFENSE);
+        defense.Value = Mathf.Min(defense.Value + defenseAmount, MAX_DEFENSE);
 
         OnStatsChanged?.Invoke();
     }
@@ -89,9 +92,13 @@ public class PlayerStats : MonoBehaviour
     private IEnumerator Die()
     {
         // When the player dies, increment the kill count of the last attacker
-        if (lastAttacker != null)
+        foreach (var client in HostManager.Instance.ClientData)
         {
-            lastAttacker.IncrementKillCount();
+            if (client.Key == lastAttackerClientId)
+            {
+                client.Value.IncrementKillCount();
+                Debug.Log($"ClientId {client.Value.clientId} has killed. Kill counter: {client.Value.killCount}");
+            }
         }
 
         // Destroy the player object after death

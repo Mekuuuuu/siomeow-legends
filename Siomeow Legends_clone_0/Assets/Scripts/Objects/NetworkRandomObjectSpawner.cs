@@ -86,6 +86,9 @@ public class NetworkRandomSpawner : NetworkBehaviour
     {
         spawnedObjects.RemoveAll(obj => obj == null || !obj.activeInHierarchy);
 
+        // Refresh the valid positions
+        GenerateValidPositions();
+
         int currentCount = spawnedObjects.Count;
         if (currentCount < MaxObjects)
         {

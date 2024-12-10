@@ -74,7 +74,7 @@ public class PlayerMovement : NetworkBehaviour
         }
         
 
-        Flip(inputDirection.x);
+        FlipServerRpc(inputDirection.x);
     }
 
     private void Animate(Vector2 input)
@@ -99,7 +99,14 @@ public class PlayerMovement : NetworkBehaviour
         anim.SetBool("Moving", moving);
     }
 
-    private void Flip(float inputX)
+    [ServerRpc(RequireOwnership = false)]
+    private void FlipServerRpc(float inputX)
+    {
+        FlipClientRpc(inputX);
+    }
+
+    [ClientRpc]
+    private void FlipClientRpc(float inputX)
     {
         if (isFacingRight && inputX < 0f || !isFacingRight && inputX > 0f)
         {
