@@ -350,12 +350,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkCrateSpawner
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6597954325518659162, guid: 3c3b6d1d7328ed94a892c724c1e10b01, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8281245771705051328, guid: 3c3b6d1d7328ed94a892c724c1e10b01, type: 3}
-      insertIndex: 2
+      insertIndex: 1
       addedObject: {fileID: 296971484}
   m_SourcePrefab: {fileID: 100100000, guid: 3c3b6d1d7328ed94a892c724c1e10b01, type: 3}
 --- !u!1 &296971483 stripped
@@ -376,8 +377,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  width: 18
-  height: 11
+  width: 58
+  height: 30
   MinSpawnDistance: 1
   InitialSpawnDelay: 2
   spawnCenter: {x: 0, y: 0}
@@ -453,11 +454,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6319341512623958571, guid: b27b60ec99e93f1498ab92a305cc7f89, type: 3}
       propertyPath: width
-      value: 18
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 6319341512623958571, guid: b27b60ec99e93f1498ab92a305cc7f89, type: 3}
       propertyPath: height
-      value: 11
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6319341512623958571, guid: b27b60ec99e93f1498ab92a305cc7f89, type: 3}
       propertyPath: ObstacleLayer.Array.size
@@ -1104,12 +1105,13 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 1984131814
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 381206293727571791, guid: 3593b2777fe5eb94ab63f3afeb645284, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2816651023271173216, guid: 3593b2777fe5eb94ab63f3afeb645284, type: 3}
-      insertIndex: 2
+      insertIndex: 1
       addedObject: {fileID: 1516525904}
   m_SourcePrefab: {fileID: 100100000, guid: 3593b2777fe5eb94ab63f3afeb645284, type: 3}
 --- !u!1 &1516525903 stripped
@@ -1130,8 +1132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  width: 18
-  height: 11
+  width: 58
+  height: 30
   MinSpawnDistance: 1
   InitialSpawnDelay: 0
   spawnCenter: {x: 0, y: 0}
@@ -1680,11 +1682,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8962480067743320995, guid: 2a2a8d04d6e4d834d9b1e062bae83d84, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.7
+      value: -5.5
       objectReference: {fileID: 0}
     - target: {fileID: 8962480067743320995, guid: 2a2a8d04d6e4d834d9b1e062bae83d84, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 8962480067743320995, guid: 2a2a8d04d6e4d834d9b1e062bae83d84, type: 3}
       propertyPath: m_LocalPosition.z

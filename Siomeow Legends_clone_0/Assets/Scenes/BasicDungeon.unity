@@ -314,11 +314,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6597954325518659162, guid: 3c3b6d1d7328ed94a892c724c1e10b01, type: 3}
       propertyPath: width
-      value: 18
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 6597954325518659162, guid: 3c3b6d1d7328ed94a892c724c1e10b01, type: 3}
       propertyPath: height
-      value: 11
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6597954325518659162, guid: 3c3b6d1d7328ed94a892c724c1e10b01, type: 3}
       propertyPath: m_Enabled
@@ -336,12 +336,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkCrateSpawner
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8281245771705051328, guid: 3c3b6d1d7328ed94a892c724c1e10b01, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6597954325518659162, guid: 3c3b6d1d7328ed94a892c724c1e10b01, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8281245771705051328, guid: 3c3b6d1d7328ed94a892c724c1e10b01, type: 3}
-      insertIndex: 2
+      insertIndex: 1
       addedObject: {fileID: 504615254}
   m_SourcePrefab: {fileID: 100100000, guid: 3c3b6d1d7328ed94a892c724c1e10b01, type: 3}
 --- !u!1 &504615253 stripped
@@ -362,8 +367,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  width: 18
-  height: 11
+  width: 23
+  height: 20
   MinSpawnDistance: 1
   InitialSpawnDelay: 2
   spawnCenter: {x: 0, y: 0}
@@ -708,11 +713,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6319341512623958571, guid: b27b60ec99e93f1498ab92a305cc7f89, type: 3}
       propertyPath: width
-      value: 18
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 6319341512623958571, guid: b27b60ec99e93f1498ab92a305cc7f89, type: 3}
       propertyPath: height
-      value: 11
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6319341512623958571, guid: b27b60ec99e93f1498ab92a305cc7f89, type: 3}
       propertyPath: ObstacleLayer.Array.size
@@ -1230,11 +1235,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 381206293727571791, guid: 3593b2777fe5eb94ab63f3afeb645284, type: 3}
       propertyPath: width
-      value: 18
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 381206293727571791, guid: 3593b2777fe5eb94ab63f3afeb645284, type: 3}
       propertyPath: height
-      value: 11
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 381206293727571791, guid: 3593b2777fe5eb94ab63f3afeb645284, type: 3}
       propertyPath: m_Enabled
@@ -1304,16 +1309,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkItemSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 2816651023271173216, guid: 3593b2777fe5eb94ab63f3afeb645284, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7860310171042216242, guid: 3593b2777fe5eb94ab63f3afeb645284, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 2400510868
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 381206293727571791, guid: 3593b2777fe5eb94ab63f3afeb645284, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2816651023271173216, guid: 3593b2777fe5eb94ab63f3afeb645284, type: 3}
-      insertIndex: 2
+      insertIndex: 1
       addedObject: {fileID: 1585958229}
   m_SourcePrefab: {fileID: 100100000, guid: 3593b2777fe5eb94ab63f3afeb645284, type: 3}
 --- !u!1 &1585958228 stripped
@@ -1334,8 +1344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  width: 18
-  height: 11
+  width: 23
+  height: 20
   MinSpawnDistance: 1
   InitialSpawnDelay: 0
   spawnCenter: {x: 0, y: 0}
@@ -1499,6 +1509,10 @@ PrefabInstance:
     - target: {fileID: 2007459031314809656, guid: a1d9a62a37501b041844dfe93a96ead6, type: 3}
       propertyPath: m_Name
       value: Trap
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007459031314809656, guid: a1d9a62a37501b041844dfe93a96ead6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5812319935145654906, guid: a1d9a62a37501b041844dfe93a96ead6, type: 3}
       propertyPath: m_LocalPosition.x
