@@ -1,5 +1,7 @@
+using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : NetworkBehaviour
 {
@@ -44,26 +46,6 @@ public class GameManager : NetworkBehaviour
         }
     }
 
-    // private void SyncKillCounts()
-    // {
-    //     foreach (var client in HostManager.Instance.ClientData)
-    //     {
-    //         ulong clientId = client.Key;
-    //         int killCount = client.Value.KillCount;
-
-    //         UpdateKillCountClientRpc(clientId, killCount);
-    //     }
-    // }
-
-    // [ClientRpc]
-    // private void UpdateKillCountClientRpc(ulong clientId, int killCount)
-    // {
-    //     if (NetworkManager.Singleton.LocalClientId == clientId)
-    //     {
-    //         PlayerUIManager.Instance.SetKillCount(killCount);
-    //     }
-    // }
-
     private void StartCountdown()
     {
         if (IsServer)
@@ -82,7 +64,7 @@ public class GameManager : NetworkBehaviour
         else
         {
             CancelInvoke(nameof(UpdateCountdown));
-            OnCountdownFinished();
+            StartCoroutine(OnCountdownFinished());
         }
     }
 
@@ -92,9 +74,11 @@ public class GameManager : NetworkBehaviour
         countdown.UpdateCountdownUI(time); // Update the UI on all clients
     }
 
-    private void OnCountdownFinished()
+    private IEnumerator OnCountdownFinished()
     {
-        countdown.OnCountdownFinished(); // Notify the countdown has finished
+        countdown.OnCountdownFinishedServerRpc(); // Notify the countdown has finished
         Debug.Log("Countdown finished! Transitioning to next phase.");
+        yield return new WaitForSeconds(3f);
+        NetworkManager.Singleton.SceneManager.LoadScene("RankingScreen", LoadSceneMode.Single);
     }
 }
