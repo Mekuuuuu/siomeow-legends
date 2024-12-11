@@ -343,6 +343,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 980944640830571644, guid: e33c2d9b2ef5d094e93278e43ae3977b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4018221150159453668, guid: df30fdf7da7aade43991a416865ea31b, type: 3}
     - target: {fileID: 1164298482045210629, guid: e33c2d9b2ef5d094e93278e43ae3977b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -423,14 +427,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1823746991727225497, guid: e33c2d9b2ef5d094e93278e43ae3977b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1304079469125189335, guid: 8d7e79bf695169f43b45a9ae763f6191, type: 3}
     - target: {fileID: 1961659164462878884, guid: e33c2d9b2ef5d094e93278e43ae3977b, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1961659164462878884, guid: e33c2d9b2ef5d094e93278e43ae3977b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2289386155252965899, guid: e33c2d9b2ef5d094e93278e43ae3977b, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 2649847697073447219, guid: 1d82b62da34ef16449934b9f618caeec, type: 3}
+    - target: {fileID: 5187151593596281192, guid: e33c2d9b2ef5d094e93278e43ae3977b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3476828053110778734, guid: afdeebf542ebefb4f971612a08bdd240, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

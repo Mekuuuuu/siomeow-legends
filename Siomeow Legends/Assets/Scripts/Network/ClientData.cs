@@ -7,7 +7,22 @@ public class ClientData
     public ulong clientId;
     public string playerName; // Add this property to store the player's name
     public int characterId = -1;
-    public int killCount = 0; 
+
+    private int _killCount;
+    public int KillCount
+    {
+        get => _killCount;
+        set
+        {
+            if (_killCount != value)
+            {
+                _killCount = value;
+                OnKillCountChanged?.Invoke(clientId, _killCount);
+            }
+        }
+    }
+
+    public static event Action<ulong, int> OnKillCountChanged;
 
     public ClientData(ulong clientId, string playerName)
     {
@@ -17,7 +32,7 @@ public class ClientData
 
     public void IncrementKillCount()
     {
-        killCount++;
-        Debug.Log($"Client {playerName} now has {killCount} kills.");
+        KillCount++;
+        Debug.Log($"Client {playerName} now has {KillCount} kills.");
     }
 }

@@ -239,7 +239,7 @@ MonoBehaviour:
     m_InternalValue: 400
   killCount: 0
   damageMultiplier: 1
-  anim: {fileID: 0}
+  anim: {fileID: 2382115497757905514}
 --- !u!114 &6623825739990740400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -927,9 +927,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.5, y: 0.5}
-      - {x: 0, y: 0}
-      - {x: 0.5, y: -0.5}
+    - - {x: 0.08992106, y: -0.009155035}
+      - {x: 0.09643683, y: -0.0071058273}
+      - {x: 0.08518063, y: -0.01066041}
   m_UseDelaunayMesh: 0
 --- !u!114 &4854687162447336318
 MonoBehaviour:

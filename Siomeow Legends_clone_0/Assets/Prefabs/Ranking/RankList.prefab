@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 2454285318401690332}
   - component: {fileID: 9179463556512520918}
   - component: {fileID: 1927199060391275572}
+  - component: {fileID: 3119872756185655699}
   m_Layer: 5
   m_Name: RankList
   m_TagString: Untagged
@@ -297,7 +298,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5596279918340491937}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad86c2f1aa791f2409620eab8a9b4279, type: 3}
   m_Name: 
@@ -306,6 +307,22 @@ MonoBehaviour:
   playerImage: {fileID: 4153439131773917466}
   playerNameText: {fileID: 1240773862529749066}
   playerKillsNumText: {fileID: 4593102040239078388}
+--- !u!114 &3119872756185655699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596279918340491937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6319eaa1dd2dc6040b728af6c6b8c9a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterDatabase: {fileID: 11400000, guid: d2c9d51c77f787d449e5f94021878b00, type: 2}
+  playerNameText: {fileID: 1240773862529749066}
+  playerPortraitImage: {fileID: 4153439131773917466}
+  killCountText: {fileID: 4593102040239078388}
 --- !u!1 &6082612035407958506
 GameObject:
   m_ObjectHideFlags: 0

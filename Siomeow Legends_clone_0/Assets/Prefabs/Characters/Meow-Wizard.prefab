@@ -340,9 +340,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.5, y: 0.5}
-      - {x: 0, y: 0}
-      - {x: 0.5, y: -0.5}
+    - - {x: 0.06860733, y: -0.003477186}
+      - {x: 0.063067675, y: 0.0042483658}
+      - {x: 0.06693411, y: 0}
+      - {x: 0.06733167, y: -0.004173428}
   m_UseDelaunayMesh: 0
 --- !u!114 &4580990670918084862
 MonoBehaviour:
@@ -563,7 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1898972835
+  GlobalObjectIdHash: 2440002222
   InScenePlacedSourceGlobalObjectIdHash: 3001382797
   DeferredDespawnTick: 0
   Ownership: 1

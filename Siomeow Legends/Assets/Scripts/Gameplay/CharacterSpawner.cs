@@ -12,6 +12,7 @@ public class CharacterSpawner : NetworkBehaviour
 
     [SerializeField] private LayerMask[] ObstacleLayer;
 
+    private List<GameObject> spawnedObjects = new List<GameObject>();
     private List<Vector2> validPositions = new List<Vector2>();
     public override void OnNetworkSpawn()
     {
@@ -20,6 +21,15 @@ public class CharacterSpawner : NetworkBehaviour
 
         GenerateValidPositions();
         SpawnAllCharacters();
+    }
+    private void OnEnable()
+    {
+        PlayerStats.OnPlayerDied += HandlePlayerRespawn;
+    }
+
+    private void OnDisable()
+    {
+        PlayerStats.OnPlayerDied -= HandlePlayerRespawn;
     }
 
     private void SpawnAllCharacters()
@@ -83,7 +93,27 @@ public class CharacterSpawner : NetworkBehaviour
 
     private bool IsValidPosition(Vector2 position)
     {
-        // IsOverllapingWithObstacles logic from RandomObjectSpawner
+        if (IsPositionTooCloseToOthers(position)) return false;
+
+        if (IsOverlappingWithObstacles(position)) return false;
+
+        return true;
+    }
+
+    private bool IsPositionTooCloseToOthers(Vector2 position)
+    {
+        foreach (GameObject obj in spawnedObjects)
+        {
+            if (obj != null && Vector2.Distance(obj.transform.position, position) < MinSpawnDistance)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private bool IsOverlappingWithObstacles(Vector2 position)
+    {
         Vector2 boxSize = new Vector2(1f, 1f);
         foreach (LayerMask layer in ObstacleLayer)
         {
@@ -107,6 +137,42 @@ public class CharacterSpawner : NetworkBehaviour
 
         spawnPosition = Vector2.zero;
         return false;
+    }
+
+    private void HandlePlayerRespawn(ulong clientId)
+    {
+        // Only the server should handle respawning
+        if (!IsServer) return;
+
+        Vector2 spawnPos;
+        if (TryGetValidSpawnPosition(out spawnPos))
+        {
+            var playerObject = NetworkManager.Singleton.ConnectedClients[clientId].PlayerObject;
+            if (playerObject != null)
+            {
+                playerObject.transform.position = spawnPos;
+                UpdatePlayerPositionClientRpc(clientId, spawnPos);
+                Debug.Log($"Respawned player {clientId} at {spawnPos}");
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"No valid spawn positions available for respawning player {clientId}.");
+        }
+    }
+
+    [ClientRpc]
+    private void UpdatePlayerPositionClientRpc(ulong clientId, Vector2 position)
+    {
+        // Ensure the local player object is updated on all clients
+        if (NetworkManager.Singleton.LocalClientId == clientId)
+        {
+            var playerObject = NetworkManager.Singleton.ConnectedClients[clientId].PlayerObject;
+            if (playerObject != null)
+            {
+                playerObject.transform.position = position;
+            }
+        }
     }
 
     // Draw the spawn area in the editor for visual debugging

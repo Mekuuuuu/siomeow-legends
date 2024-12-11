@@ -1,8 +1,11 @@
+using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : NetworkBehaviour
 {
+    public static GameManager Instance { get; private set; }
     [SerializeField] private CharacterDatabase characterDatabase;
     [SerializeField] private GameCountdown countdown;
     [SerializeField] private float remainingTime = 60f;
@@ -61,7 +64,7 @@ public class GameManager : NetworkBehaviour
         else
         {
             CancelInvoke(nameof(UpdateCountdown));
-            OnCountdownFinished();
+            StartCoroutine(OnCountdownFinished());
         }
     }
 
@@ -71,9 +74,11 @@ public class GameManager : NetworkBehaviour
         countdown.UpdateCountdownUI(time); // Update the UI on all clients
     }
 
-    private void OnCountdownFinished()
+    private IEnumerator OnCountdownFinished()
     {
-        countdown.OnCountdownFinished(); // Notify the countdown has finished
+        countdown.OnCountdownFinishedServerRpc(); // Notify the countdown has finished
         Debug.Log("Countdown finished! Transitioning to next phase.");
+        yield return new WaitForSeconds(3f);
+        NetworkManager.Singleton.SceneManager.LoadScene("RankingScreen", LoadSceneMode.Single);
     }
 }

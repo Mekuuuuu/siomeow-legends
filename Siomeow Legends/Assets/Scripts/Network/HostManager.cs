@@ -117,9 +117,11 @@ public class HostManager : MonoBehaviour
                 if (ip.AddressFamily == AddressFamily.InterNetwork)
                 {
                     JoinCode = ip.ToString();
+                    Debug.Log(JoinCode);
                     break;
                 }
             }
+            
             if (JoinCode == null)
             {
                 throw new Exception("No network adapters with an IPv4 address in the system.");
@@ -127,6 +129,7 @@ public class HostManager : MonoBehaviour
 
         }
 
+                    Debug.Log(JoinCode);
         Debug.Log("General Network Process (Host)");
 
         NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;

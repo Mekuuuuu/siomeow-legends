@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class RangedAttackBullet : MonoBehaviour
 {
-    private int minDamage = 30;
-    private int maxDamage = 60;
+    private int minDamage = 40;
+    private int maxDamage = 80;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
