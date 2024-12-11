@@ -7,8 +7,8 @@ using UnityEngine;
 public class PlayerStats : NetworkBehaviour
 {
     // PLAYER STATS
-    public NetworkVariable<int> health = new NetworkVariable<int>(3607, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
-    public NetworkVariable<int> defense = new NetworkVariable<int>(400, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    public NetworkVariable<int> health = new NetworkVariable<int>(1069, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    public NetworkVariable<int> defense = new NetworkVariable<int>(300, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     [SerializeField] public int killCount = 0;  // Add kill count to the player
 
     // To track the last player who caused damage
@@ -22,8 +22,8 @@ public class PlayerStats : NetworkBehaviour
     public static event Action<ulong> OnPlayerDied;
 
     // STAT LIMITS
-    public const int MAX_HEALTH = 3607;
-    public const int MAX_DEFENSE = 400;
+    public const int MAX_HEALTH = 1069;
+    public const int MAX_DEFENSE = 300;
     public const int DAMAGE_REDUCTION = 50;
     private bool isDead = false;
 
