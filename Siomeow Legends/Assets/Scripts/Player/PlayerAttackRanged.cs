@@ -9,7 +9,7 @@ public class PlayerAttackRanged : NetworkBehaviour
     // Objects that shoot out 
     public GameObject bullet;
     public GameObject specialBullet; 
-    public float fireForce = 10f; 
+    public float fireForce = 15f; 
 
     // Normal Attack
     private bool isAttacking = false;
@@ -64,7 +64,7 @@ public class PlayerAttackRanged : NetworkBehaviour
             GameObject intBullet = Instantiate(bullet, Aim.position, Aim.rotation, Aim);
 
             // Detach the bullet from the Aim transform
-            intBullet.transform.parent = null;
+            // intBullet.transform.parent = null;
 
             // Adjust bullet's shooting direction based on where the character is facing 
             Vector2 shootingDirection = Aim.right * facingDirection;
@@ -75,7 +75,7 @@ public class PlayerAttackRanged : NetworkBehaviour
             anim.SetBool("Attack", isAttacking); 
 
             // Removes bullet after 2 seconds
-            Destroy(intBullet, 0.8f);
+            Destroy(intBullet, 0.7f);
         }
     }
 
