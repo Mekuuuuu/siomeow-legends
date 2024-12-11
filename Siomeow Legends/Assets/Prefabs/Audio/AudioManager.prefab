@@ -288,9 +288,9 @@ MonoBehaviour:
   bgm: {fileID: 8528748015227854501}
   buttonClick: {fileID: 7769338181021298735}
   pickup: {fileID: 6298152953638024772}
-  damage: {fileID: 0}
-  death: {fileID: 0}
-  dash: {fileID: 0}
+  damage: {fileID: 499435338169319504}
+  death: {fileID: 3330742381665983864}
+  dash: {fileID: 3689189565242013342}
   heal: {fileID: 7424579875771896638}
   crate: {fileID: 5755293020145054584}
   error: {fileID: 1610599164727902853}
