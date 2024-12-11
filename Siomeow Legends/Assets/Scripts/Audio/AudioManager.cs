@@ -132,4 +132,14 @@ public class AudioManager : MonoBehaviour
     {
         lockin.Play();
     }
+
+    public void PlayHeal()
+    {
+        heal.Play();
+    }
+
+    public void PlayCrate()
+    {
+        crate.Play();
+    }
 }
