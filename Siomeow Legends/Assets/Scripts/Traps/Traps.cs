@@ -36,6 +36,7 @@ public class Traps : MonoBehaviour
             Debug.Log($"Trap Triggered");
         }
         
+        AudioManager.instance.PlayTrap();
         anim.SetBool("Triggered", trapTriggered);
     }
 
