@@ -12,6 +12,7 @@ public class CharacterSpawner : NetworkBehaviour
 
     [SerializeField] private LayerMask[] ObstacleLayer;
 
+    private List<GameObject> spawnedObjects = new List<GameObject>();
     private List<Vector2> validPositions = new List<Vector2>();
     public override void OnNetworkSpawn()
     {
@@ -92,7 +93,27 @@ public class CharacterSpawner : NetworkBehaviour
 
     private bool IsValidPosition(Vector2 position)
     {
-        // IsOverllapingWithObstacles logic from RandomObjectSpawner
+        if (IsPositionTooCloseToOthers(position)) return false;
+
+        if (IsOverlappingWithObstacles(position)) return false;
+
+        return true;
+    }
+
+    private bool IsPositionTooCloseToOthers(Vector2 position)
+    {
+        foreach (GameObject obj in spawnedObjects)
+        {
+            if (obj != null && Vector2.Distance(obj.transform.position, position) < MinSpawnDistance)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private bool IsOverlappingWithObstacles(Vector2 position)
+    {
         Vector2 boxSize = new Vector2(1f, 1f);
         foreach (LayerMask layer in ObstacleLayer)
         {
