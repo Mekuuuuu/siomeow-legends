@@ -63,26 +63,19 @@ public class PlayerAttackRanged : NetworkBehaviour
             // Instantiate bullet
             GameObject intBullet = Instantiate(bullet, Aim.position, Aim.rotation, Aim);
 
+            // Detach the bullet from the Aim transform
+            intBullet.transform.parent = null;
+
             // Adjust bullet's shooting direction based on where the character is facing 
             Vector2 shootingDirection = Aim.right * facingDirection;
             intBullet.GetComponent<Rigidbody2D>().AddForce(shootingDirection * fireForce, ForceMode2D.Impulse);
-
-            // Adjust bullet's rotation to face the correct direction
-            if (facingDirection < 0) 
-            {
-                intBullet.transform.rotation = Quaternion.Euler(0f, 180f, 0f); // Flip horizontally
-            }
-            else 
-            {
-                intBullet.transform.rotation = Quaternion.Euler(0f, 0f, 0f); // Default rotation
-            }
 
             // Trigger animations
             isAttacking = true; 
             anim.SetBool("Attack", isAttacking); 
 
             // Removes bullet after 2 seconds
-            Destroy(intBullet, 2f);
+            Destroy(intBullet, 0.8f);
         }
     }
 
@@ -112,22 +105,12 @@ public class PlayerAttackRanged : NetworkBehaviour
             Vector2 shootingDirection = Aim.right * facingDirection;
             intSpecialBullet.GetComponent<Rigidbody2D>().AddForce(shootingDirection * fireForce, ForceMode2D.Impulse);
 
-            // Adjust bullet's rotation to face the correct direction
-            if (facingDirection < 0) 
-            {
-                intSpecialBullet.transform.rotation = Quaternion.Euler(0f, 180f, 0f); // Flip horizontally
-            }
-            else 
-            {
-                intSpecialBullet.transform.rotation = Quaternion.Euler(0f, 0f, 0f); // Default rotation
-            }
-
             // Trigger animations
             isSpecialAttacking = true; 
             anim.SetBool("SpecialAttack", isSpecialAttacking); 
 
             // Removes bullet after 2 seconds
-            Destroy(intSpecialBullet, 2f);
+            Destroy(intSpecialBullet, 0.8f);
         }
     }
 
