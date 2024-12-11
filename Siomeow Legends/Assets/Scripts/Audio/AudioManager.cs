@@ -49,57 +49,36 @@ public class AudioManager : MonoBehaviour
             bgm.clip = bgmClips[0];
             bgm.Play();
         }
-        else if (sceneName == "BasicDungeon")
-        {
-            StopPlayingClips();
-            bgm.clip = bgmClips[1];
-            bgm.Play();
-        }
-        else if (sceneName == "ForestMap")
-        {
-            StopPlayingClips();
-            bgm.clip = bgmClips[1];
-            bgm.Play();
-        }
-        else if (sceneName == "LavaMap")
-        {
-            StopPlayingClips();
-            bgm.clip = bgmClips[1];
-            bgm.Play();
-        }
-        if (sceneName == "RankingScreen")
-        {
-            StopPlayingClips();
-            bgm.clip = bgmClips[1];
-            bgm.Play();
-        }
     }
 
     private void Update()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
-        // if (currentSceneName == "CharacterCustomization") return;
+        
         if (currentSceneName != previousSceneName)
         {
             // Debug.Log("Scene has changed from " + previousSceneName + " to " + currentSceneName);
             previousSceneName = currentSceneName;
             StopPlayingClips();
-            // if (currentSceneName == "CharacterCustomization")
-            // {
-            //     bgm.clip = bgmClips[6];
-            //     bgm.Play();
-            // }
-            // else if (currentSceneName == "TestMenuSave")
-            // {
-            //     bgm.clip = bgmClips[0];
-            //     bgm.Play();
-            // }
-
-            // else if (currentSceneName == "NewIntroScene")
-            // {
-            //     Debug.Log(true);
-            // }
-
+           
+            if (currentSceneName == "BasicDungeon")
+            {
+                StopPlayingClips();
+                bgm.clip = bgmClips[1];
+                bgm.Play();
+            }
+            else if (currentSceneName == "ForestMap")
+            {
+                StopPlayingClips();
+                bgm.clip = bgmClips[1];
+                bgm.Play();
+            }
+            else if (currentSceneName == "LavaMap")
+            {
+                StopPlayingClips();
+                bgm.clip = bgmClips[1];
+                bgm.Play();
+            }
         }
     }
 
