@@ -122,6 +122,7 @@ public class PlayerMovement : NetworkBehaviour
 
     private IEnumerator Dash()
     {
+        AudioManager.instance.PlayDash();
         if (!canDash) yield break; 
         canDash = false;
         isDashing = true;

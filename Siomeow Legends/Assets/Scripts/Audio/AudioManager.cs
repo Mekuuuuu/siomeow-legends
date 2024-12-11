@@ -20,6 +20,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource error;
     [SerializeField] private AudioSource select;
     [SerializeField] private AudioSource lockin;
+    [SerializeField] private AudioSource trap;
+    [SerializeField] private AudioSource gameover;
 
     [SerializeField] private List<AudioSource> audioSources = new List<AudioSource>();
 
@@ -47,14 +49,30 @@ public class AudioManager : MonoBehaviour
             bgm.clip = bgmClips[0];
             bgm.Play();
         }
-
-        // // testing purposes
-        // else if (sceneName == "City 3")
-        // {
-        //     StopPlayingClips();
-        //     bgm.clip = bgmClips[3];
-        //     bgm.Play();
-        // }
+        else if (sceneName == "BasicDungeon")
+        {
+            StopPlayingClips();
+            bgm.clip = bgmClips[1];
+            bgm.Play();
+        }
+        else if (sceneName == "ForestMap")
+        {
+            StopPlayingClips();
+            bgm.clip = bgmClips[1];
+            bgm.Play();
+        }
+        else if (sceneName == "LavaMap")
+        {
+            StopPlayingClips();
+            bgm.clip = bgmClips[1];
+            bgm.Play();
+        }
+        if (sceneName == "RankingScreen")
+        {
+            StopPlayingClips();
+            bgm.clip = bgmClips[1];
+            bgm.Play();
+        }
     }
 
     private void Update()
@@ -141,5 +159,16 @@ public class AudioManager : MonoBehaviour
     public void PlayCrate()
     {
         crate.Play();
+    }
+
+    public void PlayTrap()
+    {
+        trap.Play();
+    }
+
+    
+    public void PlayGameover()
+    {
+        gameover.Play();
     }
 }
