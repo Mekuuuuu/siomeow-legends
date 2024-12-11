@@ -63,7 +63,7 @@ public class Traps : MonoBehaviour
         
         while (trapTriggered)
         {
-            health.TakeDamageServerRpc(damage, 0);
+            health.TakeDamageServerRpc(damage, 100);
             Debug.Log("Inflicting damage!");
 
             yield return new WaitForSeconds(1f);
