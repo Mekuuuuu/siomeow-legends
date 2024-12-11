@@ -28,7 +28,6 @@ public class PlayerStats : NetworkBehaviour
     private bool isDead = false;
 
     public Animator anim;
-
     [ServerRpc(RequireOwnership = false)]
     public void TakeDamageServerRpc(int rawDamage, ulong attackerClientId)
     {
@@ -61,7 +60,12 @@ public class PlayerStats : NetworkBehaviour
         }
 
         health.Value = Mathf.Clamp(health.Value, 0, MAX_HEALTH);
-        OnStatsChanged?.Invoke();
+        if (IsOwner)
+        {
+            OnStatsChanged?.Invoke();
+        }
+        UpdateHealthUIClientRpc(health.Value, MAX_HEALTH);
+        UpdateDamageUIClientRpc(defense.Value, MAX_DEFENSE);
         Debug.Log($"{health.Value}");
         anim.SetBool("Damage", true); 
         StartCoroutine(ResetDamageAnimation());
@@ -82,14 +86,20 @@ public class PlayerStats : NetworkBehaviour
 
         health.Value = Mathf.Min(health.Value + healValue, MAX_HEALTH);
 
-        OnStatsChanged?.Invoke();  
+        if (IsOwner)
+        {
+            OnStatsChanged?.Invoke();
+        }
     }
 
     public void IncreaseDefense(int defenseAmount)
     {
         defense.Value = Mathf.Min(defense.Value + defenseAmount, MAX_DEFENSE);
 
-        OnStatsChanged?.Invoke();
+        if (IsOwner)
+        {
+            OnStatsChanged?.Invoke();
+        }
     }
 
     private IEnumerator Die()
@@ -111,6 +121,8 @@ public class PlayerStats : NetworkBehaviour
         anim.SetBool("Dead", true); 
 
         OnPlayerDied?.Invoke(OwnerClientId);
+        UpdateHealthUIClientRpc(MAX_HEALTH, MAX_HEALTH);
+        UpdateDamageUIClientRpc(MAX_DEFENSE, MAX_DEFENSE);
         yield return new WaitForSeconds(3f); 
 
         health.Value = MAX_HEALTH;
@@ -127,17 +139,34 @@ public class PlayerStats : NetworkBehaviour
     }
 
     [ClientRpc]
+    private void UpdateHealthUIClientRpc(int health, int maxHealth)
+    {
+        if (NetworkManager.Singleton.LocalClientId == OwnerClientId)
+        {
+            PlayerUIManager.Instance.SetHealth(health, maxHealth);
+        }
+    }
+
+    // Method to update damage UI (via ClientRpc)
+    [ClientRpc]
+    private void UpdateDamageUIClientRpc(int defense, int maxDefense)
+    {
+        if (NetworkManager.Singleton.LocalClientId == OwnerClientId)
+        {
+            PlayerUIManager.Instance.SetDefense(defense, maxDefense);
+        }
+    }
+    [ClientRpc]
     private void UpdateKillCountClientRpc(ulong clientId, int newKillCount)
         {
             if (NetworkManager.Singleton.LocalClientId == clientId)
             {
                 PlayerUIManager.Instance.SetKillCount(newKillCount);
             }
-        }
-    
+    }
     private IEnumerator ResetDamageAnimation()
     {
-        yield return new WaitForSeconds(0.5f); 
+        yield return new WaitForSeconds(0.5f);
         anim.SetBool("Damage", false);
     }
 }
