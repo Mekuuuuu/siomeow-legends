@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
@@ -18,11 +19,13 @@ public class PlayerStats : NetworkBehaviour
     public delegate void StatsChangedDelegate();
     // public delegate void StatsChangedDelegate(int newHealth, int newDefense);
     public event StatsChangedDelegate OnStatsChanged;
+    public static event Action<ulong> OnPlayerDied;
 
     // STAT LIMITS
     public const int MAX_HEALTH = 3607;
     public const int MAX_DEFENSE = 400;
     public const int DAMAGE_REDUCTION = 50;
+    private bool isDead = false;
 
     public Animator anim;
 
@@ -91,20 +94,30 @@ public class PlayerStats : NetworkBehaviour
 
     private IEnumerator Die()
     {
+        if (isDead) yield break;
+        isDead = true;
         // When the player dies, increment the kill count of the last attacker
         foreach (var client in HostManager.Instance.ClientData)
         {
             if (client.Key == lastAttackerClientId)
             {
                 client.Value.IncrementKillCount();
-                Debug.Log($"ClientId {client.Value.clientId} has killed. Kill counter: {client.Value.killCount}");
+                UpdateKillCountClientRpc(client.Key, client.Value.KillCount); // Notify all clients
+                Debug.Log($"ClientId {client.Value.clientId} has killed. Kill counter: {client.Value.KillCount}");
             }
         }
 
         // Destroy the player object after death
         anim.SetBool("Dead", true); 
+
+        OnPlayerDied?.Invoke(OwnerClientId);
         yield return new WaitForSeconds(3f); 
-        Destroy(gameObject);
+
+        health.Value = MAX_HEALTH;
+        defense.Value = MAX_DEFENSE;
+        // Destroy(gameObject);
+        anim.SetBool("Dead", false);
+        isDead = false;
     }
 
     public void IncrementKillCount()
@@ -112,6 +125,15 @@ public class PlayerStats : NetworkBehaviour
         killCount++;
         Debug.Log($"{gameObject.name}'s Kill Count: {killCount}");
     }
+
+    [ClientRpc]
+    private void UpdateKillCountClientRpc(ulong clientId, int newKillCount)
+        {
+            if (NetworkManager.Singleton.LocalClientId == clientId)
+            {
+                PlayerUIManager.Instance.SetKillCount(newKillCount);
+            }
+        }
     
     private IEnumerator ResetDamageAnimation()
     {

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class GameManager : NetworkBehaviour
 {
+    public static GameManager Instance { get; private set; }
     [SerializeField] private CharacterDatabase characterDatabase;
     [SerializeField] private GameCountdown countdown;
     [SerializeField] private float remainingTime = 60f;
@@ -42,6 +43,26 @@ public class GameManager : NetworkBehaviour
             }
         }
     }
+
+    // private void SyncKillCounts()
+    // {
+    //     foreach (var client in HostManager.Instance.ClientData)
+    //     {
+    //         ulong clientId = client.Key;
+    //         int killCount = client.Value.KillCount;
+
+    //         UpdateKillCountClientRpc(clientId, killCount);
+    //     }
+    // }
+
+    // [ClientRpc]
+    // private void UpdateKillCountClientRpc(ulong clientId, int killCount)
+    // {
+    //     if (NetworkManager.Singleton.LocalClientId == clientId)
+    //     {
+    //         PlayerUIManager.Instance.SetKillCount(killCount);
+    //     }
+    // }
 
     private void StartCountdown()
     {

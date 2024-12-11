@@ -239,7 +239,7 @@ MonoBehaviour:
     m_InternalValue: 400
   killCount: 0
   damageMultiplier: 1
-  anim: {fileID: 0}
+  anim: {fileID: 2382115497757905514}
 --- !u!114 &6623825739990740400
 MonoBehaviour:
   m_ObjectHideFlags: 0
