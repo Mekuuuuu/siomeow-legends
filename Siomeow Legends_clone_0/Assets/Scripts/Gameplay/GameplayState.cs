@@ -9,18 +9,23 @@ public struct GameplayState : INetworkSerializable, IEquatable<GameplayState>
     public FixedString64Bytes PlayerName;
     public int CharacterId;
 
-    public GameplayState(ulong clientId, FixedString64Bytes playerName, int characterId = -1)
+    public int KillCount;
+
+    public GameplayState(ulong clientId, FixedString64Bytes playerName, int characterId = -1, int killCount = 0)
     {
         this.ClientId = clientId;
         this.PlayerName = playerName;
         this.CharacterId = characterId;
+        this.KillCount = killCount;
     }
 
     public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
         serializer.SerializeValue(ref ClientId);
         serializer.SerializeValue(ref PlayerName);
-        serializer.SerializeValue(ref CharacterId);  
+        serializer.SerializeValue(ref CharacterId); 
+        serializer.SerializeValue(ref KillCount);  
+
     }
 
     public bool Equals(GameplayState other)

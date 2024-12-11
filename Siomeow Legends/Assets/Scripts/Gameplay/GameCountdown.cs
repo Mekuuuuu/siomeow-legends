@@ -1,14 +1,16 @@
 using System;
 using System.Collections;
 using TMPro;
+using Unity.Netcode;
 using UnityEngine;
 
-public class GameCountdown : MonoBehaviour
+public class GameCountdown : NetworkBehaviour
 {
     [SerializeField] private TMP_Text countdownText;
     [SerializeField] private float blinkThreshold = 30f; // Time threshold for blink (in seconds)
     [SerializeField] private Color blinkColor = Color.red; // Color for blink warning
     [SerializeField] private Color defaultColor = Color.white; // Default color for the text
+    [SerializeField] private GameObject timesUp;
 
     private float lastBlinkTime = 0f; // Timer for blink effect
     private bool isBlinking = false; // To toggle the blinking effect
@@ -57,9 +59,21 @@ public class GameCountdown : MonoBehaviour
             countdownText.color = defaultColor; // Ensure the text is in default color when no longer blinking
         }
     }
-
-    public void OnCountdownFinished()
+    [ServerRpc(RequireOwnership = false)]
+    public void OnCountdownFinishedServerRpc()
     {
-        // countdownText.text = "Time's up!";
+        Debug.Log("Countdown finished on server.");
+        timesUp.SetActive(true); // Set active on the server
+        OnCountdownFinishedClientRpc();
+    }
+
+    [ClientRpc]
+    public void OnCountdownFinishedClientRpc()
+    {
+        Debug.Log("Countdown finished on client.");
+        if (timesUp != null)
+        {
+            timesUp.SetActive(true); // Set active on the client
+        }
     }
 }
