@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AttackArea : MonoBehaviour
 {
-    private int minDamage = 90;
+    private int minDamage = 80;
     private int maxDamage = 120;
     private void OnTriggerEnter2D(Collider2D collider)
     {
