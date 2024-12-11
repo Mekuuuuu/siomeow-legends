@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class RangedSpecialAttackBullet : MonoBehaviour
 {
-    private int minDamage = 120;
-    private int maxDamage = 150;
+    private int minDamage = 160;
+    private int maxDamage = 240;
     private void OnTriggerEnter2D(Collider2D collider)
     {
         // Check if the collider has the PlayerStats component
