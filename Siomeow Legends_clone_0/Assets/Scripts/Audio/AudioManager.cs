@@ -20,6 +20,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource error;
     [SerializeField] private AudioSource select;
     [SerializeField] private AudioSource lockin;
+    [SerializeField] private AudioSource trap;
+    [SerializeField] private AudioSource gameover;
 
     [SerializeField] private List<AudioSource> audioSources = new List<AudioSource>();
 
@@ -47,41 +49,36 @@ public class AudioManager : MonoBehaviour
             bgm.clip = bgmClips[0];
             bgm.Play();
         }
-
-        // // testing purposes
-        // else if (sceneName == "City 3")
-        // {
-        //     StopPlayingClips();
-        //     bgm.clip = bgmClips[3];
-        //     bgm.Play();
-        // }
     }
 
     private void Update()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
-        // if (currentSceneName == "CharacterCustomization") return;
+        
         if (currentSceneName != previousSceneName)
         {
             // Debug.Log("Scene has changed from " + previousSceneName + " to " + currentSceneName);
             previousSceneName = currentSceneName;
             StopPlayingClips();
-            // if (currentSceneName == "CharacterCustomization")
-            // {
-            //     bgm.clip = bgmClips[6];
-            //     bgm.Play();
-            // }
-            // else if (currentSceneName == "TestMenuSave")
-            // {
-            //     bgm.clip = bgmClips[0];
-            //     bgm.Play();
-            // }
-
-            // else if (currentSceneName == "NewIntroScene")
-            // {
-            //     Debug.Log(true);
-            // }
-
+           
+            if (currentSceneName == "BasicDungeon")
+            {
+                StopPlayingClips();
+                bgm.clip = bgmClips[1];
+                bgm.Play();
+            }
+            else if (currentSceneName == "ForestMap")
+            {
+                StopPlayingClips();
+                bgm.clip = bgmClips[1];
+                bgm.Play();
+            }
+            else if (currentSceneName == "LavaMap")
+            {
+                StopPlayingClips();
+                bgm.clip = bgmClips[1];
+                bgm.Play();
+            }
         }
     }
 
@@ -131,5 +128,26 @@ public class AudioManager : MonoBehaviour
     public void PlayLockin()
     {
         lockin.Play();
+    }
+
+    public void PlayHeal()
+    {
+        heal.Play();
+    }
+
+    public void PlayCrate()
+    {
+        crate.Play();
+    }
+
+    public void PlayTrap()
+    {
+        trap.Play();
+    }
+
+    
+    public void PlayGameover()
+    {
+        gameover.Play();
     }
 }

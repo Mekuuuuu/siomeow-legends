@@ -68,10 +68,12 @@ public class PlayerStats : NetworkBehaviour
         UpdateDamageUIClientRpc(defense.Value, MAX_DEFENSE);
         Debug.Log($"{health.Value}");
         anim.SetBool("Damage", true); 
+        AudioManager.instance.PlayDamage();
         StartCoroutine(ResetDamageAnimation());
 
         if (health.Value <= 0)
         {
+            AudioManager.instance.PlayDeath();
             StartCoroutine(Die());
         }
 

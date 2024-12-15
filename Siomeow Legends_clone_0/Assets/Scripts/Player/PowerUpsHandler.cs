@@ -24,22 +24,27 @@ public class PowerUpsHandler : MonoBehaviour
         switch (type)
         {
             case PickupItem.PowerUp.Berserk:
+                AudioManager.instance.PlayPickup();
                 StartCoroutine(ApplyBerserk());
                 break;
 
             case PickupItem.PowerUp.Movement:
+                AudioManager.instance.PlayPickup();
                 StartCoroutine(ApplySpeedBoost());
                 break;
 
             case PickupItem.PowerUp.Stamina:
+                AudioManager.instance.PlayPickup();
                 StartCoroutine(ApplyStaminaBoost());
                 break;
 
             case PickupItem.PowerUp.Heal:
+                AudioManager.instance.PlayHeal();
                 ApplyHeal();
                 break;
 
             case PickupItem.PowerUp.Shield:
+                AudioManager.instance.PlayHeal();
                 ApplyShield();
                 break;
 
