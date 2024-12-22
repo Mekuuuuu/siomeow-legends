@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Meowalas_Idle_0: 7291436900836442363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
