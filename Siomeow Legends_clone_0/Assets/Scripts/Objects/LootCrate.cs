@@ -7,6 +7,7 @@ public class Crate : MonoBehaviour
 
     void OnDestroy()
     {
+        AudioManager.instance.PlayCrate();
         DropPotion();
     }
 
