@@ -15,8 +15,8 @@ public class PlayerMovement : NetworkBehaviour
 
     public bool canDash = true;
     public bool isDashing; 
-    public float dashingCooldown = 10f;
-    private float dashingPower = 10f;
+    public float dashingCooldown = 6f;
+    private float dashingPower = 12f;
     private float dashingTime = 0.2f;
     private float lastDashTime = -Mathf.Infinity; 
 
@@ -122,6 +122,7 @@ public class PlayerMovement : NetworkBehaviour
 
     private IEnumerator Dash()
     {
+        AudioManager.instance.PlayDash();
         if (!canDash) yield break; 
         canDash = false;
         isDashing = true;

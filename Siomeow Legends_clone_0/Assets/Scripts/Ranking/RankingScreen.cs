@@ -53,6 +53,8 @@ public class RankingScreen : NetworkBehaviour
     [ClientRpc]
     private void DisplayRankingClientRpc()
     {
+        
+        AudioManager.instance.PlayGameover();
         // Clear the previous ranking entries
         foreach (Transform child in rankingPanel)
         {
@@ -84,6 +86,7 @@ public class RankingScreen : NetworkBehaviour
 
     public void LeaveLobby()
     {
+        AudioManager.instance.PlayButtonClick();
         if (IsHost)
         {
             HostManager.Instance.StopHost();
