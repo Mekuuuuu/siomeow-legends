@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cover_photo_rounded_0: 2865387026044969755
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

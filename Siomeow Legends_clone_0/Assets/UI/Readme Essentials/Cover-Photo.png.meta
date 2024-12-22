@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 152dd31bca86d2e419172664a5879704
+guid: 5f00a85778b99e14bbbfb88cef83b0c8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2002059182574428433
-    second: Meowtar_The Blue_Idle_0
+      213: -376475203203384356
+    second: cover_photo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Meowtar_The Blue_Idle_0
+      name: cover_photo_0
       rect:
         serializedVersion: 2
-        x: 9
+        x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 940
+        height: 348
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fee9753e7c14734e0800000000000000
-      internalID: -2002059182574428433
+      spriteID: cdbb15e1ccd76caf0800000000000000
+      internalID: -376475203203384356
       vertices: []
       indices: 
       edges: []
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cover_photo_0: -376475203203384356
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
