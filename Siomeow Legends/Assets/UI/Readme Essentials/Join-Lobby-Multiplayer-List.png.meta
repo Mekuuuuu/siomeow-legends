@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Join-Lobby-Multiplayer-List_0: -8597473222705994784
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
