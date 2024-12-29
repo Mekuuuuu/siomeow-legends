@@ -175,6 +175,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6121989316675392801, guid: 10e607b34e84926478664d19f6d9a0a2, type: 3}
   m_PrefabInstance: {fileID: 7403381741236903541}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &433552097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1991912402702971987, guid: 527f3026dff92f540aa5878b384df4b6, type: 3}
+  m_PrefabInstance: {fileID: 1484362080}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &455897299
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,19 +988,70 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1991912402702971987, guid: 527f3026dff92f540aa5878b384df4b6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1484362087}
+    - targetCorrespondingSourceObject: {fileID: 1991912402702971987, guid: 527f3026dff92f540aa5878b384df4b6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1484362086}
   m_SourcePrefab: {fileID: 100100000, guid: 527f3026dff92f540aa5878b384df4b6, type: 3}
 --- !u!114 &1484362083 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8836187537902836921, guid: 527f3026dff92f540aa5878b384df4b6, type: 3}
   m_PrefabInstance: {fileID: 1484362080}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 433552097}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6960e84d07fb87f47956e7a81d71c4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1484362086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433552097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13689143be060d441b5cfbbf6e448580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Discovery: {fileID: 1484362087}
+  DrawOffset: {x: 10, y: 210}
+--- !u!114 &1484362087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433552097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 723bdd1003c5935429102ed45a52d931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Port: 47777
+  m_UniqueApplicationId: 7325946696020111747
+  m_StartWithServer: 1
+  ServerName: EnterName
+  OnServerFound:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1484362086}
+        m_TargetAssemblyTypeName: ExampleNetworkDiscoveryHud, Assembly-CSharp
+        m_MethodName: OnServerFound
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1540862053 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2627569173011161796, guid: 5bb04c8d32563c64c90b83e23b506720, type: 3}
