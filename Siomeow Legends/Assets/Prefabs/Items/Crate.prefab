@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7061964570005988212}
   - component: {fileID: 2006536516626116102}
   - component: {fileID: 4983694036338440896}
-  - component: {fileID: 3052407128424002304}
   - component: {fileID: 7166348317633131730}
-  - component: {fileID: 2315019466878276781}
+  - component: {fileID: 451648685825780469}
+  - component: {fileID: 3052407128424002304}
   - component: {fileID: 4850532283164375856}
   m_Layer: 8
   m_Name: Crate
@@ -114,20 +114,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3052407128424002304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1835547865163386838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58730558262523f47abae6acb2666c2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthPotionPrefab: {fileID: 2633245788659597330, guid: febc8454eec7e8e49b411b9cf1e2ce67, type: 3}
-  defensePotionPrefab: {fileID: 353630234702561675, guid: d2f44e7ed9c56e1409f666631133f737, type: 3}
 --- !u!114 &7166348317633131730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +139,7 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
---- !u!114 &2315019466878276781
+--- !u!114 &451648685825780469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,16 +148,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1835547865163386838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2c93109caf2b3846817c825c3c0bc6d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4479c7b4913eefa4596bddc87616b9e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   health:
-    m_InternalValue: 3607
-  defense:
-    m_InternalValue: 400
-  damageMultiplier: 1
-  anim: {fileID: 0}
+    m_InternalValue: 1
+  anim: {fileID: 4983694036338440896}
+--- !u!114 &3052407128424002304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835547865163386838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58730558262523f47abae6acb2666c2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  healthPotionPrefab: {fileID: 2633245788659597330, guid: febc8454eec7e8e49b411b9cf1e2ce67, type: 3}
+  defensePotionPrefab: {fileID: 353630234702561675, guid: d2f44e7ed9c56e1409f666631133f737, type: 3}
 --- !u!61 &4850532283164375856
 BoxCollider2D:
   m_ObjectHideFlags: 0

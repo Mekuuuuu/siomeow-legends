@@ -1,11 +1,12 @@
 using UnityEngine;
+using Unity.Netcode;
 
-public class Crate : MonoBehaviour
+public class LootCrate : NetworkBehaviour
 {
     public GameObject healthPotionPrefab;
     public GameObject defensePotionPrefab;
 
-    void OnDestroy()
+    new void OnDestroy()
     {
         AudioManager.instance.PlayCrate();
         DropPotion();

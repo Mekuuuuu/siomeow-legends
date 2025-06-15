@@ -5,6 +5,7 @@ public class AttackArea : MonoBehaviour
 {
     private int minDamage = 80;
     private int maxDamage = 120;
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.GetComponent<PlayerStats>() != null)
@@ -21,5 +22,15 @@ public class AttackArea : MonoBehaviour
 
             Debug.Log($"Normal Damage: {damage} dealt by {attacker.name}.");
         }
+
+        if (collider.GetComponent<CrateStats>() != null)
+        {
+            CrateStats crateTarget = collider.GetComponent<CrateStats>();
+            ulong attackerClientId = GetComponentInParent<NetworkObject>().OwnerClientId;
+            crateTarget.TakeDamageServerRpc(1, attackerClientId);
+            Debug.Log("Crate hit and damaged!");
+        }
     }
+
+    
 }
