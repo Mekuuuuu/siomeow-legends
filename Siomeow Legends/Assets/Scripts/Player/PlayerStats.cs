@@ -92,6 +92,9 @@ public class PlayerStats : NetworkBehaviour
         {
             OnStatsChanged?.Invoke();
         }
+    
+        UpdateHealthUIClientRpc(health.Value, MAX_HEALTH);
+        Debug.Log($"Health is now {health.Value}!");
     }
 
     public void IncreaseDefense(int defenseAmount)
@@ -102,6 +105,9 @@ public class PlayerStats : NetworkBehaviour
         {
             OnStatsChanged?.Invoke();
         }
+        
+        UpdateDamageUIClientRpc(defense.Value, MAX_DEFENSE);
+        Debug.Log($"Defense is now {defense.Value}!");
     }
 
     private IEnumerator Die()
@@ -166,9 +172,22 @@ public class PlayerStats : NetworkBehaviour
                 PlayerUIManager.Instance.SetKillCount(newKillCount);
             }
     }
+
     private IEnumerator ResetDamageAnimation()
     {
         yield return new WaitForSeconds(0.5f);
         anim.SetBool("Damage", false);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void HealServerRpc(int healValue)
+    {
+        Heal(healValue);
+    }
+    
+    [ServerRpc(RequireOwnership = false)]
+    public void IncreaseDefenseServerRpc(int defenseAmount)
+    {
+        IncreaseDefense(defenseAmount);
     }
 }
