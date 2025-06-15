@@ -47,6 +47,8 @@ public class CrateStats : NetworkBehaviour
         // Properly despawn the networked object
         if (IsServer)
         {
+            GetComponent<LootCrate>()?.DropPotion(); 
+    
             // Despawn the crate to sync destruction across all clients
             GetComponent<NetworkObject>().Despawn();
         }
