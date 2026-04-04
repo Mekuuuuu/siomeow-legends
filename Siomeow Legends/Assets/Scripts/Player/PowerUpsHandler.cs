@@ -40,12 +40,12 @@ public class PowerUpsHandler : MonoBehaviour
 
             case PickupItem.PowerUp.Heal:
                 AudioManager.instance.PlayHeal();
-                ApplyHeal();
+                playerStats.HealServerRpc(100); 
                 break;
 
             case PickupItem.PowerUp.Shield:
                 AudioManager.instance.PlayHeal();
-                ApplyShield();
+                playerStats.IncreaseDefenseServerRpc(50); 
                 break;
 
             default:
@@ -120,21 +120,5 @@ public class PowerUpsHandler : MonoBehaviour
         yield return new WaitUntil(() => !player.isDashing);
         player.dashingCooldown = 10f;
         Debug.Log($"Cooldown reset to: {player.dashingCooldown}!");
-    }
-
-    private void ApplyHeal()
-    {
-        int healAmount = 100;
-
-        playerStats.Heal(healAmount);
-        Debug.Log($"Health is now {playerStats.health}!");
-    }
-
-    private void ApplyShield()
-    {
-        int defenseAmount = 50;
-
-        playerStats.IncreaseDefense(defenseAmount);
-        Debug.Log($"Defense is now {playerStats.defense}!");
     }
 }

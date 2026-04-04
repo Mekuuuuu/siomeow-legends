@@ -33,5 +33,13 @@ public class RangedAttackBullet : MonoBehaviour
                 Debug.Log($"Normal Damage: {damage}.");
             }
         }
+
+        if (collider.GetComponent<CrateStats>() != null)
+        {
+            CrateStats crateTarget = collider.GetComponent<CrateStats>();
+            ulong attackerClientId = GetComponentInParent<NetworkObject>().OwnerClientId;
+            crateTarget.TakeDamageServerRpc(1, attackerClientId);
+            Debug.Log("Crate hit and damaged!");
+        }
     }
 }

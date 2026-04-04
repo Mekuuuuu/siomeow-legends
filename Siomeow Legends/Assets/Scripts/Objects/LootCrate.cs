@@ -1,18 +1,15 @@
 using UnityEngine;
+using Unity.Netcode;
 
-public class Crate : MonoBehaviour
+public class LootCrate : NetworkBehaviour
 {
     public GameObject healthPotionPrefab;
     public GameObject defensePotionPrefab;
 
-    void OnDestroy()
+    public void DropPotion()
     {
-        AudioManager.instance.PlayCrate();
-        DropPotion();
-    }
-
-    void DropPotion()
-    {
+        
+        Debug.Log($"Crate here");
         if (Random.Range(0f, 1f) <= 0.5f)
         {
             bool dropHealthPotion = Random.Range(0f, 1f) <= 0.69f;
@@ -20,11 +17,11 @@ public class Crate : MonoBehaviour
 
             if (dropHealthPotion && !dropDefensePotion)
             {
-                Heal();
+                SpawnPotion(healthPotionPrefab);
             }
             else if (dropDefensePotion && !dropHealthPotion)
             {
-                Shield();
+                SpawnPotion(defensePotionPrefab);
             } 
             else
             {
@@ -37,15 +34,18 @@ public class Crate : MonoBehaviour
         }
     }
 
-    void Heal()
+    void SpawnPotion(GameObject potionPrefab)
     {
-        Instantiate(healthPotionPrefab, transform.position, Quaternion.identity);
-        Debug.Log("Health potion dropped.");
-    }    
-    
-    void Shield()
-    {
-        Instantiate(defensePotionPrefab, transform.position, Quaternion.identity);
-        Debug.Log("Defense potion dropped.");
+        GameObject potion = Instantiate(potionPrefab, transform.position, Quaternion.identity);
+        var netObj = potion.GetComponent<NetworkObject>();
+        if (netObj != null)
+        {
+            netObj.Spawn();
+            Debug.Log($"Spawned potion: {potionPrefab.name}");
+        }
+        else
+        {
+            Debug.LogWarning("Potion prefab is missing NetworkObject!");
+        }
     }
 }
